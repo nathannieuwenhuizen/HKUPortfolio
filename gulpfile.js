@@ -8,7 +8,7 @@
     var plumber = require('gulp-plumber');
     var sass = require('gulp-sass');
     var browserSync = require('browser-sync').create();
-
+    var cleanCSS = require('gulp-clean-css');
     gulp.task('hello', function () {
         console.log('Hello ' + config.author);
     });
@@ -20,6 +20,7 @@
             }))
             .pipe(sass()) // Converts Sass to CSS with gulp-sass
             .on('error', sass.logError)
+            .pipe(cleanCSS({compatibility: 'ie8'}))
             .pipe(gulp.dest(''))
             .pipe(notify('SASS compiled!'))
             .pipe(browserSync.reload({
