@@ -33,7 +33,7 @@ body {
         font-weight: bold;
         font-size: 15pt;
         color: #669;
-        margin-top: 50px;
+        //margin-top: 50px;
         //background-color: #ddd;
     }
 
@@ -124,6 +124,7 @@ body {
                     position: absolute;
                     display: block;
                     z-index: 1;
+                    cursor: pointer;
                     top: calc(50% - 25px);
                 }
                 :nth-child(1) {
@@ -162,6 +163,46 @@ body {
                 }
             }
 
+        }
+
+        .projectTile {
+            margin-top: 40px;
+            transition: 0.5s linear background;
+            //border: 2px dotted red;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+            width: 50%;
+            padding: 20px 0px;
+            img {
+                //padding: 50px;
+                cursor: pointer;
+                width: 90%;
+            }
+            h3{
+                color: black;
+                cursor: pointer;
+            }
+            .buttonContainer{
+                height: 50px;
+                //outline: 2px dotted blue;
+                .github {
+                    background: url(./assets/github.png);
+                    width: 30%;
+                    height: 100%;
+                    outline: 1px solid black;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                }
+                img {
+                    cursor: pointer;
+                    width: 30%;
+                }
+            }
+            
+        }
+        .projectTile:hover{
+            background: white;
         }
     }
 

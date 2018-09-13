@@ -1,54 +1,77 @@
 window.addEventListener("load", function (){
 	var slider = document.getElementsByClassName("container")[0];
-    var buttons = document.getElementById("button");
-    var amountOfimages = 3;
+    var buttons = document.getElementsByClassName("button");
+    
+    var amountOfimages = document.getElementsByClassName("dia").length;
     var curentimage = 1;
     var loop;
-    var pauzeDuration = 6;
+    var pauzeDuration = 1;
     //ResumeLoop();
     gotToSlide(curentimage-1);
+
+    buttons[0].addEventListener('click', () => {
+        nextSlide();
+    })
+    buttons[1].addEventListener('click', () => {
+        previouusSlide();
+    })
     
-    for(var i = 0; i < buttons.length; i++)
-    {
-        (function(i){
-            buttons[i].onclick = function()
-            {
-                gotToSlide(i); 
-                curentimage = i+1;
-                clearInterval(loop); 
-                //ResumeLoop();
-            };
-        })(i);
-    }
+    // for(var i = 0; i < buttons.length; i++)
+    // {
+    //     (function(i){
+    //         buttons[i].onclick = function()
+    //         {
+    //             gotToSlide(i); 
+    //             curentimage = i+1;
+    //             clearInterval(loop); 
+    //             //ResumeLoop();
+    //         };
+    //     })(i);
+    // }
     
     function ResumeLoop()
     {
         loop = setInterval(function(){
-            curentimage++;
-
-            if(curentimage >amountOfimages)
-                curentimage = 1;            
-
-            gotToSlide(curentimage-1);
+            console.log('loop');
+            nextSlide();
         }, pauzeDuration*1000);
+    }
+    function nextSlide() 
+    {
+        curentimage++;
+
+        if(curentimage >amountOfimages)
+            curentimage = 1;            
+
+        gotToSlide(curentimage-1);
+    }
+    function previouusSlide()
+    {
+        curentimage--;
+
+        if(curentimage < 1)
+            curentimage = amountOfimages;            
+
+        gotToSlide(curentimage-1);
     }
     
     function gotToSlide(index)
     {
-        slider.style.transition = "all 2s";
+        console.log(index);
+        slider.style.transition = "all 1s";
         slider.style.left = '-'+(index)+'00%';
         
         UpdateButtons(index);
     }
     function UpdateButtons(index)
     {
-        for(var i = 0; i < buttons.length; i++)
-        {
-            if(i == index)
-                buttons[i].src = "img/buttonPressed.jpg";
-            else
-                buttons[i].src = "img/button.jpg";
-        }
+        // for(var i = 0; i < buttons.length; i++)
+        // {
+        //     if(i == index)
+        //         buttons[i].src = "img/buttonPressed.jpg";
+        //     else
+        //         buttons[i].src = "img/button.jpg";
+        // }
     }
     
 }, false);

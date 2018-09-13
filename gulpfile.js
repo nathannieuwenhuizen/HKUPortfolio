@@ -31,7 +31,10 @@
     gulp.task('watch', ['browserSync'], function () {
         console.log('Hello ' + config.author + '! Time to watch some Styles!');
         gulp.watch('scss/*.scss', ['sass']);
-        gulp.watch('index.php', browserSync.reload);
+        gulp.watch('*.php', browserSync.reload);
+        gulp.watch('*.html', browserSync.reload);
+        gulp.watch('assets/**', browserSync.reload);
+        gulp.watch('js/*.js', browserSync.reload);
     })
 
     gulp.task('browserSync', function () {
