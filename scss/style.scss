@@ -5,13 +5,14 @@ body {
     background-color: #fff;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
+    
     //background:  url('https://img.freepik.com/free-vector/abstract-white-poly-background_1390-389.jpg?size=338&ext=jpg');
     background-size: contain;
 
     p {
         color: #336;
         font-size: 11pt;
-        border: 1px solid #afa;
+        // border: 1px solid #afa;
     }
 
     H1 {
@@ -74,6 +75,9 @@ body {
                 a {
                     color: black;
                 }
+                a:target{
+                    color: red;
+                }
             }
 
             :first-child {
@@ -91,119 +95,15 @@ body {
             :nth-child(1) {
                 animation-delay: 0.2s;
             }
+            :nth-child(1)[target=blog]{
+                color: red;background: red;
+            }
 
         }
     }
 
     section {
         //outline: 2px solid #000;
-    }
-
-    .content {
-        //position: relative;
-        background: white;
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
-        border: 2px solid grey;
-        width: auto;
-        max-width: 90%;
-        margin: 0 5%; //padding: 50px;
-        background: aliceblue;
-        text-align: center;
-
-        .slider {
-            border: 1px solid red;
-            position: relative;
-            margin: 0 5%;
-            width: 90%;
-            .buttons{
-                .button {
-                    width: 50px;
-                    height: 50px;
-                    border: 5px solid black;
-                    background: black;
-                    position: absolute;
-                    display: block;
-                    z-index: 1;
-                    cursor: pointer;
-                    top: calc(50% - 25px);
-                }
-                :nth-child(1) {
-                    right: -25px;
-                }
-    
-                :nth-child(2) {
-                    left: -25px;
-                }
-    
-            }
-
-            .slideshow {
-                box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
-                //border: 5px solid red;
-
-                overflow: hidden;
-
-                .container {
-                    position: relative;
-                    width: 300%;
-                    left: -50%;
-
-                    .dia {
-                        position: relative;
-                        display: block;
-                        width: 33.3%;
-                        background: aliceblue;
-                        float: left;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-                }
-            }
-
-        }
-
-        .projectTile {
-            margin-top: 40px;
-            transition: 0.5s linear background;
-            //border: 2px dotted red;
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
-            width: 50%;
-            padding: 20px 0px;
-            img {
-                //padding: 50px;
-                cursor: pointer;
-                width: 90%;
-            }
-            h3{
-                color: black;
-                cursor: pointer;
-            }
-            .buttonContainer{
-                height: 50px;
-                //outline: 2px dotted blue;
-                .github {
-                    background: url(./assets/github.png);
-                    width: 30%;
-                    height: 100%;
-                    outline: 1px solid black;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-
-                }
-                img {
-                    cursor: pointer;
-                    width: 30%;
-                }
-            }
-            
-        }
-        .projectTile:hover{
-            background: white;
-        }
     }
 
     header {
@@ -249,7 +149,7 @@ body {
             img {
                 max-height: 100%;
                 max-width: 100%;
-                width: 80%;
+                width: 50%;
                 border-radius: 50%;
                 position: absolute;
                 top: 0;
@@ -262,18 +162,91 @@ body {
 
     }
 
-    footer {
-        margin-top: 30px;
-        font-size: 12pt;
+    .content {
+        //position: relative;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+        border: 2px solid grey;
+        width: auto;
+        height: auto;
+        //max-width: 90%;
+        margin: 0 5%; //padding: 50px;
+        background: aliceblue;
         text-align: center;
-        background-color: #ffff30;
+        align-content: center;
+        // overflow: auto; //calculates float left childrens height
+
+        
+        @import 'slider'; //slider element
+
+        .projectTile {
+            float: left;
+            height: auto;
+            margin-top: 40px;
+            transition: 0.5s linear background;
+            //border: 2px dotted red;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+            width: 50%;
+            padding: 20px 0px;
+            img {
+                //padding: 50px;
+                cursor: pointer;
+                width: 90%;
+            }
+            h3{
+                color: black;
+                cursor: pointer;
+            }
+            .buttonContainer{
+                height: 50px;
+                //float: left;
+                //outline: 2px dotted blue;
+                section{
+                    background: url(./assets/github.png);
+                    width: 30%;
+                    height: 100%;
+                    float: left;
+                    //outline: 1px solid black;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                .github {
+                    background-image: url(./assets/github.png);
+                }
+                .info{
+                    background-image: url(./assets/info.png);
+                }
+                .play {
+                    background-image: url(./assets/controller.png);
+                }
+                img {
+                    cursor: pointer;
+                    width: 30%;
+                }
+            }
+        }        
+        .projectTile:hover{
+            background: white;
+        }
+    }
+
+    @import 'about'; //about page
+ 
+    footer {
+        
+        margin-top: 30px;
+        font-size: 8pt;
+        height: auto;
+        text-align: center;
+        background-color: white;
     }
 
     #about {
         display: none;
     }
 
-    #blog {
+    #projecten {
         display: none;
     }
 
@@ -281,7 +254,7 @@ body {
         display: block;
     }
 
-    #blog:target {
+    #projecten:target {
         display: block;
     }
 

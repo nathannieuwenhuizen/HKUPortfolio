@@ -1,5 +1,5 @@
 window.addEventListener("load", function (){
-	var slider = document.getElementsByClassName("container")[0];
+	var slider = document.getElementsByClassName("slidecontainer")[0];
     var buttons = document.getElementsByClassName("button");
     
     var amountOfimages = document.getElementsByClassName("dia").length;
@@ -7,13 +7,13 @@ window.addEventListener("load", function (){
     var loop;
     var pauzeDuration = 1;
     //ResumeLoop();
-    gotToSlide(curentimage-1);
+    // gotToSlide(curentimage-1);
 
     buttons[0].addEventListener('click', () => {
         nextSlide();
     })
     buttons[1].addEventListener('click', () => {
-        previouusSlide();
+        previousSlide();
     })
     
     // for(var i = 0; i < buttons.length; i++)
@@ -45,7 +45,7 @@ window.addEventListener("load", function (){
 
         gotToSlide(curentimage-1);
     }
-    function previouusSlide()
+    function previousSlide()
     {
         curentimage--;
 
@@ -57,7 +57,7 @@ window.addEventListener("load", function (){
     
     function gotToSlide(index)
     {
-        console.log(index);
+        console.log(index, slider);
         slider.style.transition = "all 1s";
         slider.style.left = '-'+(index)+'00%';
         
