@@ -7,7 +7,7 @@ window.addEventListener("load", function (){
     var loop;
     var pauzeDuration = 1;
     //ResumeLoop();
-    // gotToSlide(curentimage-1);
+    gotToSlide(0);
 
     buttons[0].addEventListener('click', () => {
         nextSlide();

@@ -14,7 +14,7 @@
     });
 
     gulp.task('sass', function () {
-        return gulp.src('scss/*.scss')
+        return gulp.src('scss/main.scss')
             .pipe(plumber({
                 errorHandler: notify.onError("Error parsing SASS!")
             }))
@@ -28,7 +28,7 @@
             }))
 
     });
-    gulp.task('watch', ['browserSync'], function () {
+    gulp.task('dev', ['browserSync'], function () {
         console.log('Hello ' + config.author + '! Time to watch some Styles!');
         gulp.watch('scss/*.scss', ['sass']);
         gulp.watch('*.php', browserSync.reload);

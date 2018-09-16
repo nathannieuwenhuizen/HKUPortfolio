@@ -7,7 +7,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     
     //background:  url('https://img.freepik.com/free-vector/abstract-white-poly-background_1390-389.jpg?size=338&ext=jpg');
-    background-size: contain;
 
     p {
         color: #336;
@@ -129,7 +128,7 @@ body {
                 h1 {
                     font-size: 3.5vw;
                     margin: 0;
-                }
+                } 
 
                 h2 {
                     margin: 0;
@@ -174,14 +173,16 @@ body {
         background: aliceblue;
         text-align: center;
         align-content: center;
-        // overflow: auto; //calculates float left childrens height
+        overflow: auto; //calculates float left childrens height
 
         
         @import 'slider'; //slider element
+        @import 'projectInfo'; //project info
+        @import 'about'; //about page
 
         .projectTile {
             float: left;
-            height: auto;
+            height: 300px;
             margin-top: 40px;
             transition: 0.5s linear background;
             //border: 2px dotted red;
@@ -191,7 +192,8 @@ body {
             img {
                 //padding: 50px;
                 cursor: pointer;
-                width: 90%;
+                height: 60%;
+                // width: 90%;
             }
             h3{
                 color: black;
@@ -231,7 +233,6 @@ body {
         }
     }
 
-    @import 'about'; //about page
  
     footer {
         

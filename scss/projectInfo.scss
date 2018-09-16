@@ -1,0 +1,61 @@
+.projectOverview {
+    outline: 5px solid black;
+    display: inline-block;
+
+    height: 400px;
+    width: 100%;
+    .slider {
+        // border: 5px dotted red;
+        float: left;
+    }
+
+    .projectInfo {
+
+        // padding: 1vw 2vw;
+        margin-left: 4vw;
+        background: white;
+        width: 22vw;
+        float: left;
+        // outline: 5px dotted red;
+        text-align: left;
+        height: 100%;
+
+        position: relative;
+        .textInfo {
+            outline: 2px dotted red;
+
+            b {
+                line-height: 0px;
+            }
+
+            p {
+                margin-top: 0px;
+                line-height: 20px;
+            }
+
+        }
+
+        .projectButtons {
+            outline: 2px dotted red;
+            position: absolute; 
+            bottom: 0; 
+            width: 100%;
+            align-content: center;
+            text-align: center;
+            padding: 20px 0;
+            img {
+                outline: 2px dotted red;
+                display: inline-block;
+                position: relative;
+                height: 20%;
+                width: 20%;
+                margin: 0 4%;
+            }
+        }
+
+    }
+}
+
+.projectSummary {
+    padding: 50px;
+}
