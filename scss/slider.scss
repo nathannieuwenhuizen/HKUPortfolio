@@ -10,18 +10,27 @@
             height: 50px;
             border: 5px solid black;
             background: black;
+            background-image: url("./assets/arrow.png");
+            background-size: contain;
             position: absolute;
+            border-radius: 50%;
             display: block;
             z-index: 1;
             cursor: pointer;
             top: calc(50% - 25px);
+            opacity: 0.5;
+            transition: opacity 0.3s ease-in-out;
         }
         :nth-child(1) {
-            right: -25px;
+            right: 10px;
         }
 
         :nth-child(2) {
-            left: -25px;
+            transform: scale(-1);
+            left: 10px;
+        }
+        .button:hover{
+            opacity: 1;
         }
 
     }

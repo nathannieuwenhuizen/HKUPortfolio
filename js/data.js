@@ -32,8 +32,8 @@ function getData(index) {
             "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
             "description": "For this school project, we as developpers were assigned to create a game and make our own assignments. We were free to hire other developers and artists for our project. We had our priorities on making a working prototype and good communication within our team.",
             "images":[
-                'https://i.gyazo.com/e1f9fda30b1f42c2f3aa33f337f5dd1e.gif', 
                 './assets/projects/bf1.png',
+                'https://i.gyazo.com/e1f9fda30b1f42c2f3aa33f337f5dd1e.gif', 
                 './assets/projects/bf2.png',
                 './assets/projects/bf3.png',
                 './assets/projects/bf4.png',
