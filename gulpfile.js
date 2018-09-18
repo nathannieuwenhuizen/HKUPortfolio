@@ -11,6 +11,8 @@
     var cleanCSS = require('gulp-clean-css');
     var clean = require('gulp-clean');
     var gulpCopy = require('gulp-copy');
+    var uglify = require('gulp-uglify');
+    var pump = require('pump');
 
     gulp.task('hello', function () {
         console.log('Hello ' + config.author);
@@ -40,7 +42,7 @@
         gulp.watch('*.php', ['copy']);
         gulp.watch('*.html', ['copy']);
         gulp.watch('assets/**', ['copy']);
-        gulp.watch('js/*.js', ['copy']);
+        gulp.watch('js/*.js', ['js']);
     })
 
     gulp.task('browserSync', function () {
@@ -53,9 +55,10 @@
     gulp.task('cleanbuild', function () {
         return clean(['build/**', '!build'], {force:true});
     });
-    gulp.task('test', ['cleanbuild', 'copy', 'sass']);
 
-    gulp.task('copy', ['copy-html','copy-js','copy-assets']);
+    gulp.task('test', ['cleanbuild', 'copy', 'sass', 'js']);
+
+    gulp.task('copy', ['copy-html','copy-assets']);
       gulp.task('copy-html', function () {
             return  gulp.src('*.html')
         .pipe(gulp.dest('./build'))
@@ -71,4 +74,14 @@
         return gulp.src(['assets/**/*'])
         .pipe(gulp.dest('build/assets'));
     });
+
+    gulp.task('js', function (cb) {
+        pump([
+              gulp.src('js/*.js'),
+            //   uglify(),
+              gulp.dest('build/js')
+          ],
+          cb
+        );
+      });
 })();

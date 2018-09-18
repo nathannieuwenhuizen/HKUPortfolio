@@ -7,32 +7,31 @@ window.addEventListener("load", function (){
     var data = getData(c);
     console.log(data);
     document.title = data.title;
-
     document.getElementById('projectTitle').innerHTML = data.title;
     document.getElementById('projectDuration').innerHTML = data.duration;
     document.getElementById('projectDate').innerHTML = data.date;
     document.getElementById('projectSummary').innerHTML = data.summary;
     document.getElementById('projectDescription').innerHTML = data.description;
-    let slideContainer = document.getElementsByClassName('slidecontainer')[0];
+    var slideContainer = document.getElementsByClassName('slidecontainer')[0];
     slideContainer.style = 'width: ' + data.images.length +'00%;';
 
     for (i = 0; i < data.images.length; i++) {
-        if (data.images[i] !== '') {
+        if (data.images[i] !== '') { 
 
             console.log(i);
-            let el = this.document.createElement("div");
+            var el = this.document.createElement("div");
             el.className = 'dia';
             el.style = 'width:'+ (100 / data.images.length) + '%; background-image:url("'+ data.images[i]+'");';
             slideContainer.appendChild(el);
         }
     }
 
-    let buttonContainer = document.getElementsByClassName('projectButtons')[0];
+    var buttonContainer = document.getElementsByClassName('projectButtons')[0];
     for (i = 0; i < data.buttons.length; i++) {
         if (data.buttons[i] !== '') {
-            let el = this.document.createElement("a");
+            var el = this.document.createElement("a");
             el.href = data.buttons[i];            
-            let img = this.document.createElement("section");
+            var img = this.document.createElement("section");
             
             
             if (i === 0) {
