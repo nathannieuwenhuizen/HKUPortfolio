@@ -9,6 +9,9 @@
     var sass = require('gulp-sass');
     var browserSync = require('browser-sync').create();
     var cleanCSS = require('gulp-clean-css');
+    var clean = require('gulp-clean');
+    var gulpCopy = require('gulp-copy');
+
     gulp.task('hello', function () {
         console.log('Hello ' + config.author);
     });
@@ -21,7 +24,7 @@
             .pipe(sass()) // Converts Sass to CSS with gulp-sass
             .on('error', sass.logError)
             .pipe(cleanCSS({compatibility: 'ie8'}))
-            .pipe(gulp.dest(''))
+            .pipe(gulp.dest('build'))
             .pipe(notify('SASS compiled!'))
             .pipe(browserSync.reload({
                 stream: true
@@ -29,19 +32,43 @@
 
     });
     gulp.task('dev', ['browserSync'], function () {
+        gulp.start('test');
+        // gulp.start('copy');
         console.log('Hello ' + config.author + '! Time to watch some Styles!');
+        
         gulp.watch('scss/*.scss', ['sass']);
-        gulp.watch('*.php', browserSync.reload);
-        gulp.watch('*.html', browserSync.reload);
-        gulp.watch('assets/**', browserSync.reload);
-        gulp.watch('js/*.js', browserSync.reload);
+        gulp.watch('*.php', ['copy']);
+        gulp.watch('*.html', ['copy']);
+        gulp.watch('assets/**', ['copy']);
+        gulp.watch('js/*.js', ['copy']);
     })
 
     gulp.task('browserSync', function () {
         browserSync.init({
             server: {
-                baseDir: './'
+                baseDir: './build'
             },
         })
     })
+    gulp.task('cleanbuild', function () {
+        return clean(['build/**', '!build'], {force:true});
+    });
+    gulp.task('test', ['cleanbuild', 'copy', 'sass']);
+
+    gulp.task('copy', ['copy-html','copy-js','copy-assets']);
+      gulp.task('copy-html', function () {
+            return  gulp.src('*.html')
+        .pipe(gulp.dest('./build'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
+    });
+    gulp.task('copy-js', function () {
+        return gulp.src(['js/**/*'])
+        .pipe(gulp.dest('build/js'));
+    });
+    gulp.task('copy-assets', function () {
+        return gulp.src(['assets/**/*'])
+        .pipe(gulp.dest('build/assets'));
+    });
 })();
