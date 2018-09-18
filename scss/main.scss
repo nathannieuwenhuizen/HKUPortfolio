@@ -1,3 +1,4 @@
+@import 'data';
 body {
     color: #336;
     font-size: 13pt;
@@ -5,9 +6,11 @@ body {
     background-color: #fff;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
+    background: url(../assets/page_elements/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
-    //background:  url('https://img.freepik.com/free-vector/abstract-white-poly-background_1390-389.jpg?size=338&ext=jpg');
-
     p {
         color: #336;
         font-size: 11pt;
@@ -18,14 +21,14 @@ body {
         font-weight: bold;
         font-size: 18pt;
         text-align: center;
-        color: #669;
+        color: $dark-color;
         //background-color: #ffff9e;
     }
 
     H2 {
         font-weight: bold;
         text-align: center;
-        color: #669;
+        color: $dark-color;
         //background-color: #fbff00;
     }
 
@@ -61,22 +64,48 @@ body {
             list-style-type: none;
             padding: 0;
 
+
             li {
-                background: aliceblue;
-                box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+                box-shadow: $box-shadow;
                 animation: 1s 0s 1 slideInFromLeft cubic-bezier(0.68, -0.55, 0.55, 1.55); //width: 100px;
+                
                 display: inline-block;
                 margin: 0px 0px;
-                box-shadow: #000;
-                padding: 10px 50px;
-                border: 2px solid grey;
+                width: 150px;
+                height: 40px;
+                // padding: 10px 50px;
+
+                color: #fff;
+                border: 3px solid $nav-color;
+                background-image: -webkit-linear-gradient(30deg, $nav-color 50%, transparent 50%);
+                background-image: linear-gradient(30deg, $nav-color 50%, transparent 50%);
+                background-size: 500px;
+                background-repeat: no-repeat;
+                background-position: 0%;
+                -webkit-transition: background 300ms ease-in-out;
+                transition: background 300ms ease-in-out;
 
                 a {
-                    color: black;
+                    color: $nav-light-color;
+                    line-height: 200%;
+                    text-align: center;
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    // border: 1px solid red;
+                    // color: black;
                 }
                 a:target{
-                    color: red;
+                    // color: red;
                 }
+                a:hover{
+                    color: $nav-color;
+                }
+            }
+            li:hover{
+                background-position: 100%;
+                color: black;
             }
 
             :first-child {
@@ -164,7 +193,7 @@ body {
     .content {
         //position: relative;
         background: white;
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+        box-shadow: $box-shadow;
         border: 2px solid grey;
         width: auto;
         height: auto;
@@ -173,7 +202,7 @@ body {
         background: aliceblue;
         text-align: center;
         align-content: center;
-        overflow: auto; //calculates float left childrens height
+        overflow: hidden; //calculates float left childrens height
 
         
         @import 'slider'; //slider element
@@ -183,23 +212,21 @@ body {
         .projectTile {
             // display: inline-block;
             float: left;
-            height: 300px;
+            height: auto;
+            min-height: 420px;
             margin: 5% 5%;
-            transition: 0.5s linear background;
             //border: 2px dotted red;
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+            box-shadow: $box-shadow;
             width: 40%;
-            padding: 20px 0px;
+            padding: 2vw 0px;
             position: relative;
             img {
                 //padding: 50px;
                 cursor: pointer;
-                max-height: 50%;
+                max-height: 250px;
                 max-width: 80%;
                 border: 2px solid grey;
                 transition: border 0.15s ease-in-out;
-
-                // width: 90%;
             }
             img:hover{
                 border: 5px solid grey;
@@ -210,49 +237,28 @@ body {
                 cursor: pointer;
             }
             .buttonContainer{
-                height: 80px;
+                height: 6vw;
                 padding: 1vw 1vw;
                 position: absolute;
                 bottom: 0;
                 width: 90%;
                 align-content: center;
-                //float: left;
-                //outline: 2px dotted blue;
                 section{
-                    display: inline-block;
-                    background: url(./assets/github.png);
-                    width: 8vw;
+                    @extend %image-button;
+                    width: 5vw;
                     margin: 0 1vw;
-                    height: 8vw;
-                    // float: left;
-                    // outline: 1px solid black;
-                    background-color: aliceblue;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    border-radius: 50%;
-                    transition: box-shadow 0.15s ease-in-out;
-                }
-                section:hover{
-                    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
-
+                    height: 5vw;
                 }
                 .github {
-                    background-image: url(./assets/github.png);
+                    background-image: url(./assets/page_elements/github.png);
                 }
                 .info{
-                    background-image: url(./assets/info.png);
+                    background-image: url(./assets/page_elements/info.png);
                 }
                 .play {
-                    background-image: url(./assets/controller.png);
-                }
-                img {
-                    width: 30%;
+                    background-image: url(./assets/page_elements/controller.png);
                 }
             }
-        }        
-        .projectTile:hover{
-            background: white;
         }
     }
 

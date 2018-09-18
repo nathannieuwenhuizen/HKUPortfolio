@@ -46,19 +46,21 @@
             align-content: center;
             text-align: center;
             padding: 20px 0;
-            img {
-                box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 20px;
-                border-radius: 50%;
-                border: 2px solid grey;
-                // outline: 2px dotted red;
-                display: inline-block;
-                position: relative;
-                height: 20%;
-                width: 20%;
-                margin: 0 4%;
+            margin-left: -2vw;
+            section{
+                @extend %image-button;
+                width: 5vw;
+                margin: 0 1vw;
+                height: 5vw;
             }
-            img:hover{
-                border-color: black;
+            .github {
+                background-image: url(./assets/page_elements/github.png);
+            }
+            .info{
+                background-image: url(./assets/page_elements/info.png);
+            }
+            .play {
+                background-image: url(./assets/page_elements/controller.png);
             }
         }
 
@@ -70,4 +72,8 @@
     // border: 2px solid red;
     margin: 4vw 2vw;
     padding: 1vw 2vw;
+    a {
+        cursor: pointer;
+        color: red;
+    }
 }

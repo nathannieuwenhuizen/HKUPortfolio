@@ -32,18 +32,16 @@ window.addEventListener("load", function (){
         if (data.buttons[i] !== '') {
             let el = this.document.createElement("a");
             el.href = data.buttons[i];            
-            let img = this.document.createElement("img");
+            let img = this.document.createElement("section");
             
-            link = '';
+            
             if (i === 0) {
-                link = './assets/github.png';
+                img.className = 'github';
             } else if (i === 1) {
-                link = './assets/controller.png';
+                img.className = 'play';
             } else {
-                link = './assets/info.png';
+                img.className = 'info';
             }
-
-            img.setAttribute('src', link);
 
             el.appendChild(img);
             buttonContainer.appendChild(el);
