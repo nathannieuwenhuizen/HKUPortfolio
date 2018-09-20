@@ -53,7 +53,7 @@ function getData(index) {
             "duration": "2 weeks",
             "date": "September 2018",
             "summary": "First itteration of portfolio website for the HKU",
-            "description": "In this sub part section of the portfolio project, the basic functonality is added. You can view the logbook at the info button or <a href='./assets/files/logboek.pdf'>here</a>. ",
+            "description": "In this sub part section of the portfolio project, the basic functonality is added. You can view the logbook at the info button or <a href='./assets/files/logboek.pdf'>here</a>. <br> Zip file: <a href='./assets/files/build.zip'>link</a>.",
             "images":[
                 './assets/projects/po1.jpg',
                 './assets/projects/po2.jpg',
