@@ -1,15 +1,13 @@
-import Data, { Iproject } from './data';
+import { Iproject } from './data';
 import Slider from './slider';
 
 export default class Page {
 
     private aboutField: any;
-    private data: Data;
     private projectOverviewAlreadyLoaded: boolean = false;
     private infoSlider: Slider;
 
     constructor() {
-        this.data = new Data();
         this.infoSlider = new Slider(1);
         this.aboutField = document.getElementsByClassName('aboutField')[0];
 
@@ -23,14 +21,11 @@ export default class Page {
         this.aboutField.style.transform = 'scale(' + (window.innerWidth - 200) / 1000 + ')';
     }
 
-    public loadProjectOverview(): void {
+    public loadProjectOverview(data: Iproject[]): void {
         if (this.projectOverviewAlreadyLoaded) {
             return;
         }
         this.projectOverviewAlreadyLoaded = true;
-
-        let data: Iproject[] = this.data.getData(-1);
-
         let slideContainer: any = document.getElementsByClassName('slidecontainer')[0];
         let projecten: any = document.getElementById('projecten');
         slideContainer.style = 'width: ' + data.length + '00%;';
@@ -92,13 +87,9 @@ export default class Page {
         return github_link;
     }
 
-    public loadProjectInfo(): void {
+    public loadProjectInfo(data: Iproject): void {
         this.infoSlider.clearDias();
-        let url_string: string = window.location.href; //window.location.href
-        let url: URL = new URL(url_string);
-        let c: any = url.hash.slice(-1);
 
-        let data: any = this.data.getData(c);
         // console.log(data);
         document.title = data.title;
         document.getElementById('projectTitle').innerHTML = data.title;

@@ -11,15 +11,15 @@ export default class Slider {
         this.container = document.getElementsByClassName('slider')[index];
         this.slider = this.container.getElementsByClassName('slidecontainer')[0];
         this.buttons = this.container.getElementsByClassName('button');
-        console.log('buttons', this.buttons);
+        // console.log('buttons', this.buttons);
         this.amountOfimages = document.getElementsByClassName('dia').length;
         this.curentimage = 1;
         this.pauzeDuration = 1;
 
-        console.log('locatio prot', window.location.protocol);
-        console.log('locatio hist', window.location.host);
-        console.log('locatio path', window.location.pathname);
-        console.log('locatio search', window.location.search);
+        // console.log('locatio prot', window.location.protocol);
+        // console.log('locatio hist', window.location.host);
+        // console.log('locatio path', window.location.pathname);
+        // console.log('locatio search', window.location.search);
         //ResumeLoop();
         this.gotToSlide(0);
 
@@ -33,7 +33,6 @@ export default class Slider {
     }
     public updateSlider(): void {
         this.amountOfimages = this.container.getElementsByClassName('dia').length;
-        console.log('amount slider!!!!  ', this.amountOfimages);
         this.curentimage = 1;
         this.gotToSlide(0);
     }
@@ -63,7 +62,7 @@ export default class Slider {
     }
     private previousSlide(): void {
         this.curentimage--;
-        console.log('loop');
+        // console.log('loop');
 
         if (this.curentimage < 1) {
             this.curentimage = this.amountOfimages;
