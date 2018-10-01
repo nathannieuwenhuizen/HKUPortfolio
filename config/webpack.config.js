@@ -62,7 +62,7 @@ module.exports = {
         }
     },
     output: {
-        filename: 'game.js',
+        filename: 'app.js',
         path: path.join(basePath, 'builds/dev/'),
         publicPath: "../assets/"
     },

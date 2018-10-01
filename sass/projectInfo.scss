@@ -1,0 +1,79 @@
+.projectOverview {
+    // outline: 5px solid black;
+    display: inline-block;
+    margin-top: 2vw;
+    height: 400px;
+    width: 100%;
+    .slider {
+        // border: 5px dotted red;
+        float: left;
+    }
+
+    .projectInfo {
+
+        // padding: 1vw 2vw;
+        margin-left: 2vw;
+        width: 18vw; 
+        float: left;
+        // outline: 5px dotted red;
+        text-align: left;
+        height: 95%;
+        // outline: 2px dotted blue;
+        padding: 1vw 2vw;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+
+
+        position: relative;
+        .textInfo {
+            // outline: 2px dotted red;
+
+            b {
+                line-height: 0px;
+            }
+
+            p {
+                margin-top: 0px; 
+                line-height: 20px;
+            }
+
+        }
+
+        .projectButtons {
+            // outline: 2px dotted red;
+            position: absolute; 
+            bottom: 0; 
+            width: 100%;
+            align-content: center;
+            text-align: center;
+            padding: 20px 0;
+            margin-left: -2vw;
+            section{
+                @extend %image-button;
+                width: 5vw;
+                margin: 0 1vw;
+                height: 5vw;
+            }
+            .github {
+                background-image: url(page_elements/github.png);
+            }
+            .info{
+                background-image: url(page_elements/info.png);
+            }
+            .play {
+                background-image: url(page_elements/controller.png);
+            }
+        }
+
+    }
+}
+
+.projectSummary {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+    // border: 2px solid red;
+    margin: 4vw 2vw;
+    padding: 1vw 2vw; 
+    a {
+        cursor: pointer;
+        color: red;
+    }
+}
