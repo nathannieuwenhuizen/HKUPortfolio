@@ -31,10 +31,6 @@ export default class App {
 
         if (window.location.href.indexOf('#projectinfo') > -1) {
             this.projectInfo.style = 'display: block';
-
-            let url_string: string = window.location.href; //window.location.href
-            let url: URL = new URL(url_string);
-            let c: any = url.hash.slice(-1);
             this.page.loadProjectInfo(this.data[this.readVariableFromUrl()]);
         } else {
             this.projectInfo.style = 'display: none';
