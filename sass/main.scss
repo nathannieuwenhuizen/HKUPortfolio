@@ -169,13 +169,46 @@ body {
             }
 
         }
-
         .title_image {
             height: 100%;
             float: left;
             width: 50%;
             position: relative;
 
+            #selfCanvas{
+                position: absolute;
+                opacity: 0;
+            }
+            #selfImage{
+                // border: 3px solid red;
+                text-align: center;
+                position: relative;
+                height: 100%;
+                #selfCanvasResult{
+                    // border: 5px solid green;
+                    max-height: 100%;
+                    max-width: 100%;
+                    width: 50%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+                #selfValue{
+                    // margin: 0 auto;
+                    // width: 100%;
+                    // outline: 5px solid blue;
+                    left: 0;
+                    right: 0;
+                    width: 30%;;
+                    margin: auto;
+                    position: absolute;
+                    cursor: pointer;
+                }
+            }
+            
             img {
                 max-height: 100%;
                 max-width: 100%;
@@ -187,6 +220,7 @@ body {
                 left: 0;
                 right: 0;
                 margin: auto;
+                display: none;
             }
         }
 
@@ -210,6 +244,7 @@ body {
         @import 'slider'; //slider element
         @import 'projectInfo'; //project info
         @import 'about'; //about page
+        @import 'hku'; //hku page 
         @import 'contact'; //contact page 
         .projectTile {
             // display: inline-block;
@@ -285,6 +320,10 @@ body {
         display: none;
     }
 
+    #HKU {
+        display: none;
+    }
+
     #projectinfo {
         display: none;
     }
@@ -298,6 +337,9 @@ body {
     }
 
     #projecten:target {
+        display: block;
+    }
+    #HKU:target {
         display: block;
     }
 

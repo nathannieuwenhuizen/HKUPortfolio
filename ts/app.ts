@@ -1,17 +1,24 @@
 import Slider from './slider';
 import Page from './page';
-import { Iproject } from './data';
+import { Iproject, Ihomework } from './data';
+import SelfImage from './selfImage';
 
 export default class App {
     private slider: Slider;
     private projectInfo: any;
     private page: Page;
+
     public data: Iproject[];
+    public selfImage: SelfImage;
+    public homeworkData: Ihomework[];
+
     constructor() {
 
-        this.data = this.loadFile('./assets/test.json');
-        console.log('data real begin', this.data[0].buttons);
+        this.data = this.loadFile('./assets/projects.json');
+        this.homeworkData = this.loadFile('./assets/homework.json');
+        console.log(this.homeworkData);
 
+        this.selfImage = new SelfImage();
         this.page = new Page();
         this.slider = new Slider(0);
         this.projectInfo = document.getElementById('projectinfo');

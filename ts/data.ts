@@ -26,4 +26,5 @@ export interface Ihomework {
     link: string; //href link
     link_name: string; //link string
     description: string; // small description
+    image_link: string; // image url for preview
 }
