@@ -1,7 +1,7 @@
 <?php 
 	
-	$sheet = $_GET['sheet']; 
-	if (!isset($_GET['sheet']) || empty($_GET['sheet'])) 
+	$sheet = 1;
+	if (isset($_GET['sheet']) || !empty($_GET['sheet'])) 
 	{
 		$sheet = $_GET['sheet']; 
 	}
