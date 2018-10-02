@@ -1,6 +1,7 @@
 *.iml
 .idea
 dev
+dist
 atlassian-ide-plugin.xml
 node_modules
 .tscache

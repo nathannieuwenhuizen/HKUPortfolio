@@ -1,14 +1,39 @@
+<?php 
+	
+	$sheet = $_GET['sheet']; 
+	if (!isset($_GET['sheet']) || empty($_GET['sheet'])) 
+	{
+		$sheet = $_GET['sheet']; 
+	}
+	if (!filter_var($sheet, FILTER_VALIDATE_INT)) { //is not integer
+		$sheet = 1;
+	 } else {
+	 }
+	 if ($sheet > 2 || $sheet < 0) { //als de variabele groter dan 2 is
+		$sheet = 1;
+		// iemand is aan het fokken (zet variabele naar standaard waarde)
+	 }
+	// echo $sheet;
+?>
 <!DOCTYPE HTML>
 <HTML>
 
 <HEAD>
 	<TITLE>Nathan Nieuwenhuizen</TITLE>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="assets/style.css" type="text/css" />
+	
+	<link rel="stylesheet" href="assets/<?php
+		if($sheet == 2) {
+			echo 'style';
+		} else {
+			echo 'style2';
+		}
+	?>.css" type="text/css" />
 	<script src="app.js"></script>
 </HEAD>
 
 <BODY>
+	
 	<header>
 		<section class="title_image">
 			<img src="assets/page_elements/pf.jpg" />

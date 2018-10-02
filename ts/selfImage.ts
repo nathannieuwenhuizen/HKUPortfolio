@@ -6,7 +6,7 @@ export default class SelfImage {
     private rCanvas: HTMLCanvasElement;
     private rContext: CanvasRenderingContext2D;
 
-    private imageSize: number = 300;
+    private imageSize: number = 400;
     private cellSize: any = 10;
     private selfValue: any;
 
@@ -14,17 +14,18 @@ export default class SelfImage {
     private pxData: any;
     constructor() {
         this.canvas = (<HTMLCanvasElement>document.getElementById('selfCanvas'));
-        this.canvas.width = 300;
-        this.canvas.height = 300;
+        this.canvas.width = this.imageSize;
+        this.canvas.height = this.imageSize;
         this.context = this.canvas.getContext('2d');
 
         this.rCanvas = (<HTMLCanvasElement>document.getElementById('selfCanvasResult'));
-        this.rCanvas.width = 300;
-        this.rCanvas.height = 300;
+        this.rCanvas.width = this.imageSize;
+        this.rCanvas.height = this.imageSize;
         this.rContext = this.rCanvas.getContext('2d');
 
         this.selfValue = document.getElementById('selfValue');
         this.selfValue.onchange = this.updateImage.bind(this);
+        this.selfValue.oninput = this.updateImage.bind(this);
         this.updateImage();
 
         // this.interval = setInterval(this.render.bind(this), 1);
@@ -39,7 +40,7 @@ export default class SelfImage {
     public render(): void {
         //draw image on original canvas
         let img: any = new Image();
-        img.src = './assets/page_elements/profile.jpg';
+        img.src = './assets/page_elements/pf.jpg';
         this.context.drawImage(img, 0, 0, this.imageSize, this.imageSize);
 
         //clear background
@@ -51,13 +52,22 @@ export default class SelfImage {
         for (let x: number = 0; x < this.imageSize; x += this.cellSize) {
             for (let y: number = 0; y < this.imageSize; y += this.cellSize) {
                 if (Math.sqrt( Math.pow(this.imageSize / 2 - x, 2) + Math.pow(this.imageSize / 2 - y, 2)) >= this.imageSize / 2){
-                    continue;
+                    //continue;
                 }
 
                 this.rContext.fillStyle = this.getColor(x + this.cellSize / 2, y + this.cellSize / 2);
-                this.rContext.beginPath();
-                this.rContext.arc(x + this.cellSize / 2, y + this.cellSize / 2, this.cellSize / 2, 0, Math.PI * 2);
-                this.rContext.fill();
+                //image
+                this.rContext.drawImage(img, x, y, this.cellSize, this.cellSize);
+                this.rContext.globalAlpha = 0.5;
+                this.rContext.fillRect(x, y, this.cellSize, this.cellSize);
+                this.rContext.globalAlpha = 1;
+
+                //circle
+                // this.rContext.beginPath();
+                // this.rContext.arc(x + this.cellSize / 2, y + this.cellSize / 2, this.cellSize / 2, 0, Math.PI * 2);
+                // this.rContext.fill();
+
+                //square
                 // this.rContext.fillRect(x, y, this.cellSize, this.cellSize);
             }
             // console.log(x);
