@@ -26,7 +26,7 @@
 		if($sheet == 2) {
 			echo 'style';
 		} else {
-			echo 'style2';
+			echo 'style';
 		}
 	?>.css" type="text/css" />
 	<script src="app.js"></script>
