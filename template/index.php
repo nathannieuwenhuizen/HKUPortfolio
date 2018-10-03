@@ -13,7 +13,7 @@
 		$sheet = 1;
 		// iemand is aan het fokken (zet variabele naar standaard waarde)
 	 }
-	// echo $sheet;
+ 
 ?>
 <!DOCTYPE HTML>
 <HTML>
@@ -29,6 +29,7 @@
 			echo 'style';
 		}
 	?>.css" type="text/css" />
+	<script src="assets/dir.php"></script>
 	<script src="app.js"></script>
 </HEAD>
 

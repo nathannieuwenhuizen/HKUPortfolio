@@ -19,7 +19,7 @@ export default class Slider {
         // console.log('locatio prot', window.location.protocol);
         // console.log('locatio hist', window.location.host);
         // console.log('locatio path', window.location.pathname);
-        // console.log('locatio search', window.location.search);
+        // console.log('locatio search', window.location.pathname);
         //ResumeLoop();
         this.gotToSlide(0);
 
