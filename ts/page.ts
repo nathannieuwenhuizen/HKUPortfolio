@@ -21,6 +21,27 @@ export default class Page {
         this.aboutField.style.transform = 'scale(' + (window.innerWidth - 200) / 1000 + ')';
     }
 
+    public loadHKUwork(): void {
+        let subjectButtons: HTMLCollectionOf<any> = document.getElementsByClassName('subject');
+        for (let i: number = 0; i < subjectButtons.length; i++) {
+            subjectButtons[i].onclick = () => {
+                let headerHeight: number  = subjectButtons[i].getElementsByClassName('subjectHeader')[0].clientHeight * 1.1;
+                let bodyHeight: number  = subjectButtons[i].getElementsByClassName('subjectBody')[0].clientHeight * 1.1;
+
+                console.log(headerHeight, bodyHeight);
+                subjectButtons[i].classList.toggle('show');
+                if (subjectButtons[i].classList.contains('show')) {
+                    headerHeight += bodyHeight;
+                    subjectButtons[i].style = 'max-height: ' + headerHeight + 'px;';
+                } else {
+                    subjectButtons[i].style = 'max-height: ' + headerHeight + 'px;';
+
+                }
+                console.log(i, 'click');
+            };
+        }
+    }
+
     public loadProjectOverview(data: Iproject[]): void {
         if (this.projectOverviewAlreadyLoaded) {
             return;

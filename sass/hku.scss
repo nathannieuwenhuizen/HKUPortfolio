@@ -1,20 +1,18 @@
 #HKU{
-    outline: 5px solid black;
     .subject {
         margin: 5%;
         width: 90%;
+        transition: max-height 0.5s ease-in-out;
         // border: 5px solid red;
         // height: auto;
-        height: 50px;
+        height: auto;
+        max-height: 50px;
         overflow: hidden;
         border-top: 2px solid grey;
         border-bottom: 2px solid grey;
 
         .subjectHeader {
             width: 100%;
-            // background: grey;
-            
-            // border: 5px solid green;
             height: 50px;
             display: block;
             position: relative;
@@ -22,12 +20,16 @@
             background: aliceblue;
             .subjectButton{
                 float: left;
-                // outline: 5px solid green;
                 margin: 5px;
                 height: 40px;
                 width: 40px;
-                background: darkgray;
-                border: none;
+                border-radius: 50%;
+                background-color: darkgray;
+                background-image: url("page_elements/arrow.png");
+                background-size: contain;
+                transition: transform 0.5s ease-in-out;
+                opacity: 0.5;
+                    border: none;
             }
             h2{
                 width: 50%;
@@ -42,11 +44,11 @@
         .subjectBody{
             z-index: 0;
             width: inherit;
-            border: 1px dotted blue;
+            // border: 1px dotted blue;
             overflow: hidden;
             position: relative;
             display: block;
-            top: -100px;
+            // top: -100px;
             .subjectLink {
                 float: left;
                 // outline: 1px solid black;
@@ -68,6 +70,15 @@
                     margin: 0;
                     margin-left: 20px;
                 }
+            }
+        }
+    }
+    .show{
+        // border: 5px solid red;
+        // max-height: 500px; //just a high numbersa
+        .subjectHeader{
+            .subjectButton{
+                transform: rotate(90deg);
             }
         }
     }

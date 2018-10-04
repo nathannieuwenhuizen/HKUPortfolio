@@ -52,6 +52,9 @@ export default class App {
             buttons[2].className = 'selected';
         } else if (window.location.href.indexOf('#contact') > -1) {
             buttons[3].className = 'selected';
+        } else if (window.location.href.indexOf('#HKU') > -1) {
+            buttons[4].className = 'selected';
+            this.page.loadHKUwork();
         } else {
             buttons[0].className = 'selected';
         }
