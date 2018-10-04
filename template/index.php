@@ -173,6 +173,7 @@
 			<div class="subject">
 				<div class="subjectHeader">
 					<h2>title</h2> 
+					<input type ="button" value="show!" class="subjectButton">
 				</div> 
 				<div class="subjectLink">
 					<a href="">link sddvfbgn</a>

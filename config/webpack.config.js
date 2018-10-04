@@ -107,8 +107,8 @@ module.exports = {
                 to: path.join(basePath, 'builds/dev/assets')
             },
             {
-                from: path.join(basePath, 'template/index.php'),
-                to: path.join(basePath, 'builds/dev/index.php')
+                from: path.join(basePath, 'template/index.html'),
+                to: path.join(basePath, 'builds/dev/index.html')
             },
             // {
             //     from: path.join(basePath, 'template/projectinfo.html'),

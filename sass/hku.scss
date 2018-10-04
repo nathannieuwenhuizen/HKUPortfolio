@@ -1,22 +1,73 @@
 #HKU{
     outline: 5px solid black;
     .subject {
+        margin: 5%;
+        width: 90%;
+        // border: 5px solid red;
+        // height: auto;
+        height: 50px;
+        overflow: hidden;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid grey;
 
         .subjectHeader {
-            background: grey;
-            h3{
-
+            width: 100%;
+            // background: grey;
+            
+            // border: 5px solid green;
+            height: 50px;
+            display: block;
+            position: relative;
+            z-index: 1;
+            background: aliceblue;
+            .subjectButton{
+                float: left;
+                // outline: 5px solid green;
+                margin: 5px;
+                height: 40px;
+                width: 40px;
+                background: darkgray;
+                border: none;
+            }
+            h2{
+                width: 50%;
+                // outline: 3px dashed #1c87c9;
+                float: left;
+                padding-left: 10px;
+                text-align: left;
+                // padding: 50px;
+                line-height: 50%;
             }
         }
-        .subjectLink {
-            outline: 5px dotted black;
-            width: 50%;
-            text-align: left;
-            a{
-
-            }
-            p{
-
+        .subjectBody{
+            z-index: 0;
+            width: inherit;
+            border: 1px dotted blue;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            top: -100px;
+            .subjectLink {
+                float: left;
+                // outline: 1px solid black;
+                width: 50%;
+                text-align: left;
+    
+                a{
+                    list-style: circle;
+                    text-decoration-style: dotted;
+                    font-weight: bold;
+                    font-style: unset;
+                    margin: 0;
+                    margin-left: 10px;
+    
+                }
+                p{
+                    font-style: italic;
+                    font-size: 0.7em;
+                    margin: 0;
+                    margin-left: 20px;
+                }
             }
         }
     }
