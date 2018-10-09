@@ -1,6 +1,6 @@
 #HKU{
     .subject {
-        margin: 5%;
+        margin: 2% 5%;
         width: 90%;
         transition: max-height 0.5s ease-in-out;
         // border: 5px solid red;
@@ -17,7 +17,8 @@
             display: block;
             position: relative;
             z-index: 1;
-            background: aliceblue;
+            transition: background-color 0.3s ease;
+            // background: aliceblue;
             .subjectButton{
                 float: left;
                 margin: 5px;
@@ -29,7 +30,7 @@
                 background-size: contain;
                 transition: transform 0.5s ease-in-out;
                 opacity: 0.5;
-                    border: none;
+                border: none;
             }
             h2{
                 width: 50%;
@@ -41,6 +42,9 @@
                 line-height: 50%;
             }
         }
+        .subjectHeader:hover{
+            background-color: rgba(0, 0, 0, 0.1);
+        }
         .subjectBody{
             z-index: 0;
             width: inherit;
@@ -48,6 +52,7 @@
             overflow: hidden;
             position: relative;
             display: block;
+            padding: 20px 0;
             // top: -100px;
             .subjectLink {
                 float: left;

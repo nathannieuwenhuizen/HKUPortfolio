@@ -43,6 +43,10 @@ export default class App {
             this.projectInfo.style = 'display: none';
         }
 
+        if (window.location.href.indexOf('#about') <= -1) {
+            this.page.hideAboutMe();
+        }
+
         if (window.location.href.indexOf('#projecten') > -1) {
             buttons[1].className = 'selected';
             console.log('data begin', this.data);
@@ -50,11 +54,12 @@ export default class App {
             this.slider.updateSlider();
         } else if (window.location.href.indexOf('#about') > -1) {
             buttons[2].className = 'selected';
+            this.page.aboutMe();
         } else if (window.location.href.indexOf('#contact') > -1) {
             buttons[3].className = 'selected';
         } else if (window.location.href.indexOf('#HKU') > -1) {
             buttons[4].className = 'selected';
-            this.page.loadHKUwork();
+            this.page.loadHKUwork(this.homeworkData);
         } else {
             buttons[0].className = 'selected';
         }

@@ -1,4 +1,14 @@
 .aboutField{
+    .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines  {
+        transition: transform $image_duration  cubic-bezier(0.1, 0.5, 0.5, 1.5);
+        transition-delay: $line_duration;
+        transform: scale(0);
+    }
+    .lines{
+        transition-duration: $line_duration;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+    }
     // margin-top: 50px;
     position: relative;
     width: 0px;
@@ -131,8 +141,6 @@
         top: 345px;
         //width: 90%;
         border: 1px solid red;
-        transform: scale(1);
-
         .line{
             position: absolute;
             transform-origin: left;
@@ -152,5 +160,10 @@
             transform: rotate(270deg);
         }
         
+    }
+}
+.aboutField_show{
+    .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines  {
+        transform: scale(1);
     }
 }

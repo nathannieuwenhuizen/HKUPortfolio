@@ -1,10 +1,11 @@
-import { Iproject } from './data';
+import { Iproject, Ihomework, subjects } from './data';
 import Slider from './slider';
 
 export default class Page {
 
     private aboutField: any;
     private projectOverviewAlreadyLoaded: boolean = false;
+    private HKULoaded: boolean = false;
     private infoSlider: Slider;
 
     constructor() {
@@ -21,23 +22,90 @@ export default class Page {
         this.aboutField.style.transform = 'scale(' + (window.innerWidth - 200) / 1000 + ')';
     }
 
-    public loadHKUwork(): void {
-        let subjectButtons: HTMLCollectionOf<any> = document.getElementsByClassName('subject');
+    public aboutMe(): void {
+        let aboutField: any = document.getElementsByClassName('aboutField')[0];
+        aboutField.classList.add('aboutField_show');
+    }
+    public hideAboutMe(): void {
+        let aboutField: any = document.getElementsByClassName('aboutField')[0];
+        aboutField.classList.remove('aboutField_show');
+    }
+
+    public loadHKUwork(data: Ihomework[]): void {
+        if (this.HKULoaded) {
+            return;
+        }
+        this.HKULoaded = true;
+
+        Object.keys(subjects).forEach((key: any) => {
+            let filterHomework: Ihomework[] = data.filter((homework: Ihomework) => {
+                return homework.subject === Object.keys(subjects).indexOf(key);
+            });
+            if (filterHomework.length !== 0) {
+                console.log(key, filterHomework);
+                this.createSubject(key, filterHomework);
+            }
+            // if (Object.keys(subjects).indexOf(key) === 1) {
+            //     console.log('eureka!');
+            // }
+        });
+
+        this.applyClickEventToHomework();
+
+    }
+    public createSubject(header: string, works: Ihomework[]): void {
+
+        let el: any = document.createElement('div');
+        el.className = 'subject';
+
+        let elh: any = document.createElement('div');
+        elh.className = 'subjectHeader';
+        let elhb: any = document.createElement('div');
+        elhb.className = 'subjectButton';
+        let elhh: any = document.createElement('h2');
+        elhh.innerHTML = header;
+        elh.appendChild(elhb);
+        elh.appendChild(elhh);
+        el.appendChild(elh);
+
+        let elb: any = document.createElement('div');
+        elb.className = 'subjectBody';
+        works.forEach((work: Ihomework) => {
+            let link: any = document.createElement('div');
+            link.className = 'subjectLink';
+            let a: any = document.createElement('a');
+            a.setAttribute('href', work.link);
+            a.innerHTML = work.link_name;
+            let p: any = document.createElement('p');
+            p.innerHTML = work.description + ' - year ' + work.year;
+            link.appendChild(a);
+            link.appendChild(p);
+            elb.appendChild(link);
+        });
+        el.appendChild(elb);
+
+        document.getElementById('HKU').appendChild(el);
+
+    }
+    public applyClickEventToHomework(): void {
+        let subjectButtons: HTMLCollectionOf<any> = document.getElementsByClassName('subjectHeader');
         for (let i: number = 0; i < subjectButtons.length; i++) {
             subjectButtons[i].onclick = () => {
-                let headerHeight: number  = subjectButtons[i].getElementsByClassName('subjectHeader')[0].clientHeight * 1.1;
-                let bodyHeight: number  = subjectButtons[i].getElementsByClassName('subjectBody')[0].clientHeight * 1.1;
+                let parent: any = subjectButtons[i].parentElement;
 
-                console.log(headerHeight, bodyHeight);
-                subjectButtons[i].classList.toggle('show');
-                if (subjectButtons[i].classList.contains('show')) {
+                let headerHeight: number  = subjectButtons[i].clientHeight;
+                let bodyHeight: number  = parent.getElementsByClassName('subjectBody')[0].clientHeight;
+
+                // console.log(headerHeight, bodyHeight);
+                parent.classList.toggle('show');
+                if (parent.classList.contains('show')) {
                     headerHeight += bodyHeight;
-                    subjectButtons[i].style = 'max-height: ' + headerHeight + 'px;';
+                    parent.style = 'max-height: ' + headerHeight + 'px;';
                 } else {
-                    subjectButtons[i].style = 'max-height: ' + headerHeight + 'px;';
+                    parent.style = 'max-height: ' + headerHeight + 'px;';
 
                 }
-                console.log(i, 'click');
+                // console.log(i, 'click');
             };
         }
     }

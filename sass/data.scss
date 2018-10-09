@@ -14,6 +14,9 @@ $light-color: 0;
 //link colors
 $link-color: 0;
 
+$line_duration: 1s;
+$image_duration: 0.5s;
+
 
 @mixin transform($property) {
     -webkit-transform: $property;

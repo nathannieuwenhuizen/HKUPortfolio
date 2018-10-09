@@ -177,7 +177,7 @@ body {
 
             #selfCanvas{
                 position: absolute;
-                opacity: 0;
+                opacity: 0.0;
             }
             #selfImage{
                 // border: 3px solid red;
@@ -190,7 +190,7 @@ body {
                     max-width: 100%;
                     width: 70%;
                     position: absolute;
-                    top: 0;
+                    top: 20px;
                     bottom: 0;
                     left: 0;
                     right: 0;
@@ -204,7 +204,21 @@ body {
                     right: 0;
                     width: 30%;;
                     margin: auto;
-                    position: absolute;
+                    // position: absolute;
+                    // border: none;
+
+                    cursor: pointer;
+                    color: blue;
+                    background: blue;
+                    border-color: blue;
+                    // outline: 5px solid blue;
+                }
+                #selfButton{
+                    background: rgba(51, 25, 118, 0.5);
+                    color: black;
+                    font-weight: bold;
+                    padding: 5px 10px;
+                    border: none;
                     cursor: pointer;
                 }
             }

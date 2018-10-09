@@ -6,6 +6,10 @@ export default class SelfImage {
     private rCanvas: HTMLCanvasElement;
     private rContext: CanvasRenderingContext2D;
 
+    private cellImage: any = './assets/page_elements/pf.jpg';
+    private bigImage: any = './assets/page_elements/pf.jpg';
+    private fileInput: any;
+
     private imageSize: number = 200;
     private resultSize: number = 800;
     private cellSize: any = 10;
@@ -28,6 +32,11 @@ export default class SelfImage {
         this.cellSizeInput = document.getElementById('selfValue');
         this.cellSizeInput.onchange = this.updateImage.bind(this);
         this.cellSizeInput.oninput = this.updateImage.bind(this);
+
+        this.fileInput = document.getElementById('selfFile');
+        this.fileInput.onchange = this.updateFile.bind(this);
+        this.fileInput.oninput = this.updateFile.bind(this);
+
         this.updateImage();
 
         // this.interval = setInterval(this.render.bind(this), 1);
@@ -38,11 +47,33 @@ export default class SelfImage {
         this.render();
     }
 
+    public updateFile(): void {
+        console.log('file:', window.URL.createObjectURL(this.fileInput.files[0]));
+        this.cellImage = window.URL.createObjectURL(this.fileInput.files[0]);
+        this.bigImage = this.cellImage;
+
+        requestAnimationFrame(() => {
+            this.render();
+        });
+        let reader: FileReader = new FileReader();
+
+        reader.onload = (event: any) => {
+            console.log(event);
+            this.render();
+        };
+
+        reader.readAsDataURL(this.fileInput.files[0]);
+    }
+
     public render(): void {
+        // this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
         //draw image on original canvas to use as reference
         let img: any = new Image();
-        img.src = './assets/page_elements/pf.jpg';
+        img.src = this.cellImage;
         this.context.drawImage(img, 0, 0, this.imageSize, this.imageSize);
+
+        img.src = this.cellImage;
 
         //clear background
         this.rContext.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
@@ -97,6 +128,32 @@ export default class SelfImage {
             }
         }
     }
+
+    private loadFile(url: string): any {
+        let request: XMLHttpRequest = new XMLHttpRequest();
+        request.open('GET', url, false);
+        let data: any;
+        request.onload = () => {
+        if (request.status >= 200 && request.status < 400) {
+            // Success!
+            data = JSON.parse(request.responseText);
+            console.log('data', data);
+        } else {
+            console.log('We reached our target server, but it returned an error');
+
+        }
+        };
+
+        request.onerror = () => {
+            console.log('There was a connection error of some sort');
+
+        // There was a connection error of some sort
+        };
+
+        request.send();
+        return data;
+    }
+
 
     private getColor(_x: number, _y: number): string {
         this.pxData = this.context.getImageData(_x, _y, 1, 1).data;

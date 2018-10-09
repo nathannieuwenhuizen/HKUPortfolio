@@ -21,10 +21,18 @@ export enum subjects {
     PrinciplesofInteractionDesign = 'Principles of Interaction Design'
 }
 export interface Ihomework {
-    subject: string; //vak = subjects.____
+    subject: number; //vak = subjects.____
     year: number; //leerjaar
     link: string; //href link
     link_name: string; //link string
     description: string; // small description
-    image_link: string; // image url for preview
 }
+/*
+{
+    "subjects": 0,
+    "year": 1,
+    "link": "",
+    "link_name": "",
+    "description": ""
+}
+*/
