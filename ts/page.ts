@@ -1,5 +1,6 @@
 import { Iproject, Ihomework, subjects } from './data';
 import Slider from './slider';
+import App from './app';
 
 export default class Page {
 
@@ -124,27 +125,30 @@ export default class Page {
                 let el: any = document.createElement('div');
                 let a: any = document.createElement('a');
                 el.className = 'dia';
+                let link: string = '#projectinfo?project=' + i;
                 el.style = 'width:' + (100 / data.length) + '%; background-image:url("' + data[i].images[0] + '");';
                 a.appendChild(el);
-                a.setAttribute('href', '#projectinfo?project=' + i);
+                a.setAttribute('href', link);
                 slideContainer.appendChild(a);
             }
         }
 
         for (let i: number = 0; i < data.length; i++) {
+            let link: string = '#projectinfo?project=' + i;
+
             let sec: any = document.createElement('section');
             sec.className = 'projectTile';
 
             let title: any = document.createElement('h3');
             let title_link: any = document.createElement('a');
             title_link.innerHTML = data[i].title;
-            title_link.setAttribute('href', '#projectinfo?project=' + i);
+            title_link.setAttribute('href', link);
             title.appendChild(title_link);
             sec.appendChild(title);
 
             let img: any = document.createElement('img');
             let img_link: any = document.createElement('a');
-            img_link.setAttribute('href', '#projectinfo?project=' + i);
+            img_link.setAttribute('href', link);
             img.setAttribute('src', data[i].images[0]);
             img_link.appendChild(img);
             sec.appendChild(img_link);
@@ -152,7 +156,7 @@ export default class Page {
             let buttonsec: any = document.createElement('section');
             buttonsec.className = 'buttonContainer';
 
-            buttonsec.appendChild(this.createButton('info', '#projectinfo?project=' + i));
+            buttonsec.appendChild(this.createButton('info', link));
 
             if (data[i].buttons[1] !== '') {
                 buttonsec.appendChild(this.createButton('play', data[i].buttons[1]));

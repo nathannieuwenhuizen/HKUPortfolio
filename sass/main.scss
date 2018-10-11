@@ -1,6 +1,6 @@
 @import 'data';
 body {
-    color: #336;
+    color: $p_color;
     font-size: 13pt;
     font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
     background-color: #fff;
@@ -12,7 +12,7 @@ body {
     background-attachment: fixed;
     
     p {
-        color: #336; 
+        color: $p_color; 
         font-size: 11pt;
         // border: 1px solid #afa;
     }
@@ -35,7 +35,7 @@ body {
     H3 {
         font-weight: bold;
         font-size: 15pt;
-        color: #669;
+        color: $h_color;
         //margin-top: 50px;
         //background-color: #ddd;
     }
@@ -47,8 +47,19 @@ body {
 
     //a:visited { color: #f00; text-decoration: none }
     a:hover {
-        color: #c00;
+        color: $a_hover_color;
         text-decoration: none
+    }
+
+    #styleButton {
+        position: fixed;
+        border: none;
+        background: aliceblue;
+        // border: 5px solid black;
+        right: 0;
+        margin: 10px;
+        box-shadow: $box-shadow;
+        z-index: 10;
     }
 
     nav {
@@ -128,9 +139,6 @@ body {
 
             :nth-child(1) {
                 animation-delay: 0.2s;
-            }
-            :nth-child(1)[target=blog]{
-                color: red;background: red;
             }
 
         }
@@ -214,8 +222,8 @@ body {
                     // outline: 5px solid blue;
                 }
                 #selfButton{
-                    background: rgba(51, 25, 118, 0.5);
-                    color: black;
+                    background: $nav-color;
+                    color: white;
                     font-weight: bold;
                     padding: 5px 10px;
                     border: none;
@@ -244,7 +252,7 @@ body {
         //position: relative;
         background: white;
         box-shadow: $box-shadow;
-        border: 2px solid grey;
+        border: 2px solid $box_border_color;
         width: auto;
         height: auto;
         //max-width: 90%;
@@ -276,15 +284,15 @@ body {
                 cursor: pointer;
                 max-height: 250px;
                 max-width: 80%;
-                border: 2px solid grey;
+                border: 2px solid $box_border_color;
                 transition: border 0.15s ease-in-out;
             }
             img:hover{
-                border: 5px solid grey;
+                border: 5px solid $box_border_color;
             }
-            h3{
+            a{
                 // font-size: 10px;
-                color: black;
+                color: $p_color;
                 cursor: pointer;
             }
             .buttonContainer{
@@ -320,7 +328,7 @@ body {
         font-size: 8pt;
         height: auto;
         text-align: center;
-        background-color: white;
+        background-color: $footer_color;
     }
 
     #about {

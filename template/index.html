@@ -4,12 +4,13 @@
 <HEAD>
 	<TITLE>Nathan Nieuwenhuizen</TITLE>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="assets/style.css" type="text/css" />
+	<link id="stylesheet" rel="stylesheet" href="assets/style.css" type="text/css" />
 	<script src="assets/dir.php"></script>
 	<script src="app.js"></script>
 </HEAD>
 
 <BODY>
+	<input type="button" value="change style" id="styleButton"/>
 	<header>
 		<section class="title_image">
 			<img src="assets/page_elements/pf.jpg" />
@@ -19,14 +20,14 @@
 				<input type="file" id="selfFile" style="display: none;"/>
 				<input type="button" value="Browse..." id ="selfButton" onclick="document.getElementById('selfFile').click();" />
 				<input type="range" id="selfValue" value="15" min="1" max="50" />
-
-			</div>
+ 			</div>
 
 		</section>
 		<section class="title_text">
 			<section class="text">
 				<h1>Nathan Nieuwenhuizen</h1>
 				<h2>Game developer</h2>
+				<p id="viewCount">loading...</p>
 			</section>
 		</section>
 	</header>

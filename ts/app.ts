@@ -12,6 +12,8 @@ export default class App {
     public selfImage: SelfImage;
     public homeworkData: Ihomework[];
 
+    public static style: string;
+
     constructor() {
 
         this.data = this.loadFile('./assets/projects.json');
@@ -23,13 +25,32 @@ export default class App {
         this.slider = new Slider(0);
         this.projectInfo = document.getElementById('projectinfo');
 
+        console.log('let = ', App.getQueryVariable('project'));
         this.updatePage();
 
         window.addEventListener('hashchange', () => {
             this.updatePage();
         }, false);
+        document.getElementById('styleButton').onclick = this.toggleStyle.bind(this);
+        document.getElementById('viewCount').innerHTML = 'you\'re the ' + viewCount + 'th visitor';
+    }
+
+    public toggleStyle(): void {
+        if (App.style === '1') {
+            App.style = '0';
+        } else {
+            App.style = '1';
+        }
+        this.updateStyle();
+    }
+    private updateStyle(): void {
+        console.log('click');
+        document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'style2' : 'style') + '.css');
+        // document.getElementById('styleButton').setAttribute('href', App.style === '1' ? './?style=0' : './?style=1');
     }
     private updatePage(): void {
+        this.updateStyle();
+
         // document.documentElement.scrollTop = 0;
         let buttons: any = document.getElementById('navigation').children;
         for (let i: number = 0; i < buttons.length; i++) {
@@ -38,7 +59,7 @@ export default class App {
 
         if (window.location.href.indexOf('#projectinfo') > -1) {
             this.projectInfo.style = 'display: block';
-            this.page.loadProjectInfo(this.data[this.readVariableFromUrl()]);
+            this.page.loadProjectInfo(this.data[App.getQueryVariable('project')]);
         } else {
             this.projectInfo.style = 'display: none';
         }
@@ -65,30 +86,44 @@ export default class App {
         }
         console.log('clicked');
     }
-    private readVariableFromUrl(): any {
+    public static getQueryVariable(variable: string): any {
         let url_string: string = window.location.href; //window.location.href
         let url: URL = new URL(url_string);
-        return url.hash.slice(-1);
+        let query: any = window.location.href.substring(1);
+        let startVar: any = query.split('?');
+        if (startVar.length > 1) {
+            let vars: any = startVar[1].split('&');
+            console.log('q', query, startVar, vars);
+
+            for (let i: number = 0; i < vars.length; i++) {
+                let pair: any = vars[i].split('=');
+                console.log('pair', pair);
+                if (pair[0] === variable) {
+                    return pair[1];
+                }
+            }
+            }
+        return -1;
     }
     private loadFile(url: string): any {
         let request: XMLHttpRequest = new XMLHttpRequest();
         request.open('GET', url, false);
         let data: any;
         request.onload = () => {
-        if (request.status >= 200 && request.status < 400) {
-            // Success!
-            data = JSON.parse(request.responseText);
-            console.log('data', data);
-        } else {
-            console.log('We reached our target server, but it returned an error');
+            if (request.status >= 200 && request.status < 400) {
+                // Success!
+                data = JSON.parse(request.responseText);
+                console.log('data', data);
+            } else {
+                console.log('We reached our target server, but it returned an error');
 
-        }
+            }
         };
 
         request.onerror = () => {
             console.log('There was a connection error of some sort');
 
-        // There was a connection error of some sort
+            // There was a connection error of some sort
         };
 
         request.send();

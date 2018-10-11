@@ -1,5 +1,6 @@
 //box shadow
 $box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+$box_border_color: grey;
 
 //navigation colors
 $nav-color: rgb(61, 61, 61);
@@ -12,7 +13,13 @@ $medium-color: 0;
 $light-color: 0;
 
 //link colors
-$link-color: 0;
+$p_color: #000;
+$h_color: #336;
+$a_color: rgb(38, 38, 74);
+$a_hover_color: #f00;
+$a_click_color: rgb(38, 38, 74);
+
+$footer_color: white;
 
 $line_duration: 1s;
 $image_duration: 0.5s;
