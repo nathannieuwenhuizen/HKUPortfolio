@@ -48,7 +48,7 @@ export default class App {
     }
     private updateStyle(): void {
         console.log('click');
-        document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'main2' : 'main') + '.css');
+        document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'style2' : 'style') + '.css');
         // document.getElementById('styleButton').setAttribute('href', App.style === '1' ? './?style=0' : './?style=1');
     }
     private updatePage(): void {
