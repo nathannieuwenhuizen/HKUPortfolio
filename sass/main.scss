@@ -52,13 +52,13 @@ body {
     }
 
     #styleButton {
-        position: fixed;
+        position: absolute;
         border: none;
         background: aliceblue;
         // border: 5px solid black;
         right: 0;
         margin: 10px;
-        box-shadow: $box-shadow;
+        box-shadow: $box-shadow; 
         z-index: 10;
     }
 
@@ -329,6 +329,12 @@ body {
         height: auto;
         text-align: center;
         background-color: $footer_color;
+        padding: 2em 0;
+
+        p {
+            display: inline;
+            font-size: 1.1em;
+        }
     }
 
     #about {

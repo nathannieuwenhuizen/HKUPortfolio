@@ -12,6 +12,7 @@ export default class App {
     public selfImage: SelfImage;
     public homeworkData: Ihomework[];
 
+    public static styleKey: string = 'nathans_style';
     public static style: string;
 
     constructor() {
@@ -25,13 +26,14 @@ export default class App {
         this.slider = new Slider(0);
         this.projectInfo = document.getElementById('projectinfo');
 
-        console.log('let = ', App.getQueryVariable('project'));
-        this.updatePage();
+        App.style = localStorage.getItem(App.styleKey);
+        document.getElementById('styleButton').onclick = this.toggleStyle.bind(this);
 
+        this.updatePage();
         window.addEventListener('hashchange', () => {
             this.updatePage();
         }, false);
-        document.getElementById('styleButton').onclick = this.toggleStyle.bind(this);
+
         document.getElementById('viewCount').innerHTML = 'you\'re the ' + viewCount + 'th visitor';
     }
 
@@ -41,11 +43,12 @@ export default class App {
         } else {
             App.style = '1';
         }
+        localStorage.setItem(App.styleKey, App.style);
         this.updateStyle();
     }
     private updateStyle(): void {
         console.log('click');
-        document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'style2' : 'style') + '.css');
+        document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'main2' : 'main') + '.css');
         // document.getElementById('styleButton').setAttribute('href', App.style === '1' ? './?style=0' : './?style=1');
     }
     private updatePage(): void {
@@ -59,7 +62,14 @@ export default class App {
 
         if (window.location.href.indexOf('#projectinfo') > -1) {
             this.projectInfo.style = 'display: block';
-            this.page.loadProjectInfo(this.data[App.getQueryVariable('project')]);
+
+            let projectVar: any = App.cap(App.getQueryVariable('project'), 0, this.data.length - 1);
+
+            console.log(projectVar);
+            if ( isNaN( projectVar)) {
+                projectVar = 0;
+            }
+            this.page.loadProjectInfo(this.data[projectVar]);
         } else {
             this.projectInfo.style = 'display: none';
         }
@@ -85,6 +95,10 @@ export default class App {
             buttons[0].className = 'selected';
         }
         console.log('clicked');
+    }
+    public static cap(value: number, min: number, max: number): number {
+        return Math.min(Math.max( value, min), max);
+
     }
     public static getQueryVariable(variable: string): any {
         let url_string: string = window.location.href; //window.location.href
