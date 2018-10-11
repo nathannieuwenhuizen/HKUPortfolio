@@ -1,0 +1,56 @@
+//box shadow
+$box-shadow: rgba(255, 0, 230, 0.5) 0px 5px 50px;
+$box_border_color: rgb(255, 0, 230);
+
+//navigation colors
+$nav-color: rgb(157, 157, 157);
+$nav-highlighted-color: rgb(85, 65, 65);
+$nav-light-color: rgb(36, 36, 36);
+
+//colors
+$dark-color: rgb(160, 32, 32);
+$medium-color: 0;
+$light-color: 0;
+
+//link colors
+$p_color: rgb(85, 19, 19);
+$h_color: rgb(194, 18, 115);
+$a_color: rgb(38, 38, 74);
+$a_hover_color: #f00;
+$a_click_color: rgb(38, 38, 74);
+
+$footer_color: rgb(58, 60, 58);
+
+$line_duration: 1s;
+$image_duration: 0.5s;
+
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+//image-button
+%image-button {
+    position: relative;
+    display: inline-block;
+
+    box-shadow: $box-shadow;
+    transition: opacity 0.15s ease-in-out;
+
+    border-radius: 50%;
+    border: 2px solid grey;
+    border-radius: 50%;
+
+    background: url(page_elements/github.png);
+    background-color: aliceblue;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+    // outline: 1px dotted red;
+}
+%image-button:hover{
+    opacity: 1;
+}
