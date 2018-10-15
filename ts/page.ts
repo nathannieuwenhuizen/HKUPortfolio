@@ -1,6 +1,5 @@
 import { Iproject, Ihomework, subjects } from './data';
 import Slider from './slider';
-import App from './app';
 
 export default class Page {
 

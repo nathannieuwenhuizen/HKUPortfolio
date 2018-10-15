@@ -6,28 +6,45 @@ export default class SelfImage {
     private rCanvas: HTMLCanvasElement;
     private rContext: CanvasRenderingContext2D;
 
-    private cellImage: any = './assets/page_elements/pf.jpg';
-    private bigImage: any = './assets/page_elements/pf.jpg';
+    private cellImage: any = '/page_elements/pf.jpg';
+    private bigImage: any = '/page_elements/pf.jpg';
     private fileInput: any;
 
     private imageSize: number = 200;
-    private resultSize: number = 800;
+    private resultSize: number = 2000;
     private cellSize: any = 10;
     private cellSizeInput: any;
+    private sizeToscreen: boolean;
 
     private typeOfCell: number = 0;
+
+    private rImg: HTMLImageElement;
+    private img: HTMLImageElement;
     //other
     private pxData: any;
-    constructor() {
+    constructor(root: string = 'assets/', sizeToscreen: boolean = false) {
         this.canvas = (<HTMLCanvasElement>document.getElementById('selfCanvas'));
+        this.rCanvas = (<HTMLCanvasElement>document.getElementById('selfCanvasResult'));
+
+        this.sizeToscreen = sizeToscreen;
+        this.cellImage = root + this.cellImage;
+        this.bigImage = root + this.bigImage;
+
         this.canvas.width = this.imageSize;
         this.canvas.height = this.imageSize;
-        this.context = this.canvas.getContext('2d');
 
-        this.rCanvas = (<HTMLCanvasElement>document.getElementById('selfCanvasResult'));
+        if (this.sizeToscreen) {
+            this.resultSize = Math.min(window.innerHeight, window.innerWidth);
+        }
         this.rCanvas.width = this.resultSize;
         this.rCanvas.height = this.resultSize;
+
+        this.context = this.canvas.getContext('2d');
+
         this.rContext = this.rCanvas.getContext('2d');
+
+        this.rImg = new Image();
+        this.img = new Image();
 
         this.cellSizeInput = document.getElementById('selfValue');
         this.cellSizeInput.onchange = this.updateImage.bind(this);
@@ -69,11 +86,10 @@ export default class SelfImage {
         // this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         //draw image on original canvas to use as reference
-        let img: any = new Image();
-        img.src = this.cellImage;
-        this.context.drawImage(img, 0, 0, this.imageSize, this.imageSize);
+        this.rImg.src = this.cellImage;
+        this.context.drawImage(this.rImg, 0, 0, this.imageSize, this.imageSize);
 
-        img.src = this.cellImage;
+        this.img.src = this.cellImage;
 
         //clear background
         this.rContext.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
@@ -98,7 +114,7 @@ export default class SelfImage {
                     case 0:
                         //image
                         // img.src = 'assets/selfImage/' + files[Math.floor(Math.random() * files.length)] + '.jpg';
-                        this.rContext.drawImage(img, resultPos.x, resultPos.y, resultCellSize, resultCellSize);
+                        this.rContext.drawImage(this.img, resultPos.x, resultPos.y, resultCellSize, resultCellSize);
                         this.rContext.globalAlpha = 0.5;
                         this.rContext.fillRect(resultPos.x, resultPos.y, resultCellSize, resultCellSize);
                         this.rContext.globalAlpha = 1;
@@ -129,31 +145,30 @@ export default class SelfImage {
         }
     }
 
-    private loadFile(url: string): any {
-        let request: XMLHttpRequest = new XMLHttpRequest();
-        request.open('GET', url, false);
-        let data: any;
-        request.onload = () => {
-        if (request.status >= 200 && request.status < 400) {
-            // Success!
-            data = JSON.parse(request.responseText);
-            console.log('data', data);
-        } else {
-            console.log('We reached our target server, but it returned an error');
+    // private loadFile(url: string): any {
+    //     let request: XMLHttpRequest = new XMLHttpRequest();
+    //     request.open('GET', url, false);
+    //     let data: any;
+    //     request.onload = () => {
+    //     if (request.status >= 200 && request.status < 400) {
+    //         // Success!
+    //         data = JSON.parse(request.responseText);
+    //         console.log('data', data);
+    //     } else {
+    //         console.log('We reached our target server, but it returned an error');
 
-        }
-        };
+    //     }
+    //     };
 
-        request.onerror = () => {
-            console.log('There was a connection error of some sort');
+    //     request.onerror = () => {
+    //         console.log('There was a connection error of some sort');
 
-        // There was a connection error of some sort
-        };
+    //     // There was a connection error of some sort
+    //     };
 
-        request.send();
-        return data;
-    }
-
+    //     request.send();
+    //     return data;
+    // }
 
     private getColor(_x: number, _y: number): string {
         this.pxData = this.context.getImageData(_x, _y, 1, 1).data;

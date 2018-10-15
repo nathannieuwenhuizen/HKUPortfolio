@@ -17,8 +17,8 @@ const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-web
 
 module.exports = { 
 
-    entry: {main :[path.join(basePath, 'ts/app.ts'),
-        path.join(basePath, 'sass/main.scss')] },
+    entry: {app :[path.join(basePath, 'ts/app.ts')], self:[ path.join(basePath, 'ts/selfApp.ts')],
+        style: [path.join(basePath, 'sass/main.scss')] },
     devtool: 'inline-source-map',
     module: {
         rules: [
@@ -62,7 +62,7 @@ module.exports = {
         }
     },
     output: {
-        filename: 'app.js',
+        filename: '[name].js',
         path: path.join(basePath, 'builds/dev/'),
         publicPath: "../assets/"
     },

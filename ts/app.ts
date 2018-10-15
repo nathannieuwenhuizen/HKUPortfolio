@@ -101,8 +101,6 @@ export default class App {
 
     }
     public static getQueryVariable(variable: string): any {
-        let url_string: string = window.location.href; //window.location.href
-        let url: URL = new URL(url_string);
         let query: any = window.location.href.substring(1);
         let startVar: any = query.split('?');
         if (startVar.length > 1) {

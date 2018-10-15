@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Nathan Nieuwenhuizen</TITLE>
+    <script src="./dir.php"></script>
+    <script src="../self.js"></script>
+</HEAD>
+
+<BODY>
+    <style>
+        
+        #selfCanvas{
+            opacity: 0.5;
+            display: none;
+            background: url(./page_elements/pf.jpg);
+        }
+
+        #selfCanvasResult{
+            border: 5px solid black;
+        }
+        #selfFile{
+            display: none;
+        }
+        #selfButton{
+
+        }
+        #selfValue{
+
+        }
+    </style>
+    <input type="file" id="selfFile" />
+    <input type="button" value="Browse..." id="selfButton" onclick="document.getElementById('selfFile').click();" />
+    <input type="range" id="selfValue" value="15" min="1" max="50" />
+    <canvas id="selfCanvas" style=""></canvas>
+    <canvas id="selfCanvasResult"></canvas>
+
+</BODY>
+
+</HTML>
