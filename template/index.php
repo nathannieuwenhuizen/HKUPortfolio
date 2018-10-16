@@ -1,49 +1,26 @@
-<?php 
-	
-	$sheet = 1;
-	if (isset($_GET['sheet']) || !empty($_GET['sheet'])) 
-	{
-		$sheet = $_GET['sheet']; 
-	}
-	if (!filter_var($sheet, FILTER_VALIDATE_INT)) { //is not integer
-		$sheet = 1;
-	 } else {
-	 }
-	 if ($sheet > 2 || $sheet < 0) { //als de variabele groter dan 2 is
-		$sheet = 1;
-		// iemand is aan het fokken (zet variabele naar standaard waarde)
-	 }
- 
-?>
 <!DOCTYPE HTML>
 <HTML>
 
 <HEAD>
 	<TITLE>Nathan Nieuwenhuizen</TITLE>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	
-	<link rel="stylesheet" href="assets/<?php
-		if($sheet == 2) {
-			echo 'style';
-		} else {
-			echo 'style';
-		}
-	?>.css" type="text/css" />
+	<link id="stylesheet" rel="stylesheet" href="assets/style.css" type="text/css" />
 	<script src="assets/dir.php"></script>
 	<script src="app.js"></script>
 </HEAD>
 
 <BODY>
-	
+	<input type="button" value="change style" id="styleButton"/>
 	<header>
 		<section class="title_image">
 			<img src="assets/page_elements/pf.jpg" />
 			<canvas id="selfCanvas"></canvas>
 			<div id="selfImage">
 				<canvas id="selfCanvasResult"></canvas>
-				<input type="range" id="selfValue" value="15" min="3" max="50" />
-
-			</div>
+				<input type="file" id="selfFile" style="display: none;"/>
+				<input type="button" value="Browse..." id ="selfButton" onclick="document.getElementById('selfFile').click();" />
+				<input type="range" id="selfValue" value="15" min="1" max="50" />
+ 			</div>
 
 		</section>
 		<section class="title_text">
@@ -167,20 +144,38 @@
 				<!-- <input type="reset" value="Reset"> -->
 			</form>
 		</section>
+
 		<section id="HKU">
 			<h1>HKU</h1>
+			<div class="filter">
+				<!-- <input list="filter_val"> -->
 
-			<div class="subject">
-				<div class="subjectHeader">
-					<h2>title</h2> 
-					<input type ="button" value="show!" class="subjectButton">
-				</div> 
-				<div class="subjectLink">
-					<a href="">link sddvfbgn</a>
-					<p>axcsdvdfbbdbfb</p>
-				</div>
-
+				<select id="filter_val"> 
+						<option value = ''> -- select a subject -- </option>
+				  <!-- <option value="Safari"> -->
+				</select>
 			</div>
+
+			<!-- <div class="subject">
+				<div class="subjectHeader">
+					<div class="subjectButton"></div>
+					<h2>titlesdfg</h2>
+				</div>
+				<div class="subjectBody">
+					<div class="subjectLink">
+						<a href="">link sddvfbgn</a>
+						<p>axcsdvdfbbdbfb</p>
+					</div>
+					<div class="subjectLink">
+						<a href="">link sddvfbgn</a>
+						<p>axcsdvdfbbdbfb</p>
+					</div>
+					<div class="subjectLink">
+						<a href="">link sddvfbgn</a>
+						<p>axcsdvdfbbdbfb</p>
+					</div>
+				</div>
+			</div> -->
 
 		</section>
 
@@ -236,7 +231,18 @@
 		</section>
 	</section>
 
-	<footer>Made by Nathan Nieuwenhuizen</footer>
+	<footer>
+			<p id="viewCount">You are the  <?php $out = array();
+	foreach (glob('./selfImage/*.jpg') as $filename) {
+		$p = pathinfo($filename);
+		$out[] = $p['filename'];
+	}
+	echo json_encode($out);
+	// echo 'wsdfgh';
+?>th visitor!</p>
+			<p> - Made by Nathan Nieuwenhuizen</p>
+
+	</footer>
 </BODY>
 
 </HTML>

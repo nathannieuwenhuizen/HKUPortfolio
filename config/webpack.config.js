@@ -83,9 +83,10 @@ module.exports = {
                 './assets/**/*.png',
                 './atlas_assets/**/*.png'
             ],
-            server: {
-                baseDir: ['./builds/dev']
-            }
+            // server: {
+            //     baseDir: ['./builds/dev']
+            // }, // for local browser sync
+            proxy: 'localhost/webpack-portfolio/builds/dev/' //to browser sync the php enviroment
         }, {
             reload: true
         }),
@@ -107,8 +108,8 @@ module.exports = {
                 to: path.join(basePath, 'builds/dev/assets')
             },
             {
-                from: path.join(basePath, 'template/index.html'),
-                to: path.join(basePath, 'builds/dev/index.html')
+                from: path.join(basePath, 'template/index.php'),
+                to: path.join(basePath, 'builds/dev/index.php')
             },
             // {
             //     from: path.join(basePath, 'template/projectinfo.html'),

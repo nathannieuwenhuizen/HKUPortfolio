@@ -37,8 +37,6 @@ export default class App {
         window.addEventListener('hashchange', () => {
             this.updatePage();
         }, false);
-
-        document.getElementById('viewCount').innerHTML = 'you\'re the ' + viewCount + 'th visitor';
     }
 
     public toggleStyle(): void {
