@@ -5,10 +5,3 @@ var files = <?php $out = array();
 	}
 	echo json_encode($out);
 ?>
-
-var viewCount = <?php 
-	$views = file_get_contents("views.txt");
-	$views += 1;
-	file_put_contents("views.txt", $views);
-	echo $views;
-?>
