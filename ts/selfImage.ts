@@ -45,6 +45,8 @@ export default class SelfImage {
 
         this.rImg = new Image();
         this.img = new Image();
+        this.img.onload = this.render.bind(this);
+        this.rImg.onload = this.render.bind(this);
 
         this.cellSizeInput = document.getElementById('selfValue');
         this.cellSizeInput.onchange = this.updateImage.bind(this);
@@ -68,18 +70,20 @@ export default class SelfImage {
         console.log('file:', window.URL.createObjectURL(this.fileInput.files[0]));
         this.cellImage = window.URL.createObjectURL(this.fileInput.files[0]);
         this.bigImage = this.cellImage;
+        this.rImg.src = this.cellImage;
+        this.img.src = this.cellImage;
 
-        requestAnimationFrame(() => {
-            this.render();
-        });
-        let reader: FileReader = new FileReader();
+        // requestAnimationFrame(() => {
+        //     this.render();
+        // });
+        // let reader: FileReader = new FileReader();
 
-        reader.onload = (event: any) => {
-            console.log(event);
-            this.render();
-        };
+        // reader.onload = (event: any) => {
+        //     console.log(event);
+        //     this.render();
+        // };
 
-        reader.readAsDataURL(this.fileInput.files[0]);
+        // reader.readAsDataURL(this.fileInput.files[0]);
     }
 
     public render(): void {

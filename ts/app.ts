@@ -1,6 +1,6 @@
 import Slider from './slider';
 import Page from './page';
-import { Iproject, Ihomework } from './data';
+import { Iproject, Ihomework, HomeWork } from './data';
 import SelfImage from './selfImage';
 
 export default class App {
@@ -10,6 +10,7 @@ export default class App {
 
     public data: Iproject[];
     public selfImage: SelfImage;
+    public homework: HomeWork;
     public homeworkData: Ihomework[];
 
     public static styleKey: string = 'nathans_style';
@@ -19,6 +20,9 @@ export default class App {
 
         this.data = this.loadFile('./assets/projects.json');
         this.homeworkData = this.loadFile('./assets/homework.json');
+
+        this.homework = new HomeWork();
+        this.homeworkData = this.homework.data;
         console.log(this.homeworkData);
 
         this.selfImage = new SelfImage();

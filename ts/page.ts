@@ -19,7 +19,7 @@ export default class Page {
     }
 
     public resize(): void{
-        this.aboutField.style.transform = 'scale(' + (window.innerWidth - 200) / 1000 + ')';
+        this.aboutField.style.transform = 'scale(' + (Math.min(window.innerHeight + 200, window.innerWidth - 200)) / 1000 + ')';
     }
 
     public aboutMe(): void {
@@ -37,21 +37,43 @@ export default class Page {
         }
         this.HKULoaded = true;
 
-        Object.keys(subjects).forEach((key: any) => {
+        let sortedsubjects: any = Object.keys(subjects).sort();
+        sortedsubjects.forEach((key: any) => {
             let filterHomework: Ihomework[] = data.filter((homework: Ihomework) => {
-                return homework.subject === Object.keys(subjects).indexOf(key);
+                // console.log(homework.subject, subjects[ key]);
+                return homework.subject === subjects[ key];
             });
             if (filterHomework.length !== 0) {
-                console.log(key, filterHomework);
-                this.createSubject(key, filterHomework);
+                this.createSubject(subjects[key], filterHomework);
+                this.addFilterOption(subjects[key]);
             }
-            // if (Object.keys(subjects).indexOf(key) === 1) {
-            //     console.log('eureka!');
-            // }
         });
-
+        let subjectlist: any = document.getElementById('filter_val');
+        subjectlist.onchange = () => {
+            this.filterHKUwork(subjectlist.value);
+        };
         this.applyClickEventToHomework();
 
+    }
+    public addFilterOption(header: string): void {
+        let filter: any = document.getElementById('filter_val');
+        let el: any = document.createElement('option');
+        el.innerHTML = header;
+        el.setAttribute('value', header);
+        filter.appendChild(el);
+    }
+    public filterHKUwork(val: string): void {
+        let subjectlist: any = document.getElementsByClassName('subject');
+        for (let i: number = 0; i < subjectlist.length; i++) {
+            let headerName: any = subjectlist[i].getElementsByTagName('h2')[0].innerText;
+            if (val !== '') {
+                subjectlist[i].style = (headerName === val ? 'display: block;' : 'display: none;');
+            }
+            else {
+                subjectlist[i].style = 'display: block;';
+
+            }
+        }
     }
     public createSubject(header: string, works: Ihomework[]): void {
 
@@ -77,7 +99,7 @@ export default class Page {
             a.setAttribute('href', work.link);
             a.innerHTML = work.link_name;
             let p: any = document.createElement('p');
-            p.innerHTML = work.description + ' - year ' + work.year;
+            p.innerHTML = work.description + ' - year ' + work.year + ' - ' + work.teachers;
             link.appendChild(a);
             link.appendChild(p);
             elb.appendChild(link);
