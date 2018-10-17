@@ -25,6 +25,7 @@ export default class App {
         this.homeworkData = this.homework.data;
         console.log(this.homeworkData);
 
+        console.log(files);
         this.selfImage = new SelfImage();
         this.page = new Page();
         this.slider = new Slider(0);
@@ -49,7 +50,7 @@ export default class App {
         this.updateStyle();
     }
     private updateStyle(): void {
-        console.log('click');
+        console.log('click!!!!!');
         document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'style2' : 'style') + '.css');
         // document.getElementById('styleButton').setAttribute('href', App.style === '1' ? './?style=0' : './?style=1');
     }

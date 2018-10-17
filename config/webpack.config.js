@@ -107,14 +107,14 @@ module.exports = {
                 from: path.join(basePath, 'assets'),
                 to: path.join(basePath, 'builds/dev/assets')
             },
+            // {
+            //     from: path.join(basePath, 'template/index.html'),
+            //     to: path.join(basePath, 'builds/dev/index2.html')
+            // },
             {
                 from: path.join(basePath, 'template/index.php'),
                 to: path.join(basePath, 'builds/dev/index.php')
-            },
-            // {
-            //     from: path.join(basePath, 'template/projectinfo.html'),
-            //     to: path.join(basePath, 'builds/dev/projectinfo.html')
-            // }
+            }
         ]),
         new ForkTsCheckerNotifierWebpackPlugin({alwaysNotify: true}),
         new ForkTsCheckerWebpackPlugin({
