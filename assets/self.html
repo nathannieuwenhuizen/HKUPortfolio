@@ -5,6 +5,8 @@
     <TITLE>Nathan Nieuwenhuizen</TITLE>
     <script src="./dir.php"></script>
     <script src="../self.js"></script>
+	<link id="stylesheet" rel="stylesheet" href="./style.css" type="text/css" />
+
 </HEAD>
 
 <BODY>
@@ -22,18 +24,39 @@
         #selfFile{
             display: none;
         }
-        #selfButton{
-
+        form{
+            float: left;
         }
-        #selfValue{
-
-        }
+        #selfButton, #submit, #uploadImage{
+            margin: 10px 0;
+                    background: black;
+                    color: white;
+                    font-weight: bold;
+                    padding: 5px 10px;
+                    border: none;
+                    cursor: pointer;
+                }
     </style>
-    <input type="file" id="selfFile" />
+    <!-- <input type="file" id="selfFile" />
     <input type="button" value="Browse..." id="selfButton" onclick="document.getElementById('selfFile').click();" />
     <input type="range" id="selfValue" value="15" min="1" max="50" />
     <canvas id="selfCanvas" style=""></canvas>
-    <canvas id="selfCanvasResult"></canvas>
+    <canvas id="selfCanvasResult"></canvas> -->
+        <form action="./upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" id="selfFile" name="selfFile" style="display: none;"/>
+            <input type="button" value="Browse..." name="selfButton" id ="selfButton" onclick="document.getElementById('selfFile').click();" />
+            <br>
+
+            <input type="range" id="selfValue" value="15" min="2" max="200" />
+            <br>
+
+            <input type="submit" value="Upload" id="submit" name="submit">
+            <br>
+            <input type="button" value="show uploaded images" name="uploadImage" id ="uploadImage" />
+        </form>
+        <canvas id="selfCanvas"></canvas>
+        <canvas id="selfCanvasResult"></canvas>
+
 
 </BODY>
 

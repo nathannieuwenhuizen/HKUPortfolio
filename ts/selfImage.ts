@@ -23,10 +23,12 @@ export default class SelfImage {
     private rImg: HTMLImageElement;
     private img: HTMLImageElement;
 
+    public root: string;
     public uploadedImages: HTMLImageElement[];
     //other
     private pxData: any;
     constructor(root: string = 'assets/', sizeToscreen: boolean = false) {
+        this.root = root;
         this.canvas = (<HTMLCanvasElement>document.getElementById('selfCanvas'));
         this.rCanvas = (<HTMLCanvasElement>document.getElementById('selfCanvasResult'));
 
@@ -76,7 +78,7 @@ export default class SelfImage {
             let length: number =  Math.min(50, files.length)
             for (let i: number = 0; i < length; i++) {
                 let tmp: HTMLImageElement = new Image();
-                tmp.src = 'assets/uploads/' + files[i];
+                tmp.src =  this.root + 'uploads/' + files[i];
                 tmp.onload = () => {
                     // console.log(this.uploadedImages);
                     this.uploadedImages.push(tmp);
