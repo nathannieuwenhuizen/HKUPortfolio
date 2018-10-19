@@ -8,7 +8,7 @@ export default class SelfImage {
 
     private cellImage: any = '/page_elements/pf.jpg';
     private bigImage: any = '/page_elements/pf.jpg';
-    private fileInput: any;
+    private fileInput: any; 
 
     private imageSize: number = 200;
     private resultSize: number = 2000;
@@ -16,10 +16,14 @@ export default class SelfImage {
     private cellSizeInput: any;
     private sizeToscreen: boolean;
 
+    private uploadButton: any;
+
     private typeOfCell: number = 0;
 
     private rImg: HTMLImageElement;
     private img: HTMLImageElement;
+
+    public uploadedImages: HTMLImageElement[];
     //other
     private pxData: any;
     constructor(root: string = 'assets/', sizeToscreen: boolean = false) {
@@ -49,18 +53,42 @@ export default class SelfImage {
         this.rImg.onload = this.render.bind(this);
 
         this.cellSizeInput = document.getElementById('selfValue');
-        this.cellSizeInput.onchange = this.updateImage.bind(this);
+        this.cellSizeInput.oninput = this.updateImage.bind(this);
         this.cellSizeInput.oninput = this.updateImage.bind(this);
 
         this.fileInput = document.getElementById('selfFile');
         this.fileInput.onchange = this.updateFile.bind(this);
         this.fileInput.oninput = this.updateFile.bind(this);
 
-        this.updateImage();
-
-        // this.interval = setInterval(this.render.bind(this), 1);
+        this.uploadButton = document.getElementById('uploadImage');
+        this.uploadButton.onclick = this.showUploadedImages.bind(this);
+        
+        this.rImg.src = this.cellImage;
+        this.img.src = this.cellImage;
+    }
+    public showUploadedImages(): void {
+        if (this.typeOfCell === 4) {
+            return;
+        }
+        this.typeOfCell = 4;
+        this.uploadedImages = [];
+        if (files) {
+            let length: number =  Math.min(50, files.length)
+            for (let i: number = 0; i < length; i++) {
+                let tmp: HTMLImageElement = new Image();
+                tmp.src = 'assets/uploads/' + files[i];
+                tmp.onload = () => {
+                    // console.log(this.uploadedImages);
+                    this.uploadedImages.push(tmp);
+                    if (this.uploadedImages.length === length) {
+                        console.log('load complete!');
+                    }
+                };
+            }
+        }
         this.render();
     }
+
     public updateImage(): void {
         this.cellSize = parseInt(this.cellSizeInput.value, 10);
         this.render();
@@ -87,13 +115,14 @@ export default class SelfImage {
     }
 
     public render(): void {
+        console.log('render');
         // this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         //draw image on original canvas to use as reference
-        this.rImg.src = this.cellImage;
+        // this.rImg.src = this.cellImage;
         this.context.drawImage(this.rImg, 0, 0, this.imageSize, this.imageSize);
 
-        this.img.src = this.cellImage;
+        // this.img.src = this.cellImage;
 
         //clear background
         this.rContext.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
@@ -117,7 +146,6 @@ export default class SelfImage {
                 switch (this.typeOfCell) {
                     case 0:
                         //image
-                        // img.src = 'assets/selfImage/' + files[Math.floor(Math.random() * files.length)] + '.jpg';
                         this.rContext.drawImage(this.img, resultPos.x, resultPos.y, resultCellSize, resultCellSize);
                         this.rContext.globalAlpha = 0.5;
                         this.rContext.fillRect(resultPos.x, resultPos.y, resultCellSize, resultCellSize);
@@ -141,6 +169,17 @@ export default class SelfImage {
                         this.rContext.rotate(Math.random() * 1);
                         this.rContext.fillText('NATHAN', 0, 0);
                         this.rContext.restore();
+                        break;
+                    case 4:
+                        //random images
+                        if (this.uploadedImages.length > 0) {
+                            let index: number = Math.floor(Math.random() * this.uploadedImages.length);
+                            // index = (x * this.imageSize / this.cellSize + y / this.cellSize) % this.uploadedImages.length; 
+                            this.rContext.drawImage(this.uploadedImages[index], resultPos.x, resultPos.y, resultCellSize, resultCellSize);
+                        }
+                        this.rContext.globalAlpha = 0.5;
+                        this.rContext.fillRect(resultPos.x, resultPos.y, resultCellSize, resultCellSize);
+                        this.rContext.globalAlpha = 1;
                         break;
                     default:
                         break;

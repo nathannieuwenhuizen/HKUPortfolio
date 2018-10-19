@@ -1,11 +1,11 @@
 <?php
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+     $target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["selfFile"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    $check = getimagesize($_FILES["selfFile"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -20,7 +20,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["selfFile"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -35,10 +35,12 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . uniqid('', true) . '.' . $imageFileType)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    if (move_uploaded_file($_FILES["selfFile"]["tmp_name"], $target_dir . uniqid('', true) . '.' . $imageFileType)) {
+        echo "The file ". basename( $_FILES["selfFile"]["name"]). " has been uploaded.";
     } else {
-        echo "Sorry, there was an error uploading your file." . basename( $_FILES["fileToUpload"]["name"]);
+        echo "Sorry, there was an error uploading your file." . basename( $_FILES["selfFile"]["name"]);
     }
 }
+echo '<br/> go back to site, click <a href="../">here</a>';
+echo "<script> window.location.replace('../index.php') </script>"
 ?>

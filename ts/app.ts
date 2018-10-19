@@ -17,22 +17,27 @@ export default class App {
     public static style: string;
 
     constructor() {
+        App.style = localStorage.getItem(App.styleKey);
+        document.getElementById('styleButton').onclick = this.toggleStyle.bind(this);
+        this.updateStyle();
 
         this.data = this.loadFile('./assets/projects.json');
         this.homeworkData = this.loadFile('./assets/homework.json');
 
         this.homework = new HomeWork();
         this.homeworkData = this.homework.data;
-        console.log(this.homeworkData);
+        // console.log(this.homeworkData);
+        // console.log('locatio prot', window.location.protocol);
+        // console.log('locatio hist', window.location.host);
+        // console.log('locatio path', window.location.pathname);
+        // console.log('locatio search', window.location.pathname);
 
-        console.log(files);
+        // console.log(files);
+        
         this.selfImage = new SelfImage();
         this.page = new Page();
         this.slider = new Slider(0);
         this.projectInfo = document.getElementById('projectinfo');
-
-        App.style = localStorage.getItem(App.styleKey);
-        document.getElementById('styleButton').onclick = this.toggleStyle.bind(this);
 
         this.updatePage();
         window.addEventListener('hashchange', () => {
@@ -41,6 +46,7 @@ export default class App {
     }
 
     public toggleStyle(): void {
+        console.log('style click');
         if (App.style === '1') {
             App.style = '0';
         } else {
@@ -50,7 +56,7 @@ export default class App {
         this.updateStyle();
     }
     private updateStyle(): void {
-        console.log('click!!!!!');
+        console.log('click!');
         document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'style2' : 'style') + '.css');
         // document.getElementById('styleButton').setAttribute('href', App.style === '1' ? './?style=0' : './?style=1');
     }
@@ -83,7 +89,6 @@ export default class App {
 
         if (window.location.href.indexOf('#projecten') > -1) {
             buttons[1].className = 'selected';
-            console.log('data begin', this.data);
             this.page.loadProjectOverview(this.data);
             this.slider.updateSlider();
         } else if (window.location.href.indexOf('#about') > -1) {
@@ -97,7 +102,6 @@ export default class App {
         } else {
             buttons[0].className = 'selected';
         }
-        console.log('clicked');
     }
     public static cap(value: number, min: number, max: number): number {
         return Math.min(Math.max( value, min), max);

@@ -217,11 +217,11 @@ body {
 
                     cursor: pointer;
                     color: blue;
-                    background: blue;
-                    border-color: blue;
+                    // background: blue;
+                    // border-color: blue;
                     // outline: 5px solid blue;
                 }
-                #selfButton{
+                #selfButton, #submit, #uploadImage{
                     background: $nav-color;
                     color: white;
                     font-weight: bold;

@@ -16,10 +16,6 @@ export default class Slider {
         this.curentimage = 1;
         this.pauzeDuration = 1;
 
-        // console.log('locatio prot', window.location.protocol);
-        // console.log('locatio hist', window.location.host);
-        // console.log('locatio path', window.location.pathname);
-        // console.log('locatio search', window.location.pathname);
         //ResumeLoop();
         this.gotToSlide(0);
 

@@ -80,7 +80,8 @@ module.exports = {
                 './ts/*.ts',
                 './sass/*.scss',
                 './ts/*.js',
-                './assets/**/*.png',
+                './assets/**/*.*',
+                './huiswerk/**/*.*',
                 './atlas_assets/**/*.png'
             ],
             // server: {
@@ -107,10 +108,14 @@ module.exports = {
                 from: path.join(basePath, 'assets'),
                 to: path.join(basePath, 'builds/dev/assets')
             },
-            // {
-            //     from: path.join(basePath, 'template/index.html'),
-            //     to: path.join(basePath, 'builds/dev/index2.html')
-            // },
+            {
+                from: path.join(basePath, 'huiswerk'),
+                to: path.join(basePath, 'builds/dev/huiswerk')
+            },
+            {
+                from: path.join(basePath, 'template/dirtest.php'),
+                to: path.join(basePath, 'builds/dev/dirtest.php')
+            },
             {
                 from: path.join(basePath, 'template/index.php'),
                 to: path.join(basePath, 'builds/dev/index.php')
