@@ -23,6 +23,14 @@ export default class Page {
     }
 
     public aboutMe(): void {
+        let li: any = document.getElementsByClassName('newStatField')[0].getElementsByTagName('li');
+        console.log('lis', li);
+        for (let i: number = 0; i < li.length; i++) {
+            li[i].style = 'transition: transform 200ms ease-in-out '  + (1.5 + i / 20.0) + 's;';
+            // li[i].style = 'transition: color 200ms ease-in-out 0s;';
+            // console.log( li.style.transitionDelay );
+        }
+
         let aboutField: any = document.getElementsByClassName('aboutField')[0];
         aboutField.classList.add('aboutField_show');
     }
@@ -207,6 +215,7 @@ export default class Page {
         // console.log(data);
         document.title = data.title;
         document.getElementById('projectTitle').innerHTML = data.title;
+        document.getElementById('project_title_h').innerHTML = data.title;
         document.getElementById('projectDuration').innerHTML = data.duration;
         document.getElementById('projectDate').innerHTML = data.date;
         document.getElementById('projectSummary').innerHTML = data.summary;

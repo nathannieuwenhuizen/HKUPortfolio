@@ -66,6 +66,21 @@
 					<p><b>Summary</b> Hello, I''m Nathan. I am a game developer currently studying 'Games and Interaction' ath the HKU
 						in Utrecht.</p>
 				</section>
+				<section class="newStatField">
+					<ul>
+					<li class="li">HTML5</li>
+					<li class="li">CSS</li>
+					<li class="li">Javascript</li>
+					<li class="li">Typescript</li>
+					<li class="li">C#</li>
+					<li class="li">SCRUM</li>
+					<li class="li">Agile</li>
+					<li class="li">Unity</li>
+					<li class="li">PHP</li>
+					<li class="li">MySQL</li>
+					<li class="li">Apps</li>
+					</ul>
+				</section>
 				<section class="statField">
 					<section class="stat">
 						<section class="container">
@@ -184,7 +199,10 @@
 		</section>
 
 		<section id="projectinfo">
+		<section id="project_title"> <h1 id="project_title_h"> title name </h1></section>
+
 			<section class="projectOverview">
+
 				<section class="slider" style="width: 60%;">
 					<section class="buttons">
 						<section class="button">

@@ -2,7 +2,7 @@
 body {
     color: $p_color;
     font-size: 13pt;
-    font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
     background-color: #fff;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
@@ -196,9 +196,9 @@ body {
                     // border: 5px solid green;
                     max-height: 100%;
                     max-width: 100%;
-                    width: 70%;
+                    width: 60%;
                     position: absolute;
-                    top: 20px;
+                    top: 50px;
                     bottom: 0;
                     left: 0;
                     right: 0;

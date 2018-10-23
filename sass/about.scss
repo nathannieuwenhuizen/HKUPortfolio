@@ -1,8 +1,8 @@
 .aboutField{
-    .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines  {
+    .descriptionField, .aboutField, .summaryField, .statField, .newStatField, .socialField, .lines, li {
         transition: transform $image_duration  cubic-bezier(0.1, 0.5, 0.5, 1.5);
         transition-delay: $line_duration;
-        transform: scale(0);
+        transform: scale(0); 
     }
     .lines{
         transition-duration: $line_duration;
@@ -85,8 +85,50 @@
             border-width: 20px;
         }
     }
+    .newStatField {
+        box-shadow: $box-shadow;
+        z-index: 5;
+        position: absolute;
+        // border: 2px solid black;
+        background-color: white;
+        display: block;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        left: -450px;
+        top: 250px;
+
+        ul {
+            max-height: 250px;
+            // border: 2px solid black;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+
+            li{
+                display: inline-block;
+                height: 20px;
+                padding: 5px;
+                list-style: none;
+                border-radius: 20px;
+                margin: 5px;
+                width: auto;
+                background: grey;
+                // border: 2px solid rgb(33, 30, 51);
+                // box-shadow: $box-shadow;
+                transition: all 200ms ease-in-out;
+                line-height: 100%;
+                color: white;
+            } 
+            // li:hover{
+            //     // cursor: pointer;
+            //     // transform: scale(1.1);
+            //     // color: black;
+            // }
+        }
+    }
     .statField {
-        //display: none;
+        display: none;
         position: absolute;
         width: 200px;
         height: auto;
@@ -153,7 +195,7 @@
             transform: rotate(90deg);
         }
         :nth-child(2) {
-            transform: rotate(143deg);
+            transform: rotate(180deg);
             width: 225px;
         }
         :nth-child(3) {
@@ -163,7 +205,10 @@
     }
 }
 .aboutField_show{
-    .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines  {
+    .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines, .newStatField  {
+        transform: scale(1);
+    }
+    .newStatField ul li {
         transform: scale(1);
     }
 }
