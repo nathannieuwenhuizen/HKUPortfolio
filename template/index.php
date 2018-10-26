@@ -11,6 +11,7 @@
 </HEAD>
 
 <BODY>
+	<div id="wrapper">
 	<input type="button" value="change style" id="styleButton"/>
 	<header>
 		<section class="title_image">
@@ -277,6 +278,7 @@
 			</section>
 		</section>
 	</section>
+	</div>
 
 	<footer>
 			<p id="viewCount">You are the  <?php 

@@ -1,4 +1,5 @@
 </section>
+	</div>
 
 	<footer>
 			<p id="viewCount">You are the  <?php 

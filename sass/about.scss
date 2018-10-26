@@ -1,214 +1,221 @@
-.aboutField{
-    .descriptionField, .aboutField, .summaryField, .statField, .newStatField, .socialField, .lines, li {
-        transition: transform $image_duration  cubic-bezier(0.1, 0.5, 0.5, 1.5);
-        transition-delay: $line_duration;
-        transform: scale(0); 
-    }
-    .lines{
-        transition-duration: $line_duration;
-        transition-timing-function: ease-in-out;
-        transition-delay: 0s;
-    }
-    // margin-top: 50px;
-    position: relative;
-    width: 0px;
-    height: 80vw;
-    display: block;
-    margin: 0 auto;
-    // border: 1px dotted black;
-
-    transform-origin: 50% 0;
-    transform: scale(1);
-
-    .centerField {
-        box-shadow: $box-shadow;
-
-        height: 300px;
-        width: 300px;
-        position: absolute;
-        left: -150px;
-        top: 200px;
-
-        background: url(page_elements/profile.jpg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: 150px; 
-    
-        //border: 2px dotted red;
-    }
-    .summaryField {
-        box-shadow: $box-shadow;
-
-        position: absolute;
-        width: 200px;
-        height: auto;
-        left: 200px;
-        top: 200px;
-        border: none;
-        background: rgba(255, 255, 255, 1);
-        //border: 2px dotted red;
-        p{
-            margin-left: 15px;
-            text-align: left;
+#about{
+    perspective: 1000px;
+    .aboutField{
+        .descriptionField, .aboutField, .summaryField, .statField, .newStatField, .socialField, .lines, li {
+            transition: transform $image_duration  cubic-bezier(0.1, 0.5, 0.5, 1.5);
+            transition-delay: $line_duration;
+            transform: scale(0); 
         }
-    }
-    .socialField {
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 50px;
-
-        position: absolute;
-        right: -250px;
-        top: 100px;
-        width: 500px;
-        height: 50px;
-        background: rgba(255, 255, 255, 1);
-        align-content: center;
-        text-align: center;
-        // padding: 10px 0;
-        img{
-            // outline: 2px solid black;
-            margin: -15px 10px;
-            // margin-top: -20px;
-            height: 150%;
-            background-color: white;
-            vertical-align: top;
-            width: 15%;
-            border-style: solid;
-            border-color: white;
-            border-radius: 50%;
-            transition: all 0.5s ease-in-out;
-            border-width: 5px;
-            display: inline;
+        .lines{
+            transition-duration: $line_duration;
+            transition-timing-function: ease-in-out;
+            transition-delay: 0s;
         }
-        img:hover{
-            margin-top: -30px;
-            border-width: 20px;
-        }
-    }
-    .newStatField {
-        box-shadow: $box-shadow;
-        z-index: 5;
-        position: absolute;
-        // border: 2px solid black;
-        background-color: white;
+        // margin-top: 50px;
+        position: relative;
+        width: 80vw;
+        height: 80vw;
         display: block;
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        left: -450px;
-        top: 250px;
-
-        ul {
-            max-height: 250px;
-            // border: 2px solid black;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-
-            li{
-                display: inline-block;
-                height: 20px;
-                padding: 5px;
-                list-style: none;
-                border-radius: 20px;
-                margin: 5px;
-                width: auto;
-                background: grey;
-                // border: 2px solid rgb(33, 30, 51);
-                // box-shadow: $box-shadow;
-                transition: all 200ms ease-in-out;
-                line-height: 100%;
-                color: white;
-            } 
-            // li:hover{
-            //     // cursor: pointer;
-            //     // transform: scale(1.1);
-            //     // color: black;
-            // }
+        margin: 0 auto;
+        transform-origin:  center;
+        transform-style: preserve-3d;
+        // border: 1px dotted black;
+    
+        transform-origin: 50% 0;
+        transform: scale(1);
+    
+        .centerField {
+            box-shadow: $box-shadow;
+    
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            left:  calc(40vw - 150px);
+            top: 200px;
+    
+            background: url(page_elements/profile.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 150px; 
+        
+            //border: 2px dotted red;
         }
-    }
-    .statField {
-        display: none;
-        position: absolute;
-        width: 200px;
-        height: auto;
-        left: -380px;
-        top: 330px;
-        border-bottom: 5px solid black;
-        border-left: 5px solid black;
-
-        .stat{
-            width: 20%; 
-            float: left;
-            margin: 0 10px;
-
-            .container{
-                bottom: 0%;
-                height: 150px;
-                //background: black;
-                overflow: hidden;
-                .value{
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    background-color: darkcyan;
-                    top: 10%;
+        .summaryField {
+            box-shadow: $box-shadow;
+    
+            position: absolute;
+            width: 200px;
+            height: auto;
+            left: calc(40vw + 250px);;
+            top: 200px;
+            border: none;
+            background: rgba(255, 255, 255, 1);
+            //border: 2px dotted red;
+            p{
+                margin-left: 15px;
+                text-align: left;
+            }
+        }
+        .socialField {
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 50px;
+    
+            position: absolute;
+            right: calc(40vw - 250px);
+            top: 100px;
+            width: 500px;
+            height: 50px;
+            background: rgba(255, 255, 255, 1);
+            align-content: center;
+            text-align: center;
+            // padding: 10px 0;
+            img{
+                // outline: 2px solid black;
+                margin: -15px 10px;
+                // margin-top: -20px;
+                height: 150%;
+                background-color: white;
+                vertical-align: top;
+                width: 15%;
+                border-style: solid;
+                border-color: white;
+                border-radius: 50%;
+                transition: all 0.5s ease-in-out;
+                border-width: 5px;
+                display: inline;
+            }
+            img:hover{
+                margin-top: -30px;
+                border-width: 20px;
+            }
+        }
+        .newStatField {
+            box-shadow: $box-shadow;
+            z-index: 5;
+            position: absolute;
+            // border: 2px solid black;
+            background-color: white;
+            display: block;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            // border: 5px solid red;
+            left: calc(40vw - 450px);
+            top: 250px;
+    
+            ul {
+                max-height: 250px;
+                // border: 2px solid black;
+                text-align: center;
+                padding: 20px;
+                margin: 0;
+    
+                li{
+                    display: inline-block;
+                    height: 20px;
+                    padding: 5px;
+                    list-style: none;
+                    border-radius: 20px;
+                    margin: 5px;
+                    width: auto;
+                    background: grey;
+                    // border: 2px solid rgb(33, 30, 51);
+                    // box-shadow: $box-shadow;
+                    transition: all 200ms ease-in-out;
+                    line-height: 100%;
+                    color: white;
+                } 
+                // li:hover{
+                //     // cursor: pointer;
+                //     // transform: scale(1.1);
+                //     // color: black;
+                // }
+            }
+        }
+        .statField {
+            display: none;
+            position: absolute;
+            width: 200px;
+            height: auto;
+            left: -380px;
+            top: 330px;
+            border-bottom: 5px solid black;
+            border-left: 5px solid black;
+    
+            .stat{
+                width: 20%; 
+                float: left;
+                margin: 0 10px;
+    
+                .container{
+                    bottom: 0%;
+                    height: 150px;
+                    //background: black;
+                    overflow: hidden;
+                    .value{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        background-color: darkcyan;
+                        top: 10%;
+                    }
+                }
+                h5{
+                    font-size: 10px;
+                    text-align: center;
+                    margin: 0 0;
+                    width: inherit;
+                    margin-top: 10px;
+                    color: black;
+                    position: absolute;
+    
                 }
             }
-            h5{
-                font-size: 10px;
-                text-align: center;
-                margin: 0 0;
-                width: inherit;
-                margin-top: 10px;
-                color: black;
-                position: absolute;
-
-            }
         }
-    }
-    .descriptionField {
-        box-shadow: $box-shadow;
-
-        position: absolute;
-        right: -400px;
-        top: 550px;
-        width: 800px; 
-        height: auto;
-        background: rgba(255, 255, 255, 1);
-    }
-    .lines{
-        position: absolute;
-        z-index: -1;
-        top: 345px;
-        //width: 90%;
-        border: 1px solid red;
-        .line{
+        .descriptionField {
+            box-shadow: $box-shadow;
+    
             position: absolute;
-            transform-origin: left;
-            transform: rotate(0deg);
-            display: block;
-            border-bottom: 3px solid black;
-            width: 240px;
+            right: calc(40vw - 400px);
+            top: 550px;
+            width: 800px; 
+            height: auto;
+            background: rgba(255, 255, 255, 1);
         }
-        :nth-child(1) {
-            transform: rotate(90deg);
+        .lines{
+            position: absolute;
+            z-index: -1;
+            top: 345px;
+            left: 40vw;
+            //width: 90%;
+            border: 1px solid red;
+            .line{
+                position: absolute;
+                transform-origin: left;
+                transform: rotate(0deg);
+                display: block;
+                border-bottom: 3px solid black;
+                width: 240px;
+            }
+            :nth-child(1) {
+                transform: rotate(90deg);
+            }
+            :nth-child(2) {
+                transform: rotate(180deg);
+                width: 225px;
+            }
+            :nth-child(3) {
+                transform: rotate(270deg);
+            }
+            
         }
-        :nth-child(2) {
-            transform: rotate(180deg);
-            width: 225px;
-        }
-        :nth-child(3) {
-            transform: rotate(270deg);
-        }
-        
     }
-}
-.aboutField_show{
-    .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines, .newStatField  {
-        transform: scale(1);
-    }
-    .newStatField ul li {
-        transform: scale(1);
+    .aboutField_show{
+        .descriptionField, .aboutField, .summaryField, .statField, .socialField, .lines, .newStatField  {
+            transform: scale(1);
+        }
+        .newStatField ul li {
+            transform: scale(1);
+        }
     }
 }

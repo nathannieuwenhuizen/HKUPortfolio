@@ -3,10 +3,12 @@ import Slider from './slider';
 
 export default class Page {
 
-    private aboutField: any;
+    private aboutField: Element;
     private projectOverviewAlreadyLoaded: boolean = false;
     private HKULoaded: boolean = false;
     private infoSlider: Slider;
+
+    private about_interval: any;
 
     constructor() {
         this.infoSlider = new Slider(1);
@@ -33,10 +35,28 @@ export default class Page {
 
         let aboutField: any = document.getElementsByClassName('aboutField')[0];
         aboutField.classList.add('aboutField_show');
+        addEventListener('mousemove', (event: any) => {
+            let rect: any = aboutField.getBoundingClientRect();
+            let dist: any = {
+                x: event.clientX - (rect.x + rect.width / 2)
+                y: event.clientY - (rect.y + rect.height / 2)
+            };
+            // this.aboutField.style.transform = 'scale(' + (Math.min(window.innerHeight + 200, window.innerWidth - 200)) / 1000 + ')';
+            let maxDegree: number = 5;
+            this.aboutField.style.transform =
+                'rotateY(' + Math.min(maxDegree, Math.max(-maxDegree, (dist.x / 100))) + 'deg)' +
+                'rotateX(' + -Math.min(maxDegree, Math.max(-maxDegree, (dist.y / 100))) + 'deg)';
+            console.log(dist);
+
+        });
+        this.about_interval = setInterval(() => {
+            //
+        }, 1);
     }
     public hideAboutMe(): void {
         let aboutField: any = document.getElementsByClassName('aboutField')[0];
         aboutField.classList.remove('aboutField_show');
+        clearInterval(this.about_interval);
     }
 
     public loadHKUwork(data: Ihomework[]): void {
@@ -191,7 +211,7 @@ export default class Page {
 
             let buttons: string = '';
             for (let j: number = 0; j < data[i].buttons.length; j++) {
-                console.log(j,  data[i].buttons[j][0],  data[i].buttons[j][1]);
+                console.log(j, data[i].buttons[j][0], data[i].buttons[j][1]);
                 buttons += '<a target="n_project" href="' + data[i].buttons[j][0] + '">' + data[i].buttons[j][1] + '</a>';
             }
 
@@ -208,7 +228,7 @@ export default class Page {
                 '<div class="buttons">' +
                 '<a href="' + link + '">More info...</a>' +
                 buttons +
-               '</div></div></div>';
+                '</div></div></div>';
             sec.appendChild(backpage);
 
             projecten.appendChild(sec);

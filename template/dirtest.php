@@ -220,7 +220,7 @@ include "./assets/inc/header.inc";
 	{
 		print controle($hoofd_directory,$_GET["dir"]); //voor submappen "inhoud" laten zien
 	}
-	include ".\./assets/inc/footer.inc";
+	include "./assets/inc/footer.inc";
 
 ?>
 

@@ -101,7 +101,10 @@ export default class App {
         } else if (window.location.href.indexOf('#HKU') > -1) {
             buttons[4].className = 'selected';
             this.page.loadHKUwork(this.homeworkData);
-        } else {
+        } else if (window.location.href.indexOf('#projectinfo') > -1) {
+            //
+        }
+         else {
             buttons[0].className = 'selected';
             showHeader = true;
         }
