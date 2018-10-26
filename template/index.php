@@ -20,7 +20,7 @@
 				<form action="assets/upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" id="selfFile" name="selfFile" style="display: none;"/>
 					<input type="button" value="Browse..." name="selfButton" id ="selfButton" onclick="document.getElementById('selfFile').click();" />
-					<input type="range" id="selfValue" value="15" min="2" max="200" />
+					<input type="range" id="selfValue" value="1" min="1" max="200" />
 					<input type="submit" value="Upload" id="submit" name="submit">
 					<input type="button" value="show uploaded images" name="uploadImage" id ="uploadImage" />
 				</form>
@@ -45,6 +45,31 @@
 	</nav>
 	<section class="content">
 
+		<!-- <div class="flipTile">
+			<div class="cover">
+				<section class="front">
+					<h2>Title project</h2>
+				</section>
+				<section class="back"></section>
+			</div>
+			<div class="backPage">
+				<h2>Title project</h2>
+				<p><b>Type </b> type prpject</p>
+				<p><b>Date </b> 0-0-1995</p>
+				<p><b>Duration </b> 2 weeks</p>
+				<p><b>Team </b> all by myself :(</p>
+				
+				<p><b>Description: </b> </p>
+				<p> text text text text text text text text text text text text text text </p>
+				<div class="buttons">
+				<a href="./index.php"></a>
+				<a href="./index.php"></a>
+				<a href="./index.php"></a>
+			</div>
+
+
+			</div>
+		</div> -->
 
 		<section id="about">
 			<section class="aboutField">
@@ -218,7 +243,7 @@
 				<section class="projectInfo">
 					<section class="textInfo">
 
-						<b> Name:</b>
+						<b> Type:</b>
 						<p id="projectTitle"> loading... </p>
 
 						<b> Duaration:</b>

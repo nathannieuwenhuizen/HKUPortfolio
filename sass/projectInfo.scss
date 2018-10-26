@@ -64,11 +64,11 @@
             text-align: center;
             padding: 20px 0;
             margin-left: -2vw;
-            section{
-                @extend %image-button;
-                width: 5vw;
-                margin: 0 1vw;
-                height: 5vw;
+            a{
+                @extend %border-button;
+                // width: 5vw;
+                margin: 0.2vw;
+                // height: 5vw;
             }
             .github {
                 background-image: url(page_elements/github.png);

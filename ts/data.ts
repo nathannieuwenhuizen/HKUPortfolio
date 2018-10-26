@@ -1,12 +1,13 @@
 export interface Iproject {
     title: string;
     team: string;
+    type: string;
     duration: string;
     date: string;
     summary: string;
     description: string;
     images: string[];
-    buttons: string[];
+    buttons: string[][];
 }
 export enum subjects {
     ToolsForThinking = 'Tools for Thinking',

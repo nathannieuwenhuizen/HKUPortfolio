@@ -87,6 +87,8 @@ export default class App {
             this.page.hideAboutMe();
         }
 
+        let showHeader: boolean = false;
+
         if (window.location.href.indexOf('#projecten') > -1) {
             buttons[1].className = 'selected';
             this.page.loadProjectOverview(this.data);
@@ -101,7 +103,10 @@ export default class App {
             this.page.loadHKUwork(this.homeworkData);
         } else {
             buttons[0].className = 'selected';
+            showHeader = true;
         }
+
+        document.getElementsByTagName('header')[0].style.display = showHeader ? 'block' : 'none';
     }
     public static cap(value: number, min: number, max: number): number {
         return Math.min(Math.max( value, min), max);

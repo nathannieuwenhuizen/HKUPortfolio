@@ -6,13 +6,13 @@ export default class SelfImage {
     private rCanvas: HTMLCanvasElement;
     private rContext: CanvasRenderingContext2D;
 
-    private cellImage: any = '/page_elements/pf.jpg';
-    private bigImage: any = '/page_elements/pf.jpg';
+    private cellImage: any = '/page_elements/profile.jpg';
+    private bigImage: any = '/page_elements/profile.jpg';
     private fileInput: any; 
 
     private imageSize: number = 200;
     private resultSize: number = 2000;
-    private cellSize: any = 10;
+    private cellSize: any = 1;
     private cellSizeInput: any;
     private sizeToscreen: boolean;
 
@@ -133,6 +133,10 @@ export default class SelfImage {
         let aspectIncrease: number = this.resultSize / this.imageSize;
         let resultCellSize: number = this.cellSize * aspectIncrease;
 
+        if (this.cellSize === 1) {
+            this.rContext.drawImage(this.img, 0, 0, this.rCanvas.width, this.rCanvas.height);
+            return;
+        }
         //draw the pixels based on image
         for (let x: number = 0; x < this.imageSize; x += this.cellSize) {
             for (let y: number = 0; y < this.imageSize; y += this.cellSize) {
