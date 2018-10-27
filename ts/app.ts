@@ -90,27 +90,28 @@ export default class App {
         let showHeader: boolean = false;
 
         if (window.location.href.indexOf('#projecten') > -1) {
-            buttons[1].className = 'selected';
+            buttons[2].className = 'selected';
             this.page.loadProjectOverview(this.data);
             this.slider.updateSlider();
         } else if (window.location.href.indexOf('#about') > -1) {
-            buttons[2].className = 'selected';
+            buttons[3].className = 'selected';
             this.page.aboutMe();
         } else if (window.location.href.indexOf('#contact') > -1) {
-            buttons[3].className = 'selected';
-        } else if (window.location.href.indexOf('#HKU') > -1) {
             buttons[4].className = 'selected';
+        } else if (window.location.href.indexOf('#HKU') > -1) {
+            buttons[5].className = 'selected';
             this.page.loadHKUwork(this.homeworkData);
         } else if (window.location.href.indexOf('#projectinfo') > -1) {
             //
         }
          else {
-            buttons[0].className = 'selected';
+            buttons[1].className = 'selected';
             showHeader = true;
             this.helloWorld();
         }
 
         document.getElementsByTagName('header')[0].style.display = showHeader ? 'block' : 'none';
+        document.getElementById('profileShortcut').style.display = !showHeader ? 'block' : 'none';
     }
 
     public helloWorld(): void {

@@ -22,16 +22,16 @@
             width:400px;
             margin: 3px auto;
             padding: 5px;
-            // border: 1px solid green;
+            border: 2px solid $box_border_color;
             outline: 0px solid $box_border_color;
             transition: outline 0.2s ease-in-out;
 
         }
         input:hover, textarea:hover{
-            outline: 3px solid $box_border_color;
+            outline: 4px solid $box_border_color;
         }
         input:focus, textarea:focus{
-            outline: 3px solid $box_border_color;
+            outline: 4px solid $box_border_color;
         }
         #submit{
             margin-left: 10%;
@@ -39,12 +39,12 @@
             width: 200px;
             font-size: 30px;
             height: 50px;
-            border: 0px solid $box_border_color;
+            outline: 2px solid $box_border_color;
             color: $dark-color;
-            transition: border 0.2s ease-in-out;
+            transition: outline 0.2s ease-in-out;
         }
         #submit:hover{
-            border: 3px solid $box_border_color;
+            outline: 5px solid $box_border_color;
         }
     }
 

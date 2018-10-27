@@ -27,9 +27,12 @@ function toggle() {
         init(); 
         document.getElementById("canvas").style.opacity = '1';
         document.getElementById("canvas").style.zIndex = '1';
+        document.getElementById('speak').style.opacity = '0';
 
     } else {
         document.getElementById("canvas").style.opacity = '0';
+        document.getElementById('speak').style.opacity = '1';
+
         setTimeout(() => {
             document.getElementById("canvas").style.zIndex = '-1';
         }, 500);

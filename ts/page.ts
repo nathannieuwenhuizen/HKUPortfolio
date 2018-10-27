@@ -44,8 +44,8 @@ export default class Page {
             // this.aboutField.style.transform = 'scale(' + (Math.min(window.innerHeight + 200, window.innerWidth - 200)) / 1000 + ')';
             let maxDegree: number = 5;
             this.aboutField.style.transform =
-                'rotateY(' + Math.min(maxDegree, Math.max(-maxDegree, (dist.x / 100))) + 'deg)' +
-                'rotateX(' + -Math.min(maxDegree, Math.max(-maxDegree, (dist.y / 100))) + 'deg)';
+                'rotateY(' + Math.min(maxDegree, Math.max(-maxDegree, (dist.x / 200))) + 'deg)';
+                // 'rotateX(' + -Math.min(maxDegree, Math.max(-maxDegree, (dist.y / 100))) + 'deg)';
             console.log(dist);
 
         });

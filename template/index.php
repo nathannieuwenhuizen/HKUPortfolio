@@ -43,6 +43,8 @@
 	</header>
 	<nav>
 		<ul id="navigation">
+		<a id ="profileShortcut" href="./index.php"></a>
+
 			<li><a href="./">Home</a></li>
 			<li><a href="./#projecten">Projects</a></li>
 			<li><a href="./#about">About</a></li>
@@ -160,9 +162,9 @@
 		</section>
 
 		<section id="projecten">
-			<h3> Highlights</h3>
+			<!-- <h3> Highlights</h3> -->
 
-			<section class="slider">
+			<section class="slider" style="display:none;">
 				<section class="buttons">
 					<section class="button">
 					</section>
@@ -175,7 +177,7 @@
 				</section>
 			</section>
 
-			<h3> All projects</h3>
+			<h2> All projects</h2>
 
 		</section>
 
