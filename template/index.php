@@ -8,6 +8,7 @@
 	<link id="stylesheet" rel="stylesheet" href="assets/style.css" type="text/css" />
 	<script src="assets/dir.php"></script>
 	<script src="app.js"></script>
+	<script src="assets/flocking.js"></script>
 </HEAD>
 
 <BODY>
@@ -17,7 +18,11 @@
 		<section class="title_image">
 			<canvas id="selfCanvas"></canvas>
 			<div id="selfImage">
+			<div id="circleWrapper">
+				<div id="flockButton">Flock me! </div>
+				<canvas id="canvas"></canvas>
 				<canvas id="selfCanvasResult"></canvas>
+			</div>
 				<form action="assets/upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" id="selfFile" name="selfFile" style="display: none;"/>
 					<input type="button" value="Browse..." name="selfButton" id ="selfButton" onclick="document.getElementById('selfFile').click();" />

@@ -202,22 +202,56 @@ body {
                     text-align: center;
                     position: relative;
                     height: 100%;
-
-                    #selfCanvasResult {
-                        // border: 5px solid green;
-                        max-height: 100%;
-                        max-width: 100%;
-                        width: 60%;
-                        position: absolute;
-                        border: 20px solid;
-                        border-color: linear-gradient(rgba(78, 223, 218, 0.5), rgba(51, 0, 85, 0.5));
-                        border-radius: 50%;
-                        top: 50px;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        margin: auto;
+                    #circleWrapper{
+                        
+                        #flockButton{
+                            border: 5px solid black;
+                            width: 50px;
+                            height: 50px;
+                            vertical-align: center;
+                            border-radius: 50%;
+                            border: 10px solid black;
+                            background: black;
+                            color: white;
+                            position: absolute;
+                            top: 10%;
+                            left: 10%;
+                            transition: all 200ms;
+                            padding: 10px;
+                        }
+                        #flockButton:hover{
+                            border-width: 15px;
+                            color: black;
+                            background: white;
+                            cursor: pointer;
+                        }
+                        #selfCanvasResult, #canvas {
+                            max-height: 100%;
+                            max-width: 100%;
+                            width: 60%;
+                            position: absolute;
+                            border: 20px solid black;
+                            border-radius: 50%;
+                            top: 50px;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            background-color: black;
+                        }
+                        #canvas{
+                            z-index: -1;
+                            opacity: 0;
+                            // display: none;
+                            transition: opacity 400ms;
+                        }
+                        #canvas:hover{
+                            // opacity: 1;
+                            // cursor: crosshair;
+                        }
                     }
+
+                    
 
                     #selfValue {
                         // margin: 0 auto;

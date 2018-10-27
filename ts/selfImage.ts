@@ -8,7 +8,7 @@ export default class SelfImage {
 
     private cellImage: any = '/page_elements/profile.jpg';
     private bigImage: any = '/page_elements/profile.jpg';
-    private fileInput: any; 
+    private fileInput: any;
 
     private imageSize: number = 200;
     private resultSize: number = 2000;
