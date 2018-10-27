@@ -255,6 +255,9 @@
 						<b> Type:</b>
 						<p id="projectTitle"> loading... </p>
 
+						<b> Team:</b>
+						<p id="projectTeam"> loading... </p>
+
 						<b> Duaration:</b>
 						<p id="projectDuration"> loading... </p>
 
@@ -272,7 +275,7 @@
 
 			</section>
 			<section class="projectSummary">
-				<h4>Summary</h4>
+				<h3>Description</h3>
 				<p id="projectDescription">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.
 					Lorem Ipsum is de standaard
 					proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met

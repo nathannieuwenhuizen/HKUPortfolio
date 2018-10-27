@@ -29,8 +29,8 @@
     .projectInfo {
 
         // padding: 1vw 2vw;
-        margin-left: 2vw;
-        width: 18vw; 
+        margin-left: 0vw;
+        width: 20vw; 
         float: left;
         // outline: 5px dotted red;
         text-align: left;
@@ -46,11 +46,13 @@
 
             b {
                 line-height: 0px;
+                margin-top: 0;
             }
 
             p {
                 margin-top: 0px; 
-                line-height: 20px;
+                // margin-bottom: 5px; 
+                line-height: 15px;
             }
 
         }
@@ -62,12 +64,13 @@
             width: 100%;
             align-content: center;
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             margin-left: -2vw;
             a{
                 @extend %border-button;
                 // width: 5vw;
-                margin: 0.2vw;
+                margin: 0.1vw 0.2vw;
+                font-size: 0.8em;
                 // height: 5vw;
             }
             .github {

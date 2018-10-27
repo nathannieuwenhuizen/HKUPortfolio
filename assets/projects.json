@@ -18,7 +18,7 @@
             ""
         ],
         "buttons": [
-            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/HKU/dist/index.html", "code"]
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/HKU/dist/index.html", "play!"]
         ]
 
     },
@@ -156,7 +156,7 @@
         "team": "1 Developer (personal project)",
         "type": "Javascript",
         "duration": "Spare time",
-        "date": "",
+        "date": "May 2016",
         "summary": "HTML5 project to explore gravititational pulling and vectors.",
         "description": " <p>When my class were learning about programming planet orbits and forces in Javascript</p><p> I was impressed by the movements of the objects rotating around the center that I was eager to og on with mutliple objects.</p><p>I experimented with various spawning algorithms and forces and I saw interesting formations as you can see in the screen recordings here. I putted the variables in a consolo left above the screen to open.</p> <p>The resuls: an amazing visual light show for you to experiment yourself with! </p> <h3>My role</h3> <p> <li>Game programmed in Javscript</li> <li>Made the orb art.</li> <li>CSS programmed</li> </p> <h3>Game features:</h3> <p> <li>Menu to tweak variabls</li> <li>Good visual representation</li> <li>Endless posiblities</li> </p>",
         "images": [

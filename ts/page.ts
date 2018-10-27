@@ -290,6 +290,7 @@ export default class Page {
         // console.log(data);
         document.title = data.title;
         document.getElementById('projectTitle').innerHTML = data.type;
+        document.getElementById('projectTeam').innerHTML = data.team;
         document.getElementById('project_title_h').innerHTML = data.title;
         document.getElementById('projectDuration').innerHTML = data.duration;
         document.getElementById('projectDate').innerHTML = data.date;
