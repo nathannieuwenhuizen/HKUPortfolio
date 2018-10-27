@@ -41,7 +41,60 @@ export interface Ihomework {
 }
 export class HomeWork {
     public data: Ihomework[];
+    public messages: string[];
     constructor() {
+        this.messages = [
+            'Howdy Parthner!',
+            'Hello world',
+            'Sup brother!',
+            '010101000101... just kidding!',
+            'Click on the left for flocking algorithm',
+            'Do I look good?',
+            'Good moring! or... midday? ...evening?',
+            'Welcome!',
+            'Hey! :)',
+            'Hello!',
+            'Hello visitor',
+            'Greetings traveler!',
+            'Hey.........BROTHER! (rip avicii)',
+            'I\'m Nathan!',
+            'Cheers!',
+            'Zzzzz...',
+            'This is a message',
+            'Wow, I didn\'t saw you there!',
+            'Uhmmm... hello?',
+            'Wanna hear a joke?\n Me neither!',
+            'I\'m a programmer!',
+            'Wanna make games?',
+            '*type... type... type*',
+            'Good day!',
+            '8 bytes walk into a bar, the bartenders asks “What will it be?” One of them says, “Make us a double.”',
+            'Chuck Norris writes code that optimizes itself.',
+            '99 little bugs in the code, \n 99 little bugs,\n Take one down, Patch it around, \n 117 little bugs in the code.',
+            'In order to understand recursion, you must first understand recursion.',
+            'error log 101... wait! You did fount out!',
+            '0, 1, 2, 3, 4, 5!',
+            'Did you know you are a guest?',
+            'Heeeeeeeeeey',
+            'Aloha!',
+            'Goedendag meneer! (dutch)',
+            'Can you give me comany?',
+            'Whalla!',
+            'Hmm... interesting',
+            'B...E...A...utiful!',
+            '1337',
+            'LEEROY JENKINS!',
+            'Us gamers must unite!',
+            'Programmer = A machine that turns coffee into code.',
+            '<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Important code tutorial! </a>',
+            'Did you already get rick rolled? If not, then refresh until you do!',
+            'Do you wanna see awesome works?',
+            'Sup!',
+            'Whats up!',
+            'Wahtsaaaap!',
+            'Konichua, visitor-chan!',
+            'I\m a seak bubble!'
+        ];
         this.data = [
             //tekenen!
             {

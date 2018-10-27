@@ -56,7 +56,7 @@ export default class App {
         this.updateStyle();
     }
     private updateStyle(): void {
-        console.log('click!');
+        console.log('click!!!');
         document.getElementById('stylesheet').setAttribute('href', 'assets/' + (App.style === '1' ? 'style2' : 'style') + '.css');
         // document.getElementById('styleButton').setAttribute('href', App.style === '1' ? './?style=0' : './?style=1');
     }
@@ -107,9 +107,24 @@ export default class App {
          else {
             buttons[0].className = 'selected';
             showHeader = true;
+            this.helloWorld();
         }
 
         document.getElementsByTagName('header')[0].style.display = showHeader ? 'block' : 'none';
+    }
+
+    public helloWorld(): void {
+        let randomIndex: number = Math.floor(Math.random() * this.homework.messages.length);
+        let message: string = this.homework.messages[randomIndex];
+        this.updateHelloWorld(0, message);
+    }
+    public updateHelloWorld(i: number, str: string): void {
+        document.getElementById('speak').innerHTML = str.substr(0, i);
+        if (i < str.length) {
+            setTimeout(() => {
+                this.updateHelloWorld(i + 1, str);
+            }, 50);
+        }
     }
     public static cap(value: number, min: number, max: number): number {
         return Math.min(Math.max( value, min), max);

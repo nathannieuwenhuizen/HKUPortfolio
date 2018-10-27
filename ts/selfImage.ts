@@ -64,7 +64,7 @@ export default class SelfImage {
 
         this.uploadButton = document.getElementById('uploadImage');
         this.uploadButton.onclick = this.showUploadedImages.bind(this);
-        
+
         this.rImg.src = this.cellImage;
         this.img.src = this.cellImage;
     }

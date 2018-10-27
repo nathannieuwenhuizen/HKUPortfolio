@@ -22,6 +22,7 @@
 				<div id="flockButton">Flock me! </div>
 				<canvas id="canvas"></canvas>
 				<canvas id="selfCanvasResult"></canvas>
+				<div id="speak">...</div>
 			</div>
 				<form action="assets/upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" id="selfFile" name="selfFile" style="display: none;"/>
