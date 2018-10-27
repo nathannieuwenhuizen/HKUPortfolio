@@ -93,11 +93,15 @@ export default class App {
             buttons[2].className = 'selected';
             this.page.loadProjectOverview(this.data);
             this.slider.updateSlider();
+            document.title = 'projects';
+
         } else if (window.location.href.indexOf('#about') > -1) {
             buttons[3].className = 'selected';
             this.page.aboutMe();
+            document.title = 'about Nathan Nieuiwenhuizen';
         } else if (window.location.href.indexOf('#contact') > -1) {
             buttons[4].className = 'selected';
+            document.title = 'contact';
         } else if (window.location.href.indexOf('#HKU') > -1) {
             buttons[5].className = 'selected';
             this.page.loadHKUwork(this.homeworkData);
