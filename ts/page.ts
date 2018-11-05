@@ -35,7 +35,7 @@ export default class Page {
 
         let aboutField: any = document.getElementsByClassName('aboutField')[0];
         aboutField.classList.add('aboutField_show');
-        addEventListener('mousemove', (event: any) => {
+        /*addEventListener('mousemove', (event: any) => {
             let rect: any = aboutField.getBoundingClientRect();
             let dist: any = {
                 x: event.clientX - (rect.x + rect.width / 2)
@@ -48,10 +48,7 @@ export default class Page {
                 // 'rotateX(' + -Math.min(maxDegree, Math.max(-maxDegree, (dist.y / 100))) + 'deg)';
             console.log(dist);
 
-        });
-        this.about_interval = setInterval(() => {
-            //
-        }, 1);
+        });*/
     }
     public hideAboutMe(): void {
         let aboutField: any = document.getElementsByClassName('aboutField')[0];
@@ -233,8 +230,6 @@ export default class Page {
 
             projecten.appendChild(sec);
         }
-
-
 
         //thumbs - old
         /* for (let i: number = 0; i < data.length; i++) {
