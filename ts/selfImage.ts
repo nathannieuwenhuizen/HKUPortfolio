@@ -191,7 +191,6 @@ export default class SelfImage {
                             //1280 by 720
                             this.rContext.drawImage(this.uploadedImages[index], (1280 - 720) / 2, 0, 720, 720, resultPos.x, resultPos.y, resultCellSize, resultCellSize);
                             // this.rContext.drawImage(this.uploadedImages[index], resultPos.x, resultPos.y, resultCellSize, resultCellSize);
-                            
                         }
                         this.rContext.globalAlpha = 0.5;
                         this.rContext.fillRect(resultPos.x, resultPos.y, resultCellSize, resultCellSize);
@@ -202,6 +201,41 @@ export default class SelfImage {
                 }
             }
         }
+
+        //omlijsting zelfportret opdracht
+
+        // for (let x: number = 0; x < this.imageSize; x += this.cellSize * 2) {
+        //     let resultPos: any = {
+        //         x: x * aspectIncrease,
+        //         y: 0 * aspectIncrease
+        //     };
+
+        //     let index: number = Math.floor(Math.random() * this.uploadedImages.length);
+        //     this.rContext.drawImage(this.uploadedImages[index], (1280 - 720) / 2, 0, 720, 720, resultPos.x, resultPos.y, resultCellSize * 2, resultCellSize * 2);
+        //     console.log('rendering!');
+        //     resultPos = {
+        //         x: x * aspectIncrease,
+        //         y:  this.imageSize / this.aspectRatio * aspectIncrease - resultCellSize * 2
+        //     };
+        //     this.rContext.drawImage(this.uploadedImages[index], (1280 - 720) / 2, 0, 720, 720, resultPos.x, resultPos.y, resultCellSize * 2, resultCellSize * 2);
+        // }
+
+        // for (let y: number = 0; y < this.imageSize / this.aspectRatio; y += this.cellSize * 2) {
+        //     let resultPos: any = {
+        //         x: 0 * aspectIncrease,
+        //         y: y * aspectIncrease
+        //     };
+
+        //     let index: number = Math.floor(Math.random() * this.uploadedImages.length);
+        //     this.rContext.drawImage(this.uploadedImages[index], (1280 - 720) / 2, 0, 720, 720, resultPos.x, resultPos.y, resultCellSize * 2, resultCellSize * 2);
+        //     console.log('rendering!');
+        //     resultPos = {
+        //         x: this.imageSize * aspectIncrease - resultCellSize * 2,
+        //         y: y * aspectIncrease
+        //     };
+        //     this.rContext.drawImage(this.uploadedImages[index], (1280 - 720) / 2, 0, 720, 720, resultPos.x, resultPos.y, resultCellSize * 2, resultCellSize * 2);
+        // }
+
     }
 
     // private loadFile(url: string): any {
