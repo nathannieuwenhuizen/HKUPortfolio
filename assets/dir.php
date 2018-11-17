@@ -1,5 +1,5 @@
 var files = <?php $out = array();
-	foreach (glob('./uploads/*.*') as $filename) {
+	foreach (glob('./selfImage/subs/*.*') as $filename) {
 		$p = pathinfo($filename);
 		if ( $p['extension'] === 'jpg' ||  $p['extension'] === 'png') {
 			$out[] = $p['filename'] . '.' . $p['extension'];
@@ -8,7 +8,7 @@ var files = <?php $out = array();
 	echo json_encode($out);
 ?>
 <!-- var selfFiles = <?php $out = array();
-	foreach (glob('./selfImage/*.jpg') as $filename) {
+	foreach (glob('./selfImage/subs/*.jpg') as $filename) {
 		$p = pathinfo($filename); 
 		$out[] = $p['filename'];
 	}

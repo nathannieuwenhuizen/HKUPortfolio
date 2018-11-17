@@ -25,25 +25,31 @@ export default class SelfImage {
 
     public root: string;
     public uploadedImages: HTMLImageElement[];
+    public aspectRatio: number = 1;
+
     //other
     private pxData: any;
-    constructor(root: string = 'assets/', sizeToscreen: boolean = false) {
+    constructor(root: string = 'assets/', sizeToscreen: boolean = false, imageString: string = '/page_elements/profile.jpg') {
         this.root = root;
         this.canvas = (<HTMLCanvasElement>document.getElementById('selfCanvas'));
         this.rCanvas = (<HTMLCanvasElement>document.getElementById('selfCanvasResult'));
 
         this.sizeToscreen = sizeToscreen;
-        this.cellImage = root + this.cellImage;
-        this.bigImage = root + this.bigImage;
+        this.cellImage = root + imageString;
+        this.bigImage = root + imageString;
 
+        if (sizeToscreen) {
+            this.aspectRatio = 520 / 720;
+        }
         this.canvas.width = this.imageSize;
-        this.canvas.height = this.imageSize;
+        this.canvas.height = this.imageSize / this.aspectRatio;
 
         if (this.sizeToscreen) {
-            this.resultSize = Math.min(window.innerHeight, window.innerWidth);
+            // this.resultSize = Math.min(window.innerHeight, window.innerWidth);
+            
         }
         this.rCanvas.width = this.resultSize;
-        this.rCanvas.height = this.resultSize;
+        this.rCanvas.height = this.resultSize / this.aspectRatio;
 
         this.context = this.canvas.getContext('2d');
 
@@ -75,12 +81,12 @@ export default class SelfImage {
         this.typeOfCell = 4;
         this.uploadedImages = [];
         if (files) {
-            let length: number =  Math.min(50, files.length)
+            let length: number =  Math.min(100, files.length);
             for (let i: number = 0; i < length; i++) {
                 let tmp: HTMLImageElement = new Image();
-                tmp.src =  this.root + 'uploads/' + files[i];
+                tmp.src =  this.root + 'selfImage/subs/' + files[i];
                 tmp.onload = () => {
-                    // console.log(this.uploadedImages);
+                    console.log(this.uploadedImages);
                     this.uploadedImages.push(tmp);
                     if (this.uploadedImages.length === length) {
                         console.log('load complete!');
@@ -122,7 +128,7 @@ export default class SelfImage {
 
         //draw image on original canvas to use as reference
         // this.rImg.src = this.cellImage;
-        this.context.drawImage(this.rImg, 0, 0, this.imageSize, this.imageSize);
+        this.context.drawImage(this.rImg, 0, 0, this.imageSize, this.imageSize / this.aspectRatio);
 
         // this.img.src = this.cellImage;
 
@@ -139,7 +145,8 @@ export default class SelfImage {
         }
         //draw the pixels based on image
         for (let x: number = 0; x < this.imageSize; x += this.cellSize) {
-            for (let y: number = 0; y < this.imageSize; y += this.cellSize) {
+            for (let y: number = 0; y < this.imageSize / this.aspectRatio; y += this.cellSize) {
+                //circle image (sort of)
                 if (Math.sqrt(Math.pow(this.imageSize / 2 - x, 2) + Math.pow(this.imageSize / 2 - y, 2)) >= this.imageSize / 2) {
                     //continue;
                 }
@@ -180,8 +187,11 @@ export default class SelfImage {
                         //random images
                         if (this.uploadedImages.length > 0) {
                             let index: number = Math.floor(Math.random() * this.uploadedImages.length);
-                            // index = (x * this.imageSize / this.cellSize + y / this.cellSize) % this.uploadedImages.length; 
-                            this.rContext.drawImage(this.uploadedImages[index], resultPos.x, resultPos.y, resultCellSize, resultCellSize);
+                            // index = (x * this.imageSize / this.cellSize + y / this.cellSize) % this.uploadedImages.length;
+                            //1280 by 720
+                            this.rContext.drawImage(this.uploadedImages[index], (1280 - 720) / 2, 0, 720, 720, resultPos.x, resultPos.y, resultCellSize, resultCellSize);
+                            // this.rContext.drawImage(this.uploadedImages[index], resultPos.x, resultPos.y, resultCellSize, resultCellSize);
+                            
                         }
                         this.rContext.globalAlpha = 0.5;
                         this.rContext.fillRect(resultPos.x, resultPos.y, resultCellSize, resultCellSize);
