@@ -19,7 +19,7 @@
 			<canvas id="selfCanvas"></canvas>
 			<div id="selfImage">
 			<div id="circleWrapper">
-				<div id="flockButton">Flock me! </div>
+				<div id="flockButton">Show boids! </div>
 				<canvas id="canvas"></canvas>
 				<canvas id="selfCanvasResult"></canvas>
 				<div id="speak">...</div>
@@ -196,7 +196,7 @@
 				<input type="submit" id="submit" value="Send">
 				<!-- <input type="reset" value="Reset"> -->
 			</form>
-			<center><object data="https://www.gentlemens-magic.com/prubiked/28JM6" frameborder="no" scrolling="no" width="100%" height="400px"></object></center>
+			<!-- <center><object data="https://www.gentlemens-magic.com/prubiked/28JM6" frameborder="no" scrolling="no" width="100%" height="400px"></object></center> -->
 		</section>
 
 		<section id="HKU">

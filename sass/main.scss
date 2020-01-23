@@ -3,6 +3,17 @@ html, body{
     height: 100%;
     margin: 0;
 }
+
+@font-face {
+  font-family: 'MyWebFont';
+  src: url("fonts/earthorbiterbold.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+
+@font-face {
+  font-family: 'CodeFont';
+  src: url("fonts/JosefinSans-Bold.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+
 body {
     height: auto;
     color: $p_color;
@@ -179,20 +190,22 @@ body {
             position: relative;
 
             .title_text {
+                font-family: MyWebFont;
                 position: relative;
                 float: left;
-                width: 50%;
+                width: 60%;
                 height: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: left;
 
                 .text {
                     text-align: left;
                     position: relative;
 
                     h1 {
-                        font-size: 3.5vw;
+                        text-align: left;
+                        font-size: 6.2vw;
                         margin: 0;
                     }
 
@@ -208,7 +221,7 @@ body {
             .title_image {
                 height: 100%;
                 float: left;
-                width: 50%;
+                width: 40%;
                 position: relative;
 
                 #selfCanvas {
@@ -224,13 +237,12 @@ body {
                     #circleWrapper{
                         
                         #flockButton{
-                            border: 5px solid black;
                             width: 50px;
                             height: 50px;
                             vertical-align: center;
                             border-radius: 50%;
-                            border: 10px solid black;
-                            background: black;
+                            border: 10px solid $nav-color;
+                            background: $nav-color;
                             color: white;
                             position: absolute;
                             top: 10%;
@@ -240,7 +252,7 @@ body {
                             opacity: 0.8;
                         }
                         #flockButton:hover{
-                            color: black;
+                            color: $nav-color;
                             background: white;
                             cursor: pointer;
                         }
@@ -267,6 +279,8 @@ body {
                         
                         #speak{
                             @extend %speak;
+                            font-family: CodeFont;
+
                         }
                     }
 
@@ -581,6 +595,8 @@ body {
             font-size: 1.1em;
         }
     }
-
+    .hide {
+        display: none;
+    }
 
 }

@@ -1,4 +1,45 @@
-[{
+[
+    {
+        "title": "Plant Audio Visualizer",
+        "team": "By myself",
+        "type": "Visualizer / procedural art",
+        "duration": "2 weeks",
+        "date": "November 2019",
+        "summary": "First attempt at procedural art",
+        "description": "We often visualize our images when we hear music, or that goes with bars that are on and of go down or lines that make waves, in short there are many different ways to do this. \n Before the first lesson, I was inspired by a song from Blackmore’s \n Night. I imagined a growing plant that went with the music and became complicated \n made movements as it grew. Think of magic beans from the fairy tale “Jack and \n the Beanstalk ”. \n \n I want the plant to grow up to the music that it did \n can respond to user input by using. for example \n clicking on the screen, unfortunately that did not work within the \n but we will elaborate on that later. \n ",
+        "images": [
+            "./assets/projects/procArt/0.gif",
+            "./assets/projects/procArt/1.gif",
+            "./assets/projects/procArt/2.gif",
+            "./assets/projects/procArt/3.gif",
+            "./assets/projects/procArt/4.gif"
+        ],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/ProceduralArt/tree/dev", "code"],
+            ["./assets/files/logboek.pdf", "play"]
+        ]
+    },
+    {
+        "title": "Portfolio iteration v1",
+        "team": "By myself",
+        "type": "website / project",
+        "duration": "2 weeks",
+        "date": "September 2018",
+        "summary": "First itteration of portfolio website for the HKU",
+        "description": "In this sub part section of the portfolio project, the basic functonality is added. You can view the logbook at the info button or <a href='./assets/files/logboek.pdf'>here</a>. <br> Zip file: <a href='./assets/files/build.zip'>link</a>.",
+        "images": [
+            "./assets/projects/po1.jpg",
+            "./assets/projects/po2.jpg",
+            "./assets/projects/po3.jpg",
+            "./assets/projects/po4.jpg",
+            ""
+        ],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/HKUPortfolio", "code"],
+            ["./assets/files/logboek.pdf", "logbook"]
+        ]
+    },
+    {
         "title": "Slide Puzzle Challenge",
         "team": "by myself",
         "type": "HTML5 Game",
@@ -21,26 +62,6 @@
             ["https://nathannieuwenhuizen.github.io/PlayableBuilds/HKU/dist/index.html", "play!"]
         ]
 
-    },
-    {
-        "title": "Portfolio iteration v1",
-        "team": "By myself",
-        "type": "website / project",
-        "duration": "2 weeks",
-        "date": "September 2018",
-        "summary": "First itteration of portfolio website for the HKU",
-        "description": "In this sub part section of the portfolio project, the basic functonality is added. You can view the logbook at the info button or <a href='./assets/files/logboek.pdf'>here</a>. <br> Zip file: <a href='./assets/files/build.zip'>link</a>.",
-        "images": [
-            "./assets/projects/po1.jpg",
-            "./assets/projects/po2.jpg",
-            "./assets/projects/po3.jpg",
-            "./assets/projects/po4.jpg",
-            ""
-        ],
-        "buttons": [
-            ["https://github.com/nathannieuwenhuizen/HKUPortfolio", "code"],
-            ["./assets/files/logboek.pdf", "logbook"]
-        ]
     },
     {
         "title": "Blasterfest",

@@ -113,6 +113,11 @@ export default class App {
             showHeader = true;
             this.helloWorld();
         }
+        if (showHeader) {
+            document.getElementsByClassName('content')[0].classList.add('hide');
+        } else {
+            document.getElementsByClassName('content')[0].classList.remove('hide');
+        }
 
         document.getElementsByTagName('header')[0].style.display = showHeader ? 'block' : 'none';
         document.getElementById('profileShortcut').style.display = !showHeader ? 'block' : 'none';
