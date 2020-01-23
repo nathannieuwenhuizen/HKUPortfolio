@@ -15,8 +15,27 @@
             "./assets/projects/procArt/4.gif"
         ],
         "buttons": [
-            ["https://github.com/nathannieuwenhuizen/ProceduralArt/tree/dev", "code"],
-            ["./assets/files/logboek.pdf", "play"]
+            ["https://github.com/nathannieuwenhuizen/ProceduralArt/tree/dev", "code"]
+        ] 
+    },
+    {
+        "title": "Blocky Climb",
+        "team": "By myself",
+        "type": "2D game",
+        "duration": "4 weeks",
+        "date": "May 20189",
+        "summary": "A simple 2D platformer game",
+        "description": "Story: \n The game is about a climber who is the magic \n want to get an apple tree. Hereby goes the \n climber use his trusted \n grappling hook that takes him everywhere \n Gameplay \n This is a simple 2D platformer where your character \n can jump, walk, jump off the wall and the \n use grappling hook. When you focus on one \n you can shoot yourself to it \n with a faster speed. This is possible from any \n corner. You can also use the grappling hook again immediately \n let go and thereby let yourself fall. <iframe width='560' height='315' src='https://www.youtube.com/embed/G6zc6rClGbU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+        "images": [
+            "./assets/projects/blocky/0.PNG",
+            "https://i.gyazo.com/872e55eb1d3f850eaaa16b23cfa5f5d7.gif",
+            "./assets/projects/blocky/1.PNG", 
+            "./assets/projects/blocky/2.PNG",
+            "./assets/projects/blocky/3.PNG"
+        ],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/BPW2_project", "code"],
+            ["./huiswerk/BUILDING_PLAYFUL_WORLDS/bpw2/playablebuild/index.html", "play"]
         ]
     },
     {

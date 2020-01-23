@@ -22,7 +22,7 @@
 				<div id="flockButton">Show boids! </div>
 				<canvas id="canvas"></canvas>
 				<canvas id="selfCanvasResult"></canvas>
-				<div id="speak">...</div>
+				<div id="speak" class="hide">...</div>
 			</div>
 				<form action="assets/upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" id="selfFile" name="selfFile" style="display: none;"/>
@@ -36,7 +36,8 @@
 		</section>
 		<section class="title_text">
 			<section class="text">
-				<h1>Nathan Nieuwenhuizen</h1>
+				<h1>Nathan</h1>
+				<h1>Nieuwenhuizen</h1>
 				<h2>Game developer</h2>
 			</section>
 		</section>
@@ -295,9 +296,9 @@
 	<footer>
 			<p id="viewCount">You are the  <?php 
 			$views = file_get_contents("views.txt");
+			echo $views;
 			$views += 1;
 			file_put_contents("views.txt", $views);
-			echo $views;
 ?>th visitor!</p>
 			<p> - Made by Nathan Nieuwenhuizen!</p>
 

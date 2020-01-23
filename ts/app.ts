@@ -111,7 +111,8 @@ export default class App {
          else {
             buttons[1].className = 'selected';
             showHeader = true;
-            this.helloWorld();
+            setTimeout(this.helloWorld.bind(this), 2000);
+            //this.helloWorld();
         }
         if (showHeader) {
             document.getElementsByClassName('content')[0].classList.add('hide');
@@ -126,6 +127,7 @@ export default class App {
     public helloWorld(): void {
         let randomIndex: number = Math.floor(Math.random() * this.homework.messages.length);
         let message: string = this.homework.messages[randomIndex];
+        document.getElementById('speak').classList.remove('hide');
         this.updateHelloWorld(0, message);
     }
     public updateHelloWorld(i: number, str: string): void {

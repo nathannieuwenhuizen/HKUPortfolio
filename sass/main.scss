@@ -202,17 +202,27 @@ body {
                 .text {
                     text-align: left;
                     position: relative;
-
+                    overflow: hidden;
                     h1 {
                         text-align: left;
                         font-size: 6.2vw;
                         margin: 0;
+                        animation: titleSlideIn 1.5s linear 0s;
+                        animation-timing-function: ease-in-out;
                     }
 
                     h2 {
                         margin: 0;
                         text-align: left;
                         font-size: 3.0vw;
+                        margin-left: -100vw;
+                        animation: titleSlideIn 1.5s linear .5s;
+                        animation-timing-function: ease-in-out;
+                        animation-fill-mode: forwards;
+                    }
+                    @keyframes titleSlideIn {
+                        from {margin-left: -100vw;}
+                        to {margin-left: 0;}
                     }
                 }
 
@@ -229,8 +239,20 @@ body {
                     opacity: 0.0;
                 }
 
+                @keyframes imageSlideOut {
+                    from {margin-left: 30vw;}
+                    to {margin-left: 0vw;}
+                }
+
                 #selfImage {
-                    // border: 3px solid red;
+
+                    animation: imageSlideOut 1.5s linear .5s;
+                    animation-timing-function: ease-in-out;
+                    animation-fill-mode: backwards;
+                    z-index: 2;
+                    margin-left: 0vw;
+                    width: 40vw;
+                    //border: 3px solid red;
                     text-align: center;
                     position: relative;
                     height: 100%;
