@@ -87,7 +87,7 @@ module.exports = {
             // server: {
             //     baseDir: ['./builds/dev']
             // }, // for local browser sync
-            proxy: 'localhost/webpack-portfolio/builds/dev/' //to browser sync the php enviroment
+            proxy: 'localhost/HKUPortfolio/builds/dev/' //to browser sync the php enviroment
         }, {
             reload: true
         }),
@@ -127,28 +127,28 @@ module.exports = {
             tslint: path.join(__dirname, '../tslint.json'),
             tsconfig: path.join(__dirname, '../tsconfig.json'),
         }),
-        new SpritesmithPlugin({
-            src: {
-                cwd: path.resolve(__dirname, '../atlas_assets'),
-                glob: '**/*.png'
-            },
-            target: {
-                image: path.resolve(__dirname, '../builds/dev/assets/atlases/sprite.png'),
-                css: [
-                    //optional if we want a css file referencing the atlas
-                    //path.resolve(__dirname, '../builds/dev/assets/atlases/sprite.css'),
-                    [path.resolve(__dirname, '../builds/dev/assets/atlases/sprite.json'), {
-                        format: 'json_texture'
-                    }]
-                ]
-            },
-            apiOptions: {
-                cssImageRef: "~sprite.png"
-            },
-            spritesmithOptions: {
-                padding: 5
-            },
-        })
+        // new SpritesmithPlugin({
+        //     src: {
+        //         cwd: path.resolve(__dirname, '../atlas_assets'),
+        //         glob: '**/*.png'
+        //     },
+        //     target: {
+        //         image: path.resolve(__dirname, '../builds/dev/assets/atlases/sprite.png'),
+        //         css: [ 
+        //             //optional if we want a css file referencing the atlas
+        //             //path.resolve(__dirname, '../builds/dev/assets/atlases/sprite.css'),
+        //             [path.resolve(__dirname, '../builds/dev/assets/atlases/sprite.json'), {
+        //                 format: 'json_texture'
+        //             }]
+        //         ]
+        //     },
+        //     apiOptions: {
+        //         cssImageRef: "~sprite.png"
+        //     },
+        //     spritesmithOptions: {
+        //         padding: 5
+        //     },
+        // })
   ]
 
 };

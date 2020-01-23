@@ -21,10 +21,10 @@ export default class App {
         document.getElementById('styleButton').onclick = this.toggleStyle.bind(this);
         this.updateStyle();
 
-        this.data = this.loadFile('./assets/projects.json');
+        this.data = this.loadFile('./assets/projects.json'); 
         this.homeworkData = this.loadFile('./assets/homework.json');
 
-        this.homework = new HomeWork();
+        this.homework = new HomeWork(); 
         this.homeworkData = this.homework.data;
         // console.log(this.homeworkData);
         // console.log('locatio prot', window.location.protocol);
