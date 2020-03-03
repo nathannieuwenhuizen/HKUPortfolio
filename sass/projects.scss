@@ -1,0 +1,180 @@
+.flipTile:hover {
+    z-index: 2;
+
+    .cover {
+        transform: rotateY(-135deg);
+    }
+
+    transform: rotateZ(-5deg) translate(100px, -40px);
+
+    .backPage {
+        -webkit-box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 0.2);
+    }
+
+}
+
+.flipTile {
+    margin: 20px;
+
+    // background: red;
+    border: 5px solid black;
+    border-top-color: rgb(60, 60, 60);
+    border-left: none;
+    border-bottom: none;
+    width: 250px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+    // box-shadow: $box-shadow;
+    display: inline-block;
+    transform-origin: left;
+    transition: transform 800ms ease-in-out;
+
+    .cover,
+    .backPage {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+    }
+
+    .cover {
+        z-index: 1;
+        // border: 1px solid blue;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        transform: rotateY(0deg);
+        transition: transform 800ms ease-in-out;
+        top: -2px;
+
+        .front,
+        .back {
+            border: 2px solid black;
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            // background: rgba(0,0,0,0.9);
+            background: url(./projects/bf2.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            -webkit-box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 1);
+            -moz-box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 1);
+            box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 1);
+
+
+            h2 {
+                color: white;
+                background: rgba(0, 0, 0, 0.75);
+                padding: 10px;
+            }
+        }
+
+        .back {
+            background: url(./projects/bf1.jpg);
+
+            background-size: contain;
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            -webkit-box-shadow: inset 0px 0px 157px 42px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: inset 0px 0px 157px 42px rgba(0, 0, 0, 0.75);
+            box-shadow: inset 0px 0px 157px 42px rgba(0, 0, 0, 0.75);
+
+            transform: rotateY(180deg);
+        }
+    }
+
+    .backPage {
+        overflow: hidden;
+        border: 1px solid black;
+        background: rgb(230, 230, 230);
+
+        transition: box-shadow 800ms ease-in-out;
+        -webkit-box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 1);
+        -moz-box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 1);
+        box-shadow: inset 41px -21px 98px -48px rgba(0, 0, 0, 1);
+
+        p {
+            text-align: left;
+            padding: 0 30px;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 0;
+            width: inherit;
+
+            a {
+                @extend %border-button;
+            }
+        }
+    }
+}
+
+// .projectTile {
+//     // display: inline-block;
+//     float: left;
+//     height: auto;
+//     min-height: 420px;
+//     margin: 1.5%;
+//     //border: 2px dotted red;
+//     box-shadow: $box-shadow;
+//     width: 30%;
+//     padding: 2vw 0px;
+//     position: relative;
+
+//     img {
+//         //padding: 50px;
+//         cursor: pointer;
+//         max-height: 250px;
+//         max-width: 80%;
+//         border: 2px solid $box_border_color;
+//         transition: border 0.15s ease-in-out;
+//     }
+
+//     img:hover {
+//         border: 5px solid $box_border_color;
+//     }
+
+//     a {
+//         // font-size: 10px;
+//         color: $p_color;
+//         cursor: pointer;
+//     }
+
+//     .buttonContainer {
+//         height: 6vw;
+//         padding: 1vw 1vw;
+//         position: absolute;
+//         bottom: 0;
+//         width: 90%;
+//         align-content: center;
+
+//         section {
+//             @extend %image-button;
+//             width: 5vw;
+//             margin: 0 1vw;
+//             height: 5vw;
+//         }
+
+//         .github {
+//             background-image: url(page_elements/github.png);
+//         }
+
+//         .info {
+//             background-image: url(page_elements/info.png);
+//         }
+
+//         .play {
+//             background-image: url(page_elements/controller.png);
+//         }
+//     }
+// }

@@ -1,0 +1,229 @@
+body {
+
+
+    p {
+        color: $p_color;
+        font-size: 20pt;
+    }
+
+    H1 {
+        font-weight: bold;
+        font-size: 35pt;
+        text-align: center;
+        color: $dark-color;
+    }
+
+    H2 {
+        font-weight: bold;
+        font-size: 30pt;
+        text-align: center;
+        color: $dark-color;
+    }
+
+    H3 {
+        font-weight: bold;
+        font-size: 28pt;
+        color: $h_color;
+    }
+
+    #wrapper {
+        width: 100%;
+        min-height: calc(100vh - 50px);
+        float: left;
+        padding-bottom: 70px;
+
+        nav {
+            width: 100%;
+            float: none;
+            background: transparent;
+            font-size: 18px;
+            font-weight: bold; //height: 20vh;
+            ul {
+
+                align-content: center;
+                text-align: center;
+                list-style-type: none;
+                padding: 0;
+                #profileShortcut{
+                    position: relative;
+                    margin: 1vh auto;
+                    width: 200px;
+                    height: 200px;
+                    border: 5px solid black;
+                }
+        
+                li {
+                    //margin-left: 5vw;
+                    width: 80vw;
+                    height: 100px;
+                    background-size: 200vw;
+        
+                    a {
+                        font-size: 30pt;
+                    }
+                }
+        
+            }
+        }
+        
+        header{
+            height: 70vh;
+            .title_text{
+                width: 100%;
+                height: 30%;
+                .text {
+                    text-align: center;
+                    position: relative;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    h1 {
+                        text-align: center;
+                        font-size: 11.2vw;
+                        margin: 0;
+                        animation: titleSlideIn 1.5s linear 0s;
+                        animation-timing-function: ease-in-out;
+                    }
+        
+                    h2 {
+                        margin: 0;
+                        text-align: center;
+                        font-size: 8.0vw;
+                        animation: titleSlideIn 1.5s linear .5s;
+                        animation-timing-function: ease-in-out;
+                        animation-fill-mode: forwards;
+                    }
+                    @keyframes titleSlideIn {
+                        from {margin-top: -100vh;}
+                        to {margin-top: 0;}
+                    }
+                } 
+        
+            }
+            .title_image {
+                width: 100%;
+                height: 60%;
+                @keyframes imageSlideOut {
+                    from {margin-top: 10vh;}
+                    to {margin-top: 0vh;}
+                }
+        
+                #selfImage {
+                    width: 100vw;
+                    #circleWrapper{
+                
+                        #flockButton{
+                            width: 100px;
+                            height: 100px;
+                            font-size: 20pt;
+                        }
+                        #speak{
+                            font-size: 30pt;
+                        }
+        
+                    }
+        
+                }
+            }
+        }
+
+        .content {
+            margin: 0%; //padding: 50px;
+            width: 100%; 
+
+            #contact{
+                form{
+                    label {
+                        font-size: 30pt;
+                        // width: 300px;
+                    }
+                    input, textarea{
+                        width: 60vw;
+                        font-size: 25pt;
+                    }
+                    #submit{
+                        font-size: 30pt;
+                    }
+                }
+            }
+            .flipTile{
+                margin: 100px;
+
+                width: 450px;
+                height: 650px;
+                .backPage {
+                    .buttons {
+                        a {
+                            font-size: 20pt;
+                        }
+                    }
+                }
+            }
+            .flipTile:hover {
+                transform: rotateZ(-5deg) translate(200px, -40px);
+            
+            }
+    
+            #project_title{
+                width: 90%;
+                padding: 20px;
+            }
+            #about{
+                transform-origin: 50% 0;
+    
+                transform: scale(1.1);
+                height: 100vh;
+                .aboutField {
+                    .descriptionField {
+                        margin-top: 300px;
+                    }
+                    .lines{
+                        .line{
+    
+                        } :nth-child(1) { 
+                            //border: 5px solid red;
+                            width: 500px;
+                            transform: rotate(90deg); 
+                        }
+            
+                    }
+    
+                }
+            }
+    
+    
+            .projectOverview {
+
+                height: auto;
+
+                .slider {
+                    // border: 5px dotted red;
+                    float: none;
+                    width: 90%;
+                    height: 50vh;
+                }
+            
+                .projectInfo {
+                    position: relative;
+                    margin: 5% 5%;
+                    width: 85%; 
+                    .textInfo{
+                        b {
+                            font-size: 25pt;
+                        }
+                        }
+                    height: auto;
+                    .projectButtons {
+                        position: relative;
+                        a {
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+            .projectSummary {
+                padding: 1vw 10vw; 
+            }
+
+        }
+    }
+}

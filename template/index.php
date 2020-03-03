@@ -239,7 +239,7 @@
 
 			<section class="projectOverview">
 
-				<section class="slider" style="width: 60%;">
+				<section class="slider">
 					<section class="buttons">
 						<section class="button">
 						</section>

@@ -1,0 +1,278 @@
+nav {
+    width: 100%;
+    float: none;
+    background: transparent;
+    font-size: 18px;
+    font-weight: bold; //height: 20vh;
+
+    ul {
+        align-content: center;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+        #profileShortcut{
+            background: url(./page_elements/profile.jpg);
+            background-position: center;
+            background-size: cover;
+            background-color: black;
+            // display: block;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 50px;
+            height: 50px;
+            border: 5px solid black;
+            border-radius: 50%;
+            transition: all 200ms;
+            display: none;
+        }
+        #profileShortcut:hover{
+            border-color: white;
+        }
+
+
+        li {
+            box-shadow: $box-shadow;
+            animation: 1s 0s 1 slideInFromLeft cubic-bezier(0.68, -0.55, 0.55, 1.55); //width: 100px;
+
+            display: inline-block;
+            margin: 0px 0px;
+            width: 150px;
+            height: 40px;
+            // padding: 10px 50px;
+
+            color: #fff;
+            border: 3px solid $nav-color;
+            background-image: -webkit-linear-gradient(30deg, $nav-color 50%, transparent 50%);
+            background-image: linear-gradient(30deg, $nav-color 50%, transparent 50%);
+            background-size: 500px;
+            background-repeat: no-repeat;
+            background-position: 0%;
+            -webkit-transition: background 300ms ease-in-out;
+            transition: background 300ms ease-in-out;
+
+            a {
+                color: $nav-light-color;
+                line-height: 200%;
+                text-align: center;
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            a:target {
+                // color: red;
+            }
+
+            a:hover {
+                color: $nav-color;
+            }
+        }
+
+        li:hover {
+            background-position: 100%;
+            color: black;
+        }
+
+        .selected {
+            border-color: $nav-highlighted-color;
+            background-image: -webkit-linear-gradient(30deg, $nav-highlighted-color 50%, transparent 50%);
+            background-image: linear-gradient(30deg, $nav-highlighted-color 50%, transparent 50%);
+
+        }
+
+        :first-child {
+            margin: 0px 0px 0px 0px;
+        }
+
+        :nth-child(0) {
+            animation-delay: 0.0s;
+        }
+
+        :nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        :nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+    }
+}
+
+header {
+    font-size: 12pt;
+    text-align: left;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+
+    .title_text {
+        font-family: MyWebFont;
+        position: relative;
+        float: left;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        .text {
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            h1 {
+                text-align: left;
+                font-size: 6.2vw;
+                margin: 0;
+                animation: titleSlideIn 1.5s linear 0s;
+                animation-timing-function: ease-in-out;
+            }
+
+            h2 {
+                margin: 0;
+                text-align: left;
+                font-size: 3.0vw;
+                margin-left: -100vw;
+                animation: titleSlideIn 1.5s linear .5s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards;
+            }
+            @keyframes titleSlideIn {
+                from {margin-left: -100vw;}
+                to {margin-left: 0;}
+            }
+        }
+
+    }
+
+    .title_image {
+        height: 100%;
+        float: left;
+        width: 40%;
+        position: relative;
+
+        #selfCanvas {
+            position: absolute;
+            opacity: 0.0;
+        }
+
+        @keyframes imageSlideOut {
+            from {margin-left: 30vw;}
+            to {margin-left: 0vw;}
+        }
+
+        #selfImage {
+
+            animation: imageSlideOut 1.5s linear .5s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: backwards;
+            z-index: 2;
+            margin-left: 0vw;
+            width: 40vw;
+            //border: 3px solid red;
+            text-align: center;
+            position: relative;
+            height: 100%;
+            #circleWrapper{
+                
+                #flockButton{
+                    width: 50px;
+                    height: 50px;
+                    vertical-align: center;
+                    border-radius: 50%;
+                    border: 10px solid $nav-color;
+                    background: $nav-color;
+                    color: white;
+                    position: absolute;
+                    top: 10%;
+                    left: 10%;
+                    transition: all 200ms;
+                    padding: 10px;
+                    opacity: 0.8;
+                }
+                #flockButton:hover{
+                    color: $nav-color;
+                    background: white;
+                    cursor: pointer;
+                }
+                #selfCanvasResult, #canvas {
+                    max-height: 100%;
+                    max-width: 100%;
+                    width: 60%;
+                    position: absolute;
+                    border: 20px solid black;
+                    border-radius: 50%;
+                    top: 50px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    background-color: black;
+                }
+                #canvas{
+                    z-index: -1;
+                    opacity: 0;
+                    // display: none;
+                    transition: opacity 400ms;
+                }
+                
+                #speak{
+                    @extend %speak;
+                    font-family: CodeFont;
+
+                }
+            }
+
+            
+
+            #selfValue {
+                // margin: 0 auto;
+                // width: 100%;
+                // outline: 5px solid blue;
+                left: 0;
+                right: 0;
+                width: 50%;
+                ;
+                margin: auto;
+                // position: absolute;
+                // border: none;
+
+                cursor: pointer;
+                border: 5px solid blue;
+                // background: blue;
+                // border-color: blue;
+                // outline: 5px solid blue;
+            }
+
+            #selfButton,
+            #submit,
+            #uploadImage {
+                background: $nav-color;
+                color: white;
+                font-weight: bold;
+                padding: 5px 10px;
+                border: none;
+                display: none;
+
+                cursor: pointer;
+            }
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: none;
+        }
+    }
+
+}
