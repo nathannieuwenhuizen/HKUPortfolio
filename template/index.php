@@ -180,7 +180,16 @@
 
 			<h2> All projects</h2>
 
-			<form  method="post" enctype="text/plain" class="projectForm show">
+			<h3> Order by 
+				
+			<select id="projectsorder" name="cars">
+    <option value="Time" selected>Time</option>
+    <option value="Title">Title</option>
+    <option value="Type">Type of project</option>
+  </select>
+   | invert <input id="projectorderInvert" type="checkbox">
+			</h3>
+			<form  method="post" enctype="text/plain" class="projectForm hide">
 				<!-- <INPUT TYPE="hidden" NAME="required" VALUE="from,name"> -->
 				<label>Project name</label>
 				<input class="title" type="text" name="name"><br>

@@ -1,4 +1,8 @@
-import { Iproject, Ihomework, subjects } from './data';
+import {
+    Iproject,
+    Ihomework,
+    subjects
+} from './data';
 import Slider from './slider';
 import App from './app';
 
@@ -95,8 +99,7 @@ export default class Page {
             let headerName: any = subjectlist[i].getElementsByTagName('h2')[0].innerText;
             if (val !== '') {
                 subjectlist[i].style = (headerName === val ? 'display: block;' : 'display: none;');
-            }
-            else {
+            } else {
                 subjectlist[i].style = 'display: block;';
 
             }
@@ -137,7 +140,7 @@ export default class Page {
 
     }
     public applyClickEventToHomework(): void {
-        let subjectButtons: HTMLCollectionOf<any> = document.getElementsByClassName('subjectHeader');
+        let subjectButtons: HTMLCollectionOf < any > = document.getElementsByClassName('subjectHeader');
         for (let i: number = 0; i < subjectButtons.length; i++) {
             subjectButtons[i].onclick = () => {
                 let parent: any = subjectButtons[i].parentElement;
@@ -164,20 +167,20 @@ export default class Page {
         let form: Element = document.getElementsByClassName("projectForm")[0];
 
         let uploadedData: Iproject = {
-            title : form.getElementsByClassName("title")[0].value,
-            team : form.getElementsByClassName("team")[0].value,
-            type : form.getElementsByClassName("type")[0].value,
-            duration : form.getElementsByClassName("duration")[0].value,
-            date : form.getElementsByClassName("date")[0].value,
-            summary : form.getElementsByClassName("summary")[0].value,
-            description : form.getElementsByClassName("description")[0].value,
-            images : this.getimagesVal(),
+            title: form.getElementsByClassName("title")[0].value,
+            team: form.getElementsByClassName("team")[0].value,
+            type: form.getElementsByClassName("type")[0].value,
+            duration: form.getElementsByClassName("duration")[0].value,
+            date: form.getElementsByClassName("date")[0].value,
+            summary: form.getElementsByClassName("summary")[0].value,
+            description: form.getElementsByClassName("description")[0].value,
+            images: this.getimagesVal(),
             buttons: this.getbuttonsVal()
         }
         data.push(uploadedData);
-        
-        console.log("copy this: ", JSON.stringify(data));
-        
+        console.log("copy this:");
+        console.log(JSON.stringify(uploadedData));
+
     }
     public getbuttonsVal(): string[][] {
         let result: string[][] = [];
@@ -188,7 +191,7 @@ export default class Page {
                 buttonContainer.children[i].getElementsByClassName("buttonText")[0].value
             ]);
         }
-        console.log("result: " , result);
+        console.log("result: ", result);
         return result;
     }
 
@@ -198,7 +201,7 @@ export default class Page {
         for (let i: number = 0; i < buttonContainer.childElementCount; i++) {
             result.push(buttonContainer.children[i].getElementsByClassName("imageLink")[0].value);
         }
-        console.log("image result: " , result);
+        console.log("image result: ", result);
         return result;
     }
 
@@ -208,7 +211,7 @@ export default class Page {
         let exampleButton = document.getElementById("exampleButton");
 
         if (val > buttonContainer.childElementCount) {
-            for (let i: number = 0; i < val  - buttonContainer.childElementCount; i++) {
+            for (let i: number = 0; i < val - buttonContainer.childElementCount; i++) {
                 let newElement = exampleButton.cloneNode(true);
                 newElement.classList.remove("hide");
                 buttonContainer.appendChild(newElement);
@@ -229,7 +232,7 @@ export default class Page {
         let exampleImage = document.getElementById("exampleimageLink");
 
         if (val > imagesContainer.childElementCount) {
-            for (let i: number = 0; i < val  - imagesContainer.childElementCount; i++) {
+            for (let i: number = 0; i < val - imagesContainer.childElementCount; i++) {
                 let newElement = exampleImage.cloneNode(true);
                 newElement.classList.remove("hide");
                 imagesContainer.appendChild(newElement);
@@ -244,6 +247,17 @@ export default class Page {
         console.log(imagesContainer.childElementCount, imagesContainer, exampleImage)
     }
 
+    public reloadProjectOverview(data: Iproject[]) {
+        let projects: any = document.getElementById('projecten');
+        let elements: any = projects.getElementsByClassName("flipTile");
+
+        while (elements[0]) {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+        this.projectOverviewAlreadyLoaded = false;
+        this.loadProjectOverview(data);
+    }
+
 
     public loadProjectOverview(data: Iproject[]): void {
         if (this.projectOverviewAlreadyLoaded) {
@@ -256,20 +270,21 @@ export default class Page {
         numberofbuttons.addEventListener("click", () => {
             this.changeAmountofButtons(numberofbuttons.value);
         });
-        
+
         let numberofimages: Element = document.getElementsByClassName("numberofimages")[0];
         numberofimages.addEventListener("click", () => {
             this.changeAmountofImages(numberofimages.value);
         });
-        
+
         this.projectUploadButton = document.getElementById("projectUploadButton");
         this.projectUploadButton.addEventListener("click", () => {
             this.uploadProject(data);
         });
-        console.log("project upload button: " + this.projectUploadButton)
+
+
         //slider
         let slideContainer: any = document.getElementsByClassName('slidecontainer')[0];
-        let projecten: any = document.getElementById('projecten');
+        let projects: any = document.getElementById('projecten');
         slideContainer.style = 'width: ' + data.length + '00%;';
 
         for (let i: number = 0; i < data.length; i++) {
@@ -284,6 +299,37 @@ export default class Page {
                 slideContainer.appendChild(a);
             }
         }
+
+        let orderSelection: Element = document.getElementById("projectsorder");
+        orderSelection.onchange = () => {
+            this.reloadProjectOverview(data);
+        })
+        let orderSelectionDirection =document.getElementById("projectorderInvert");
+        orderSelectionDirection.onchange = () => {
+            console.log("Thy fuck?");
+            this.reloadProjectOverview(data);
+        })
+        console.log(orderSelection.value);
+
+        data.sort((a: Iproject, b: Iproject) => {
+            let result = 0;
+            switch (orderSelection.value) {
+                case "Time":
+                    result = a.date > b.date ? -1 : a.date < b.date ? 1 : 0;
+                    break;
+                case "Title":
+                    result = a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
+                    break;
+                case "Type":
+                    result = a.type > b.type ? -1 : a.type < b.type ? 1 : 0;
+                    break;
+
+            }
+            if (orderSelectionDirection.checked) {
+                result = result == 1 ? -1 : 1;
+            }
+            return result;
+        });
 
         //thumbs - new
         for (let i: number = 0; i < data.length; i++) {
@@ -332,46 +378,8 @@ export default class Page {
                 '</div></div></div>';
             sec.appendChild(backpage);
 
-            projecten.appendChild(sec);
+            projects.appendChild(sec);
         }
-
-        //thumbs - old
-        /* for (let i: number = 0; i < data.length; i++) {
-        //     let link: string = '#projectinfo?project=' + i;
-
-        //     let sec: any = document.createElement('section');
-        //     sec.className = 'projectTile';
-
-        //     let title: any = document.createElement('h3');
-        //     let title_link: any = document.createElement('a');
-        //     title_link.innerHTML = data[i].title;
-        //     title_link.setAttribute('href', link);
-        //     title.appendChild(title_link);
-        //     sec.appendChild(title);
-
-        //     let img: any = document.createElement('img');
-        //     let img_link: any = document.createElement('a');
-        //     img_link.setAttribute('href', link);
-        //     img.setAttribute('src', data[i].images[0]);
-        //     img_link.appendChild(img);
-        //     sec.appendChild(img_link);
-
-        //     let buttonsec: any = document.createElement('section');
-        //     buttonsec.className = 'buttonContainer';
-
-        //     buttonsec.appendChild(this.createButton('info', link));
-
-        //     if (data[i].buttons[1] !== '') {
-        //         buttonsec.appendChild(this.createButton('play', data[i].buttons[1]));
-        //     }
-        //     if (data[i].buttons[0] !== '') {
-        //         buttonsec.appendChild(this.createButton('github', data[i].buttons[0]));
-        //     }
-
-        //     sec.appendChild(buttonsec);
-
-        //     projecten.appendChild(sec);
-        } */
 
     }
     public createButton(className: string, url: string): any {

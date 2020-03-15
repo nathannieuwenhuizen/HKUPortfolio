@@ -3,7 +3,7 @@ export interface Iproject {
     team: string;
     type: string;
     duration: string;
-    date: string;
+    date: Date;
     summary: string;
     description: string;
     images: string[];

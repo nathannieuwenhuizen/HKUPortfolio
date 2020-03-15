@@ -1,165 +1,245 @@
 [{
-    "title": "Plant Audio Visualizer",
-    "team": "By myself",
-    "type": "Visualizer / procedural art",
-    "duration": "2 weeks",
-    "date": "November 2019",
-    "summary": "First attempt at procedural art",
-    "description": "We often visualize our images when we hear music, or that goes with bars that are on and of go down or lines that make waves, in short there are many different ways to do this. \n Before the first lesson, I was inspired by a song from Blackmore’s \n Night. I imagined a growing plant that went with the music and became complicated \n made movements as it grew. Think of magic beans from the fairy tale “Jack and \n the Beanstalk ”. \n \n I want the plant to grow up to the music that it did \n can respond to user input by using. for example \n clicking on the screen, unfortunately that did not work within the \n but we will elaborate on that later. \n ",
-    "images": ["./assets/projects/procArt/0.gif", "./assets/projects/procArt/1.gif", "./assets/projects/procArt/2.gif", "./assets/projects/procArt/3.gif", "./assets/projects/procArt/4.gif"],
-    "buttons": [
-        ["https://github.com/nathannieuwenhuizen/ProceduralArt/tree/dev", "code"]
-    ]
-}, {
-    "title": "Blocky Climb",
-    "team": "By myself",
-    "type": "2D game",
-    "duration": "4 weeks",
-    "date": "May 20189",
-    "summary": "A simple 2D platformer game",
-    "description": "Story: \n The game is about a climber who is the magic \n want to get an apple tree. Hereby goes the \n climber use his trusted \n grappling hook that takes him everywhere \n Gameplay \n This is a simple 2D platformer where your character \n can jump, walk, jump off the wall and the \n use grappling hook. When you focus on one \n you can shoot yourself to it \n with a faster speed. This is possible from any \n corner. You can also use the grappling hook again immediately \n let go and thereby let yourself fall. <iframe width='560' height='315' src='https://www.youtube.com/embed/G6zc6rClGbU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-    "images": ["./assets/projects/blocky/0.PNG", "https://i.gyazo.com/872e55eb1d3f850eaaa16b23cfa5f5d7.gif", "./assets/projects/blocky/1.PNG", "./assets/projects/blocky/2.PNG", "./assets/projects/blocky/3.PNG"],
-    "buttons": [
-        ["https://github.com/nathannieuwenhuizen/BPW2_project", "code"],
-        ["./huiswerk/BUILDING_PLAYFUL_WORLDS/bpw2/playablebuild/index.html", "play"]
-    ]
-}, {
-    "title": "Portfolio iteration v1",
-    "team": "By myself",
-    "type": "website / project",
-    "duration": "2 weeks",
-    "date": "September 2018",
-    "summary": "First itteration of portfolio website for the HKU",
-    "description": "In this sub part section of the portfolio project, the basic functonality is added. You can view the logbook at the info button or <a href='./assets/files/logboek.pdf'>here</a>. <br> Zip file: <a href='./assets/files/build.zip'>link</a>.",
-    "images": ["./assets/projects/po1.jpg", "./assets/projects/po2.jpg", "./assets/projects/po3.jpg", "./assets/projects/po4.jpg", ""],
-    "buttons": [
-        ["https://github.com/nathannieuwenhuizen/HKUPortfolio", "code"],
-        ["./assets/files/logboek.pdf", "logbook"]
-    ]
-}, {
-    "title": "Slide Puzzle Challenge",
-    "team": "by myself",
-    "type": "HTML5 Game",
-    "duration": "2 days",
-    "date": "26-4-2018",
-    "summary": "Here is my admission assignment for the HKU college",
-    "description": "Game rules \n Try to solve the sliding puzzles as soon as possible before the timeline ends. For each puzzle you get some extra time, but the level increases during the course of the game. Try to get the highest possible score and beat your own high score! Special mechanic!The interesting thing about this game is the fact that you get a time pressure when solving these sliding puzzles. This ensures that the game first starts with easy puzzles to solve so that the player does not get overwhelmed. Solving this combination of time pressure and a soothing sliding puzzle creates an interesting twist!",
-    "images": ["./assets/projects/0.jpg", "./assets/projects/1.jpg", "", "", "", "", "", "", ""],
-    "buttons": [
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/HKU/dist/index.html", "play!"]
-    ]
-}, {
-    "title": "Blasterfest",
-    "team": "2 Developers | 3 Artsits",
-    "type": "Unity 2D",
-    "duration": "4 weeks",
-    "date": "June 2016",
-    "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
-    "description": "For this school project, we as developpers were assigned to create a game and make our own assignments. We were free to hire other developers and artists for our project. We had our priorities on making a working prototype and good communication within our team.",
-    "images": ["./assets/projects/bf1.jpg", "https://i.gyazo.com/e1f9fda30b1f42c2f3aa33f337f5dd1e.gif", "./assets/projects/bf2.jpg", "./assets/projects/bf3.jpg", "./assets/projects/bf4.jpg", "./assets/projects/bf5.jpg", "./assets/projects/bf6.jpg", ""],
-    "buttons": [
-        ["https://github.com/Phazy1996/MatchMaker2", "code"],
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/BlasterfestWEBGL/index.html", "play!"]
-    ]
-}, {
-    "title": "Blocks",
-    "team": "3 Developers",
-    "type": "Unity 2.5D",
-    "duration": "3 weeks",
-    "date": "October 2015",
-    "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
-    "description": "<p>In the beginning of our second year at Media College Amsterdam, we were assigned to make a '2D endless runner' game with a team of mainly three developers.</p><p>It is made in a 3D Unity and we asked permission from the client to use it if we were able to look like 2D. </p><p> I have learned many things in this project and was my introduction to Unity.</p>",
-    "images": ["./assets/projects//blocks1.png", "https://i.gyazo.com/7861ec8f8ad68f50bed4179f642bcb28.gif", "./assets/projects//blocks2.png", ""],
-    "buttons": [
-        ["https://github.com/nathannieuwenhuizen/Blocks", "code"],
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/blocks/index.html", "play!"]
-    ]
-}, {
-    "title": "Correct the field",
-    "team": "1 Developer (personal project)",
-    "type": "Unity 2D",
-    "duration": "Spare time",
-    "date": "December 2015",
-    "summary": "Unity project made for myself",
-    "description": " <p>This personal project started when I wanted to learn more about 2D arrays and grid systems. So I decided to make a puzzle game based on the mini game: 'Puzzle Panic'.</p><p>I realized with this project that creating the core gameplay is just the half work, because I spent more time on making the UI and getting the little things right.</p>",
-    "images": ["./assets/projects//ctf1.png", "https://i.gyazo.com/c42ac1e3f094d733e8b7bfbef34b26d7.gif", "./assets/projects//ctf2.png", "./assets/projects//ctf3.png", ""],
-    "buttons": [
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/CorrectTheField/CorrectTheField.html", "code"]
-    ]
-}, {
-    "title": "Crystales ",
-    "team": "4 Developers | 4 Artsits",
-    "type": "Game Jam",
-    "duration": "24 hours",
-    "date": "20 June 2016",
-    "summary": "Game Jam for mediabites 2016",
-    "description": "<p>A game jam we made during 'Mediabites 2016' where I volunteered with 7 other developers and artists to make a game with the theme 'connecting'.</p><p> In 24 hours we had to come up with a concept and make a prototype/game based around the concept.</p><p>The 24 hours were not as hard as I thought it would be, but in the last couple of hours we struggled to keep awake. Luckilly we finished our prototype: Crystales!. </p><p> It was a unique experience for me and my team and personally want to do it again next year!</p>",
-    "images": ["./assets/projects/c1.png", "https://i.gyazo.com/0df0a60e6423188859341b72fa8a5141.gif", "./assets/projects/c2.png", "./assets/projects/c3.png", "./assets/projects/c4.png", "./assets/projects/c5.jpg", ""],
-    "buttons": [
-        ["https://github.com/Jprummel/MediaBites_2016_GameJam", "code"],
-        ["http://pakhuis.hosts.ma-cloud.nl/gamejam/WebBuild/WebBuild.html", "play!"],
-        ["http://pakhuis.hosts.ma-cloud.nl/gamejam/", "pakhuis"]
-    ]
-}, {
-    "title": "Flocking",
-    "team": "1 Developer (personal project)",
-    "type": "Algorithm research",
-    "duration": "Spare time",
-    "date": "October 2016",
-    "summary": "Unity and HTM5 project made fun and to study the flocking algorithm",
-    "description": "<p>This project was made to understand the flocking algorithm and group behaviour.</p><p> I devided this project in two: a javascript project to understand the algorithm and a Unity project to implement it in 3D with animals (fish to be precise). </p> <p> The flocking algorithm is aplied to each agent in a group. Each agent follows the flocking algorithm based on 3 rules:</p><li>Cohesion (agent wants to be part of the group based on de the average position of their neighbours.)</li><li>Seperation (agent doesn't want to get too close so takes the distance of each neigbour and adds it up to its vector and the namde negative.)</li> <li>Allignment (agent wants to get the same direction as its neighbours, so it takes the average direction vector of its neighbours.)</li> <p>The agent adds all these three vectors to one direction and then it has its direction it wants to go to be in the group.</p><h3>My role</h3> <p> ---Javascript project---</p> <br> <li>Made javascript art</li> <li>Implemented the flocking algorithm</li> <li>CSS programmed (based on O'rbit's CSS.)</li> <p>---Unity project---</p> <br> <li>Implemented the flocking algorithm</li> <li>Level design</li> <li>Camera/player movement</li> <li>Different fish behaviour</li> <a href='https://www.assetstore.unity3d.com/en/#!/content/46132'>Fish model source</a><br> <a href='https://www.assetstore.unity3d.com/en/#!/content/53146'>Rock model source</a> </p> <h3>Game features:</h3> <p> ---Javascript project---</p><br> <li>Adjustable variables tweaking</li> <li>Attractors/magnets the agents want to follow (mouse)</li> <li>Different spawning mechanics</li> <p>---Unity project---</p><br> <li>Camera/player movement</li> <li>Different schools of fish</li> <li>Different fish behaviour</li>",
-    "images": ["./assets/projects/flock1.jpg", "https://i.gyazo.com/c61459e9e90fb322c117954567b9bf22.gif", "./assets/projects/flock3.jpg", "./assets/projects/flock2.png", "./assets/projects/aq1.jpg", "./assets/projects/aq2.jpg", "./assets/projects/aq3.jpg", "./assets/projects/aq4.jpg", ""],
-    "buttons": [
-        ["https://github.com/nathannieuwenhuizen/Aquarium/tree/master/Assets/Scripts", "code (3d)"],
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/FlockingUnity/index.html", "play! (3d version)"],
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/FlockingJavascript/index.html", "play! (2d version)"]
-    ]
-}, {
-    "title": "Orbit",
-    "team": "1 Developer (personal project)",
-    "type": "Javascript",
-    "duration": "Spare time",
-    "date": "May 2016",
-    "summary": "HTML5 project to explore gravititational pulling and vectors.",
-    "description": " <p>When my class were learning about programming planet orbits and forces in Javascript</p><p> I was impressed by the movements of the objects rotating around the center that I was eager to og on with mutliple objects.</p><p>I experimented with various spawning algorithms and forces and I saw interesting formations as you can see in the screen recordings here. I putted the variables in a consolo left above the screen to open.</p> <p>The resuls: an amazing visual light show for you to experiment yourself with! </p> <h3>My role</h3> <p> <li>Game programmed in Javscript</li> <li>Made the orb art.</li> <li>CSS programmed</li> </p> <h3>Game features:</h3> <p> <li>Menu to tweak variabls</li> <li>Good visual representation</li> <li>Endless posiblities</li> </p>",
-    "images": ["./assets/projects/orb1.png", "https://i.gyazo.com/thumb/500/_fb7f73313426763a56a211d9a86d61da-gif.gif", "https://i.gyazo.com/thumb/500/_4d380bd06167f06dfa287e71238bb03b-gif.gif"],
-    "buttons": [
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/orbit/index.html", "play!"]
-    ]
-}, {
-    "title": "Smashers",
-    "team": "1 Developer (personal project)",
-    "type": "Fash game",
-    "duration": "Spare time",
-    "date": "Summer 2015",
-    "summary": "Flash game made for fun!",
-    "description": "<h3>Description</h3> <p>In my 1st year, I wanted to make a platform fighting game. I made it in Actionscript 3.</p><p>I am proud of the AI enemy I created in less than a day, and the different area's you can fight in.</p> <h3>My role</h3> <p> <li>Made art</li> <li>Programmed the game.</li> </p> <h3>Game features:</h3> <p> <li>Fighting mechanics</li> <li>2 players or AI</li> <li>Choosing the area to fight</li> <li>Pick ups like (weapons/ extra health).</li> </p>",
-    "images": ["./assets/projects/smashers.jpg", "https://i.gyazo.com/thumb/1000/_92978343ea5fe22c76249f4646d99856-gif.gif", "./assets/projects/sm.jpg", "./assets/projects/sm1.png", ""],
-    "buttons": [
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/Smashing.swf", "play"]
-    ]
-}, {
-    "title": "water run",
-    "team": "4 Developers | 6 Artists",
-    "type": "Unity 2D / mobile app",
-    "duration": "8 weeks",
-    "date": "April 2016",
-    "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
-    "description": "<p>A 8 week project for school where we made a game for mobile and set in for free in the Google play store.</p><p> Our subject for the game was mythe, so we chose the rainbow serpent (a fable animal) to be the theme of our game.</p> <p>This is my first mobile game I've worked so far and with the biggest team so far (10 people). And I am proud of the result!s</p> <h3>My role</h3> <p> <li>Programming the 'sky form' and transition into it.</li> <li>Proggramming the healthbar.</li> <li>Programming the enemies.</li> <li>Designing some of the level parts.</li> </p> <h3>Game features:</h3> <p> <li>Endless runner</li> <li>Online highscore</li> <li>Static and moving obstacles</li> <li>Increasing difficulty</li> <li>Randomanized chunks</li> <li>Tutorial chunks for beginners</li> <li>Snake movement</li> <li>Particles for game feel</li> </p>",
-    "images": ["./assets/projects/wr1.jpg", "https://i.gyazo.com/1b4d61a54a4b783be832db3ff168d3e5.gif", "./assets/projects/wr2.jpg", "./assets/projects/wr3.jpg", "./assets/projects/wr4.png"],
-    "buttons": [
-        ["https://github.com/Daniel95/Mythe", "code"]
-    ]
-}, {
-    "title": "the Heart",
-    "team": "1 Developer (personal project)",
-    "type": "Javascript",
-    "duration": "Spare time",
-    "date": "November 2016",
-    "summary": "HTML5 project based on a mathologer video.",
-    "description": "<p>This project demonstrates the calculations for a refelction in a cup buy a facor of n. You see n = 2 in nature like lightbeams on a cofee cup or rolling a circle with half the size around the other circle.</p> <p>Inspiration came from the youtube video from Matheloger:<a target='_blank' href='https://www.youtube.com/watch?v=qhbuKbxJsk8'>Click here</a></p><p>Here is the article about light intervals: <a target='_blank' href='http://xahlee.info/SpecialPlaneCurves_dir/Cardioid_dir/_p/LightsRaysReflections.pdf'>Click here</a> </p> <p>You can see many patterns unfolding like parts of the mandelbrot, spirals and more.</p><p>I haven't found many articles or information about this, so I can't recall a name for this one.So, I call it the heart of mathematics.</p> <h3>My role</h3> <p> <li>Programmed the application.</li> <li>CSS made</li> </p> <h3>Game features:</h3> <p> <li>Random color lerping</li> <li>Interctivity about the multiplication factor and how many points the circle has.</li> <li>Animation of in/decreasing multiplication factors</li> </p>",
-    "images": ["./assets/projects/th2.jpg", "https://i.gyazo.com/ac1e6570189358cafa8839d62ef8b069.gif", "./assets/projects/th3.jpg", "./assets/projects/th4.jpg", "./assets/projects/th5.jpg", ""],
-    "buttons": [
-        ["https://nathannieuwenhuizen.github.io/PlayableBuilds/theHeart/index.html", "play!"]
-    ]
-}]
+        "title": "Plant Audio Visualizer",
+        "team": "By myself",
+        "type": "Visualizer / procedural art",
+        "duration": "2 weeks",
+        "date": "2019-11-13",
+        "summary": "First attempt at procedural art",
+        "description": "We often visualize our images when we hear music, or that goes with bars that are on and of go down or lines that make waves, in short there are many different ways to do this. \n Before the first lesson, I was inspired by a song from Blackmore’s \n Night. I imagined a growing plant that went with the music and became complicated \n made movements as it grew. Think of magic beans from the fairy tale “Jack and \n the Beanstalk ”. \n \n I want the plant to grow up to the music that it did \n can respond to user input by using. for example \n clicking on the screen, unfortunately that did not work within the \n but we will elaborate on that later. \n ",
+        "images": ["./assets/projects/procArt/0.gif", "./assets/projects/procArt/1.gif", "./assets/projects/procArt/2.gif", "./assets/projects/procArt/3.gif", "./assets/projects/procArt/4.gif"],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/ProceduralArt/tree/dev", "code"]
+        ]
+    }, {
+        "title": "Blocky Climb",
+        "team": "By myself",
+        "type": "Unity 2D",
+        "duration": "4 weeks",
+        "date": "2019-05-16",
+        "summary": "A simple 2D platformer game",
+        "description": "Story: \n The game is about a climber who is the magic \n want to get an apple tree. Hereby goes the \n climber use his trusted \n grappling hook that takes him everywhere \n Gameplay \n This is a simple 2D platformer where your character \n can jump, walk, jump off the wall and the \n use grappling hook. When you focus on one \n you can shoot yourself to it \n with a faster speed. This is possible from any \n corner. You can also use the grappling hook again immediately \n let go and thereby let yourself fall. <iframe width='560' height='315' src='https://www.youtube.com/embed/G6zc6rClGbU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+        "images": ["./assets/projects/blocky/0.PNG", "https://i.gyazo.com/872e55eb1d3f850eaaa16b23cfa5f5d7.gif", "./assets/projects/blocky/1.PNG", "./assets/projects/blocky/2.PNG", "./assets/projects/blocky/3.PNG"],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/BPW2_project", "code"],
+            ["./huiswerk/BUILDING_PLAYFUL_WORLDS/bpw2/playablebuild/index.html", "play"]
+        ]
+    }, {
+        "title": "Portfolio iteration v1",
+        "team": "By myself",
+        "type": "website / project",
+        "duration": "2 weeks",
+        "date": "2018-09-03",
+        "summary": "First itteration of portfolio website for the HKU",
+        "description": "In this sub part section of the portfolio project, the basic functonality is added. You can view the logbook at the info button or <a href='./assets/files/logboek.pdf'>here</a>. <br> Zip file: <a href='./assets/files/build.zip'>link</a>.",
+        "images": ["./assets/projects/po1.jpg", "./assets/projects/po2.jpg", "./assets/projects/po3.jpg", "./assets/projects/po4.jpg", ""],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/HKUPortfolio", "code"],
+            ["./assets/files/logboek.pdf", "logbook"]
+        ]
+    }, {
+        "title": "Slide Puzzle Challenge",
+        "team": "by myself",
+        "type": "HTML5 Game",
+        "duration": "2 days",
+        "date": "2018-04-26",
+        "summary": "Here is my admission assignment for the HKU college",
+        "description": "Game rules \n Try to solve the sliding puzzles as soon as possible before the timeline ends. For each puzzle you get some extra time, but the level increases during the course of the game. Try to get the highest possible score and beat your own high score! Special mechanic!The interesting thing about this game is the fact that you get a time pressure when solving these sliding puzzles. This ensures that the game first starts with easy puzzles to solve so that the player does not get overwhelmed. Solving this combination of time pressure and a soothing sliding puzzle creates an interesting twist!",
+        "images": ["./assets/projects/0.jpg", "./assets/projects/1.jpg", "", "", "", "", "", "", ""],
+        "buttons": [
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/HKU/dist/index.html", "play!"]
+        ]
+    }, {
+        "title": "Blasterfest",
+        "team": "2 Developers | 3 Artsits",
+        "type": "Unity 2D",
+        "duration": "4 weeks",
+        "date": "2016-06-23",
+        "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
+        "description": "For this school project, we as developpers were assigned to create a game and make our own assignments. We were free to hire other developers and artists for our project. We had our priorities on making a working prototype and good communication within our team.",
+        "images": ["./assets/projects/bf1.jpg", "https://i.gyazo.com/e1f9fda30b1f42c2f3aa33f337f5dd1e.gif", "./assets/projects/bf2.jpg", "./assets/projects/bf3.jpg", "./assets/projects/bf4.jpg", "./assets/projects/bf5.jpg", "./assets/projects/bf6.jpg", ""],
+        "buttons": [
+            ["https://github.com/Phazy1996/MatchMaker2", "code"],
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/BlasterfestWEBGL/index.html", "play!"]
+        ]
+    }, {
+        "title": "Blocks",
+        "team": "3 Developers",
+        "type": "Unity 2.5D",
+        "duration": "3 weeks",
+        "date": "2015-10-04",
+        "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
+        "description": "<p>In the beginning of our second year at Media College Amsterdam, we were assigned to make a '2D endless runner' game with a team of mainly three developers.</p><p>It is made in a 3D Unity and we asked permission from the client to use it if we were able to look like 2D. </p><p> I have learned many things in this project and was my introduction to Unity.</p>",
+        "images": ["./assets/projects//blocks1.png", "https://i.gyazo.com/7861ec8f8ad68f50bed4179f642bcb28.gif", "./assets/projects//blocks2.png", ""],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/Blocks", "code"],
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/blocks/index.html", "play!"]
+        ]
+    }, {
+        "title": "Correct the field",
+        "team": "1 Developer (personal project)",
+        "type": "Unity 2D",
+        "duration": "Spare time",
+        "date": "2015-12-13",
+        "summary": "Unity project made for myself",
+        "description": " <p>This personal project started when I wanted to learn more about 2D arrays and grid systems. So I decided to make a puzzle game based on the mini game: 'Puzzle Panic'.</p><p>I realized with this project that creating the core gameplay is just the half work, because I spent more time on making the UI and getting the little things right.</p>",
+        "images": ["./assets/projects//ctf1.png", "https://i.gyazo.com/c42ac1e3f094d733e8b7bfbef34b26d7.gif", "./assets/projects//ctf2.png", "./assets/projects//ctf3.png", ""],
+        "buttons": [
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/CorrectTheField/CorrectTheField.html", "code"]
+        ]
+    }, {
+        "title": "Crystales ",
+        "team": "4 Developers | 4 Artsits",
+        "type": "Game Jam",
+        "duration": "24 hours",
+        "date": "2016-6-20",
+        "summary": "Game Jam for mediabites 2016",
+        "description": "<p>A game jam we made during 'Mediabites 2016' where I volunteered with 7 other developers and artists to make a game with the theme 'connecting'.</p><p> In 24 hours we had to come up with a concept and make a prototype/game based around the concept.</p><p>The 24 hours were not as hard as I thought it would be, but in the last couple of hours we struggled to keep awake. Luckilly we finished our prototype: Crystales!. </p><p> It was a unique experience for me and my team and personally want to do it again next year!</p>",
+        "images": ["./assets/projects/c1.png", "https://i.gyazo.com/0df0a60e6423188859341b72fa8a5141.gif", "./assets/projects/c2.png", "./assets/projects/c3.png", "./assets/projects/c4.png", "./assets/projects/c5.jpg", ""],
+        "buttons": [
+            ["https://github.com/Jprummel/MediaBites_2016_GameJam", "code"],
+            ["http://pakhuis.hosts.ma-cloud.nl/gamejam/WebBuild/WebBuild.html", "play!"],
+            ["http://pakhuis.hosts.ma-cloud.nl/gamejam/", "pakhuis"]
+        ]
+    }, {
+        "title": "Flocking",
+        "team": "1 Developer (personal project)",
+        "type": "Algorithm research",
+        "duration": "Spare time",
+        "date": "2016-10-07",
+        "summary": "Unity and HTM5 project made fun and to study the flocking algorithm",
+        "description": "<p>This project was made to understand the flocking algorithm and group behaviour.</p><p> I devided this project in two: a javascript project to understand the algorithm and a Unity project to implement it in 3D with animals (fish to be precise). </p> <p> The flocking algorithm is aplied to each agent in a group. Each agent follows the flocking algorithm based on 3 rules:</p><li>Cohesion (agent wants to be part of the group based on de the average position of their neighbours.)</li><li>Seperation (agent doesn't want to get too close so takes the distance of each neigbour and adds it up to its vector and the namde negative.)</li> <li>Allignment (agent wants to get the same direction as its neighbours, so it takes the average direction vector of its neighbours.)</li> <p>The agent adds all these three vectors to one direction and then it has its direction it wants to go to be in the group.</p><h3>My role</h3> <p> ---Javascript project---</p> <br> <li>Made javascript art</li> <li>Implemented the flocking algorithm</li> <li>CSS programmed (based on O'rbit's CSS.)</li> <p>---Unity project---</p> <br> <li>Implemented the flocking algorithm</li> <li>Level design</li> <li>Camera/player movement</li> <li>Different fish behaviour</li> <a href='https://www.assetstore.unity3d.com/en/#!/content/46132'>Fish model source</a><br> <a href='https://www.assetstore.unity3d.com/en/#!/content/53146'>Rock model source</a> </p> <h3>Game features:</h3> <p> ---Javascript project---</p><br> <li>Adjustable variables tweaking</li> <li>Attractors/magnets the agents want to follow (mouse)</li> <li>Different spawning mechanics</li> <p>---Unity project---</p><br> <li>Camera/player movement</li> <li>Different schools of fish</li> <li>Different fish behaviour</li>",
+        "images": ["./assets/projects/flock1.jpg", "https://i.gyazo.com/c61459e9e90fb322c117954567b9bf22.gif", "./assets/projects/flock3.jpg", "./assets/projects/flock2.png", "./assets/projects/aq1.jpg", "./assets/projects/aq2.jpg", "./assets/projects/aq3.jpg", "./assets/projects/aq4.jpg", ""],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/Aquarium/tree/master/Assets/Scripts", "code (3d)"],
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/FlockingUnity/index.html", "play! (3d version)"],
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/FlockingJavascript/index.html", "play! (2d version)"]
+        ]
+    }, {
+        "title": "Orbit",
+        "team": "1 Developer (personal project)",
+        "type": "Javascript",
+        "duration": "Spare time",
+        "date": "2016--05-05",
+        "summary": "HTML5 project to explore gravititational pulling and vectors.",
+        "description": " <p>When my class were learning about programming planet orbits and forces in Javascript</p><p> I was impressed by the movements of the objects rotating around the center that I was eager to og on with mutliple objects.</p><p>I experimented with various spawning algorithms and forces and I saw interesting formations as you can see in the screen recordings here. I putted the variables in a consolo left above the screen to open.</p> <p>The resuls: an amazing visual light show for you to experiment yourself with! </p> <h3>My role</h3> <p> <li>Game programmed in Javscript</li> <li>Made the orb art.</li> <li>CSS programmed</li> </p> <h3>Game features:</h3> <p> <li>Menu to tweak variabls</li> <li>Good visual representation</li> <li>Endless posiblities</li> </p>",
+        "images": ["./assets/projects/orb1.png", "https://i.gyazo.com/thumb/500/_fb7f73313426763a56a211d9a86d61da-gif.gif", "https://i.gyazo.com/thumb/500/_4d380bd06167f06dfa287e71238bb03b-gif.gif"],
+        "buttons": [
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/orbit/index.html", "play!"]
+        ]
+    }, {
+        "title": "Smashers",
+        "team": "1 Developer (personal project)",
+        "type": "Fash game",
+        "duration": "Spare time",
+        "date": "2015-07-12",
+        "summary": "Flash game made for fun!",
+        "description": "<h3>Description</h3> <p>In my 1st year, I wanted to make a platform fighting game. I made it in Actionscript 3.</p><p>I am proud of the AI enemy I created in less than a day, and the different area's you can fight in.</p> <h3>My role</h3> <p> <li>Made art</li> <li>Programmed the game.</li> </p> <h3>Game features:</h3> <p> <li>Fighting mechanics</li> <li>2 players or AI</li> <li>Choosing the area to fight</li> <li>Pick ups like (weapons/ extra health).</li> </p>",
+        "images": ["./assets/projects/smashers.jpg", "https://i.gyazo.com/thumb/1000/_92978343ea5fe22c76249f4646d99856-gif.gif", "./assets/projects/sm.jpg", "./assets/projects/sm1.png", ""],
+        "buttons": [
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/Smashing.swf", "play"]
+        ]
+    }, {
+        "title": "water run",
+        "team": "4 Developers | 6 Artists",
+        "type": "Unity 2D / mobile app",
+        "duration": "8 weeks",
+        "date": "2016-04-06",
+        "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
+        "description": "<p>A 8 week project for school where we made a game for mobile and set in for free in the Google play store.</p><p> Our subject for the game was mythe, so we chose the rainbow serpent (a fable animal) to be the theme of our game.</p> <p>This is my first mobile game I've worked so far and with the biggest team so far (10 people). And I am proud of the result!s</p> <h3>My role</h3> <p> <li>Programming the 'sky form' and transition into it.</li> <li>Proggramming the healthbar.</li> <li>Programming the enemies.</li> <li>Designing some of the level parts.</li> </p> <h3>Game features:</h3> <p> <li>Endless runner</li> <li>Online highscore</li> <li>Static and moving obstacles</li> <li>Increasing difficulty</li> <li>Randomanized chunks</li> <li>Tutorial chunks for beginners</li> <li>Snake movement</li> <li>Particles for game feel</li> </p>",
+        "images": ["./assets/projects/wr1.jpg", "https://i.gyazo.com/1b4d61a54a4b783be832db3ff168d3e5.gif", "./assets/projects/wr2.jpg", "./assets/projects/wr3.jpg", "./assets/projects/wr4.png"],
+        "buttons": [
+            ["https://github.com/Daniel95/Mythe", "code"]
+        ]
+    }, {
+        "title": "the Heart",
+        "team": "1 Developer (personal project)",
+        "type": "Javascript",
+        "duration": "Spare time",
+        "date": "2016-11-12",
+        "summary": "HTML5 project based on a mathologer video.",
+        "description": "<p>This project demonstrates the calculations for a refelction in a cup buy a facor of n. You see n = 2 in nature like lightbeams on a cofee cup or rolling a circle with half the size around the other circle.</p> <p>Inspiration came from the youtube video from Matheloger:<a target='_blank' href='https://www.youtube.com/watch?v=qhbuKbxJsk8'>Click here</a></p><p>Here is the article about light intervals: <a target='_blank' href='http://xahlee.info/SpecialPlaneCurves_dir/Cardioid_dir/_p/LightsRaysReflections.pdf'>Click here</a> </p> <p>You can see many patterns unfolding like parts of the mandelbrot, spirals and more.</p><p>I haven't found many articles or information about this, so I can't recall a name for this one.So, I call it the heart of mathematics.</p> <h3>My role</h3> <p> <li>Programmed the application.</li> <li>CSS made</li> </p> <h3>Game features:</h3> <p> <li>Random color lerping</li> <li>Interctivity about the multiplication factor and how many points the circle has.</li> <li>Animation of in/decreasing multiplication factors</li> </p>",
+        "images": ["./assets/projects/th2.jpg", "https://i.gyazo.com/ac1e6570189358cafa8839d62ef8b069.gif", "./assets/projects/th3.jpg", "./assets/projects/th4.jpg", "./assets/projects/th5.jpg", ""],
+        "buttons": [
+            ["https://nathannieuwenhuizen.github.io/PlayableBuilds/theHeart/index.html", "play!"]
+        ]
+    }, {
+        "title": "WizCat Nightmare",
+        "team": "Personal",
+        "type": "Unity",
+        "duration": "2 months",
+        "date": "2017-01-01",
+        "summary": "A colaboration from our college (MediaCollege Amsterdam) with the University of Amsterdam",
+        "description": "<p>A co lab from our college (MediaCollege Amsterdam) with the University of Amsterdam to build a game to teach teachers how to teach the metric system of weight values.</p>\n                <div id=\"line\"></div>\n                \n                <h3>My role</h3>\n                <p>\n                    <li>UI and dialogue system</li>\n                    <li>Programming the cow levels with random weight values and increasing difficulty.</li>\n                    <li>Designing some of the level parts.</li>\n                </p>\n                <div id=\"line\"></div>\n                \n                <h3>Game features:</h3>\n                <p>\n                    <li>Tutorial level</li>\n                    <li>Playable on mobile and desktop</li>\n                    <li>Infinite levels</li>\n                    <li>Compelling story</li>\n                </p>",
+        "images": ["./assets/projects/wn/0.png", "./assets/projects/wn/1.png", "./assets/projects/wn/2.png", "./assets/projects/wn/3.png", "./assets/projects/wn/4.png"],
+        "buttons": [
+            ["https://github.com/DavidZwit/Cataglypis", "Github repo"],
+            ["https://www.dropbox.com/s/wzq6msony345lfp/FinalBuild.apk?dl=0", "APK download"]
+        ]
+    }, {
+        "title": "Tribal Trials",
+        "team": "2 developers, 2 artists, 1 designer, 1 musician",
+        "type": "Unity",
+        "duration": "8 weeks",
+        "date": "2019-07-10",
+        "summary": "A team project to make a game based on Berlin.",
+        "description": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ijDmUL0K-9k\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n<p>Tribal Trials is a 2-4 player arena combat game based on a schooltrip to Berlin in Germany.</p> <p> I learned many things on the 3d camera and movement system.</p>",
+        "images": ["./assets/projects/tt/0.png", "./assets/projects/tt/1.png", "./assets/projects/tt/2.png", "./assets/projects/tt/3.gif"],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/Project-vrij-1", "Github"],
+            ["https://drive.google.com/file/d/1-csURRq0K79sZIKrEfXHbReKMhla2kOb/view?usp=sharing", "Build (zip)"],
+            ["https://docs.google.com/document/d/1yaxlZLIRuQHuyu60LGX1rwaRblmzLSDUVKWJvu5F3MI/edit?usp=sharing", "Documentation"]
+        ]
+    }, {
+        "title": "Space Squids (GGJ 2020)",
+        "team": "1 Developer, 2 Designers, 2 Artists, 1 Musician",
+        "type": "Game Jam",
+        "duration": "48 hours",
+        "date": "2020-02-02",
+        "summary": "Global Game Jam 2020 - Theme = Repair",
+        "description": "Me and five others participated in the global game jam 2020. The them was repair. We won the Audience Price for most fun game. <br><br>\n\n<b>Game summary</b>\n\nSquid racing enjoyed solo or up to 4 local players.\n\n\"You can only move forward in space if you push something else away\" ~Anonymous\n\nSquids can loose their tentacles to thrust forward on a beautiful racing track!\nDon't worry, they can still get tentacles back... from their enemies!\n\nSpace Squids: Race in Space\n\nPlay up to 4 players!\nSet the amount of laps and enjoy!\n\nSpace Squids: Race in Space, Main Menu\n\nMade for the Global Game Jam 2020!\n\nBy:\n\nMichelle Avis: 2D art and UI sprites\nJulius de Blaaij: Balancing and UI implementation\nThijs Engel: Music and Sound design\nNathan Nieuwenhuizen: Programming\nWillem van Schaik: 3D and technical art\nMirna van Steenbergen: Game design, Producing and Graphic Design",
+        "images": ["./assets/projects/ggj2020/0.PNG", "./assets/projects/ggj2020/1.PNG", "./assets/projects/ggj2020/2.gif", "./assets/projects/ggj2020/3.jpg", "./assets/projects/ggj2020/4.jpg"],
+        "buttons": [
+            ["https://globalgamejam.org/2020/games/space-squids-race-space-8", "Jam Site"],
+            ["https://juliusdeblaaij.itch.io/space-squids-race-in-space", "Ith.io page (download)"]
+        ]
+    }, {
+        "title": "Homewards (GGJ 2019)",
+        "team": "2 Developers, 3 Artists, 1 Designer",
+        "type": "Game Jam",
+        "duration": "48 hours",
+        "date": "2019-02-02",
+        "summary": "GLobal Game Jam, theme = \"Home\"",
+        "description": "<p>This was my verry first visit at the global game jam, and the premise was to make a game within 48 hours with the theme \"home\". <br>\nWe made a platform game where a girl walks in a forest trying to find her home\n<p>Game Design:&nbsp;</p>\n<p>Thijs Roem</p>\n<p>Game Development:</p>\n<p>Nathan Nieuwenhuizen</p>\n<p>Dennis Borst</p>\n<p>Game Art:</p>\n<p>Tran Rosendahl</p>\n<p>Samara Spierings</p>\n<p>Luuk Bergman</p>\n</div>",
+        "images": ["./assets/projects/ggj2019/0.png", "./assets/projects/ggj2019/1.jpg", "./assets/projects/ggj2019/2.gif"],
+        "buttons": [
+            ["https://globalgamejam.org/2019/games/homewards-0", "Jam Site"]
+        ]
+    },
+    {
+        "title": "Pillar Dream",
+        "team": "1 Developer, 3 Artists, 2 Designers",
+        "type": "VR",
+        "duration": "3 weeks",
+        "date": "2019-12-28",
+        "summary": "VR experience with a magical illusion",
+        "description": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/d7OZnLg_hNI\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n<br>\nFor the project \"Hybrid Space\" for my study at HKU, we got an assignment to create a experience where virtual and physical space come together. <br>\nAs a design we came up with a magical VR experience where you get the illusion that you walk into a real physical Pillar. ",
+        "images": ["./assets/projects/pd/0.PNG", "./assets/projects/pd/1.PNG", "./assets/projects/pd/2.gif", "./assets/projects/pd/3.PNG", "./assets/projects/pd/4.PNG", "./assets/projects/pd/5.jpg"],
+        "buttons": [
+            ["https://pillardream.blogspot.com/", "Blog"]
+        ]
+    },
+    {
+        "title": "TreeM",
+        "team": "1 Developer, 2 Artists, 1 Designer",
+        "type": "AR",
+        "duration": "3 Weeks",
+        "date": "2019-10-22",
+        "summary": "Augmented Reality App used for sustainability of trees",
+        "description": "\nRising global CO2 levels are already having catastrophic consequences for our planet. But there is hope. Research from mapping tree density at a global scale shows that there are around 3.04 trillion trees on our planet that hold around 400 Gigaton worth of CO2 (Crowther, 2015). Further studies estimate that there is room for another 1.2 trillion trees on our planets which would undo around 10 years worth of global anthropogenic emissions.\n<br>\nBut how do you get humanity to plant 1 trillion trees?\nBy abusing the system and making tree growth have economic benefits. \n<br>\nA project by: Marnix Licht, Annalie Bruns, Rolando Ritzen en Nathan Nieuwenhuizen\n\n",
+        "images": ["./assets/projects/treem/0.PNG", "./assets/projects/treem/1.PNG", "./assets/projects/treem/3.gif"],
+        "buttons": [
+            ["https://github.com/nathannieuwenhuizen/Show-me", "Github"],
+            ["https://drive.google.com/file/d/1fAymmmBy21KqDFTM68XBvYQPC6zyKDj_/view?usp=sharing", "Apk download"]
+        ]
+    }
+]
