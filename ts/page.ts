@@ -1,10 +1,12 @@
 import { Iproject, Ihomework, subjects } from './data';
 import Slider from './slider';
+import App from './app';
 
 export default class Page {
 
     private aboutField: Element;
     private projectOverviewAlreadyLoaded: boolean = false;
+    private projectUploadButton: Element;
     private HKULoaded: boolean = false;
     private infoSlider: Slider;
 
@@ -157,12 +159,114 @@ export default class Page {
         }
     }
 
+    public uploadProject(data: Iproject[]): void {
+        console.log("click!");
+        let form: Element = document.getElementsByClassName("projectForm")[0];
+
+        let uploadedData: Iproject = {
+            title : form.getElementsByClassName("title")[0].value,
+            team : form.getElementsByClassName("team")[0].value,
+            type : form.getElementsByClassName("type")[0].value,
+            duration : form.getElementsByClassName("duration")[0].value,
+            date : form.getElementsByClassName("date")[0].value,
+            summary : form.getElementsByClassName("summary")[0].value,
+            description : form.getElementsByClassName("description")[0].value,
+            images : this.getimagesVal(),
+            buttons: this.getbuttonsVal()
+        }
+        data.push(uploadedData);
+        
+        console.log("copy this: ", JSON.stringify(data));
+        
+    }
+    public getbuttonsVal(): string[][] {
+        let result: string[][] = [];
+        let buttonContainer = document.getElementsByClassName("buttonContainer")[0];
+        for (let i: number = 0; i < buttonContainer.childElementCount; i++) {
+            result.push([
+                buttonContainer.children[i].getElementsByClassName("buttonLink")[0].value,
+                buttonContainer.children[i].getElementsByClassName("buttonText")[0].value
+            ]);
+        }
+        console.log("result: " , result);
+        return result;
+    }
+
+    public getimagesVal(): string[][] {
+        let result: string[][] = [];
+        let buttonContainer = document.getElementsByClassName("imageLinksContainer")[0];
+        for (let i: number = 0; i < buttonContainer.childElementCount; i++) {
+            result.push(buttonContainer.children[i].getElementsByClassName("imageLink")[0].value);
+        }
+        console.log("image result: " , result);
+        return result;
+    }
+
+    public changeAmountofButtons(val: number) {
+        console.log("number of buttons: ", val)
+        let buttonContainer = document.getElementsByClassName("buttonContainer")[0];
+        let exampleButton = document.getElementById("exampleButton");
+
+        if (val > buttonContainer.childElementCount) {
+            for (let i: number = 0; i < val  - buttonContainer.childElementCount; i++) {
+                let newElement = exampleButton.cloneNode(true);
+                newElement.classList.remove("hide");
+                buttonContainer.appendChild(newElement);
+            }
+        } else {
+            if (val >= 0) {
+                for (let i: number = 0; i < buttonContainer.childElementCount - val; i++) {
+                    buttonContainer.removeChild(buttonContainer.childNodes[buttonContainer.childElementCount - 1]);
+                }
+            }
+        }
+        console.log(buttonContainer.childElementCount, buttonContainer, exampleButton)
+    }
+
+    public changeAmountofImages(val: number) {
+        console.log("number of buttons: ", val)
+        let imagesContainer = document.getElementsByClassName("imageLinksContainer")[0];
+        let exampleImage = document.getElementById("exampleimageLink");
+
+        if (val > imagesContainer.childElementCount) {
+            for (let i: number = 0; i < val  - imagesContainer.childElementCount; i++) {
+                let newElement = exampleImage.cloneNode(true);
+                newElement.classList.remove("hide");
+                imagesContainer.appendChild(newElement);
+            }
+        } else {
+            if (val >= 0) {
+                for (let i: number = 0; i < imagesContainer.childElementCount - val; i++) {
+                    imagesContainer.removeChild(imagesContainer.childNodes[imagesContainer.childElementCount - 1]);
+                }
+            }
+        }
+        console.log(imagesContainer.childElementCount, imagesContainer, exampleImage)
+    }
+
+
     public loadProjectOverview(data: Iproject[]): void {
         if (this.projectOverviewAlreadyLoaded) {
             return;
         }
         this.projectOverviewAlreadyLoaded = true;
 
+
+        let numberofbuttons: Element = document.getElementsByClassName("numberofbuttons")[0];
+        numberofbuttons.addEventListener("click", () => {
+            this.changeAmountofButtons(numberofbuttons.value);
+        });
+        
+        let numberofimages: Element = document.getElementsByClassName("numberofimages")[0];
+        numberofimages.addEventListener("click", () => {
+            this.changeAmountofImages(numberofimages.value);
+        });
+        
+        this.projectUploadButton = document.getElementById("projectUploadButton");
+        this.projectUploadButton.addEventListener("click", () => {
+            this.uploadProject(data);
+        });
+        console.log("project upload button: " + this.projectUploadButton)
         //slider
         let slideContainer: any = document.getElementsByClassName('slidecontainer')[0];
         let projecten: any = document.getElementById('projecten');
@@ -208,7 +312,7 @@ export default class Page {
 
             let buttons: string = '';
             for (let j: number = 0; j < data[i].buttons.length; j++) {
-                console.log(j, data[i].buttons[j][0], data[i].buttons[j][1]);
+                //console.log(j, data[i].buttons[j][0], data[i].buttons[j][1]);
                 buttons += '<a target="n_project" href="' + data[i].buttons[j][0] + '">' + data[i].buttons[j][1] + '</a>';
             }
 

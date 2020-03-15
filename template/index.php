@@ -5,14 +5,14 @@
 	<TITLE>Nathan Nieuwenhuizen</TITLE>
 	<link rel="icon" type="image/png" href="./assets/page_elements/profile.jpg"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link id="stylesheet" rel="stylesheet" href="assets/style.css" type="text/css" />
+	<link id="stylesheet" rel="stylesheet" href="assets/style.css?version=2" type="text/css" />
 	<script src="assets/dir.php"></script>
 	<script src="app.js"></script>
 	<script src="assets/flocking.js"></script>
 </HEAD>
 
 <BODY>
-	<div id="wrapper">
+	<div id="wrapper"> 
 	<input type="button" value="change style" id="styleButton"/>
 	<header>
 		<section class="title_image">
@@ -180,8 +180,47 @@
 
 			<h2> All projects</h2>
 
-		</section>
+			<form  method="post" enctype="text/plain" class="projectForm show">
+				<!-- <INPUT TYPE="hidden" NAME="required" VALUE="from,name"> -->
+				<label>Project name</label>
+				<input class="title" type="text" name="name"><br>
+				<label>Team</label>
+				<input class="team" type="text" name="team"><br>
+				<label>Type</label>
+				<input class="type" type="text" name="type"><br>
+				<label>Duration</label>
+				<input class="duration" type="text" name="duration"><br>
+				<label>Date</label>
+				<input class="date" type="date" name="date"><br>
+				
+				<label>Summary</label>
+				<textarea type="field" class ="summary" name="content" size="30" rows="2" cols="40"></textarea><br><br>
 
+				<label>Description</label>
+				<textarea type="field" name="content" class="description" size="80" rows="10" cols="40"></textarea><br><br>
+				<label>Image links</label>
+				<input class="numberofimages" type="number" name="from" value = 0><br>
+				<div class="imageLinksContainer">  
+				</div>
+				<div id ="exampleimageLink"  class = "hide">
+				<input class ="imageLink" type="text" value ="./assets/projects/" name="name"><br>
+				</div> 
+				<label>Amount of buttons</label>
+				<input class="numberofbuttons" type="number"  name="from" value = 0><br>
+				<div class="buttonContainer">  
+				</div>
+				<div id ="exampleButton" class="hide">
+				<label>Some button</label><br>
+				<label>Text</label>
+				<input class ="buttonText" type="text" name="name"><br>
+				<label>Link</label>
+				<input class = "buttonLink" type="text" name="name"><br>
+</div>
+				<input type="button" id="projectUploadButton" value="Upload project">
+				<!-- <input type="reset" value="Reset"> -->
+			</form>
+
+		</section>
 		<section id="contact">
 			<h3> Contact</h3>
 			<form action="mailto:nathan.nieuwenhuizen@student.hku.nl" method="post" enctype="text/plain">
@@ -294,12 +333,24 @@
 	</div>
 
 	<footer>
-			<p id="viewCount">You are the  <?php 
-			$views = file_get_contents("views.txt");
-			echo $views;
-			$views += 1;
-			file_put_contents("views.txt", $views);
-?>th visitor!</p>
+			<p id="viewCount">You are the  
+			<?php 
+
+
+			// $views = file_get_contents("views.txt"); 
+			// echo $views;
+			// $views += 1;
+			// file_put_contents("views.txt", $views);
+
+
+$filename = 'views.txt';
+
+$file_data = file_get_contents($filename);
+echo $file_data + 1054;
+// $fp = fopen($filename, 'w');
+// fwrite($fp, $file_data + 1);
+// fclose($fp);
+?>th visitor</p>
 			<p> - Made by Nathan Nieuwenhuizen!</p>
 
 	</footer> 

@@ -43,6 +43,9 @@ export default class App {
             this.updatePage();
         }, false);
     }
+    public addProject() {
+        console.log("testing");
+    }
 
     public toggleStyle(): void {
         console.log('style click');
