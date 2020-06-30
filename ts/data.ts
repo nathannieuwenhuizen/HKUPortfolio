@@ -1,4 +1,5 @@
 export interface Iproject {
+    id: number;
     title: string;
     team: string;
     type: string;
@@ -7,6 +8,7 @@ export interface Iproject {
     summary: string;
     description: string;
     images: string[];
+    highLighted: boolean;
     buttons: string[][];
 }
 export enum subjects {

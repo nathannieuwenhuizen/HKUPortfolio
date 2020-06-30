@@ -22,6 +22,10 @@ export default class App {
         this.updateStyle();
 
         this.data = this.loadFile('./assets/projects.json'); 
+        for(let i = 0; i < this.data.length; i++) {
+            this.data[i].id = i;
+        }
+        console.log(this.data);
         this.homeworkData = this.loadFile('./assets/homework.json');
         this.homework = new HomeWork(); 
         this.homeworkData = this.homework.data;
@@ -42,7 +46,7 @@ export default class App {
         window.addEventListener('hashchange', () => {
             this.updatePage();
         }, false);
-    }
+    } 
     public addProject() {
         console.log("testing");
     }

@@ -47,10 +47,10 @@
 		<a id ="profileShortcut" href="./index.php"></a>
 
 			<li><a href="./">Home</a></li>
-			<li><a href="./#projecten">Projects</a></li>
+			<li><a href="./#projecten">My Work</a></li>
 			<li><a href="./#about">About</a></li>
 			<li><a href="./#contact">Contact</a></li>
-			<li><a href="./dirtest.php">HKU</a></li>
+			<!-- <li><a href="./dirtest.php">HKU</a></li> -->
 		</ul>
 	</nav>
 	<section class="content">
@@ -90,15 +90,17 @@
 					<!-- github -->
 					<a target="_blank" href="https://nl.linkedin.com/in/nathan-nieuwenhuizen-908395b3"><img src="./assets/page_elements/li.png" /></a>
 					<!-- linkedin -->
-					<a href="mailto:nathan-san@live.nl"><img src="./assets/page_elements/email.png" /></a>
-					<!-- email -->
-					<a target="_blank" href="assets/files/CV_ENGLISH.pdf"><img src="./assets/files/cv.png" /></a>
+					<a target="_blank" href="assets/files/resume.pdf"><img src="./assets/files/cv.png" /></a>
 					<!-- CV -->
+					<a target="_blank" href="https://nathannieuwenhuizen.itch.io/"><img src="./assets/page_elements/itch.png" /></a>
+					<!-- itch -->
+
+
 				</section>
 				<section class="summaryField">
 					<p><b>Name</b> Nathan Nieuwenhuizen</p>
-					<p><b>Age</b> 22</p>
-					<p><b>Summary</b> Hello, I''m Nathan. I am a game developer currently studying 'Games and Interaction' ath the HKU
+					<p><b>Age</b> 24</p>
+					<p><b>Summary</b> Hello, I'm Nathan. I'm a game developer currently studying 'Games and Interaction' at the HKU
 						in Utrecht.</p>
 				</section>
 				<section class="newStatField">
@@ -108,6 +110,7 @@
 					<li class="li">Javascript</li>
 					<li class="li">Typescript</li>
 					<li class="li">C#</li>
+					<li class="li">C++</li>
 					<li class="li">SCRUM</li>
 					<li class="li">Agile</li>
 					<li class="li">Unity</li>
@@ -148,10 +151,6 @@
 						My goal is to challenge myself to become a better programmer / designer. To become a better team player. And last
 						but not least: To make games!
 					</p>
-					<p>
-						One of my favourite games is the game 'Portal', because it has a simple mechanic that gets deeper and deeper the
-						more you go into the game making it one of the deepest tutorials I've ever witnissed!
-					</p>
 				</section>
 				<section class="lines">
 					<span class="line"></span>
@@ -165,7 +164,8 @@
 		<section id="projecten">
 			<!-- <h3> Highlights</h3> -->
 
-			<section class="slider" style="display:none;">
+			<h1> Highlighted work </h1>
+			<section class="slider" style="display:block; height:70vh;">
 				<section class="buttons">
 					<section class="button">
 					</section>
@@ -178,7 +178,7 @@
 				</section>
 			</section>
 
-			<h2> All projects</h2>
+			<h2> Other works</h2>
 
 			<h3> Order by 
 				

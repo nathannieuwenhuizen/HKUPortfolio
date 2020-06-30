@@ -191,7 +191,6 @@ export default class Page {
                 buttonContainer.children[i].getElementsByClassName("buttonText")[0].value
             ]);
         }
-        console.log("result: ", result);
         return result;
     }
 
@@ -201,12 +200,10 @@ export default class Page {
         for (let i: number = 0; i < buttonContainer.childElementCount; i++) {
             result.push(buttonContainer.children[i].getElementsByClassName("imageLink")[0].value);
         }
-        console.log("image result: ", result);
         return result;
     }
 
     public changeAmountofButtons(val: number) {
-        console.log("number of buttons: ", val)
         let buttonContainer = document.getElementsByClassName("buttonContainer")[0];
         let exampleButton = document.getElementById("exampleButton");
 
@@ -223,11 +220,9 @@ export default class Page {
                 }
             }
         }
-        console.log(buttonContainer.childElementCount, buttonContainer, exampleButton)
     }
 
     public changeAmountofImages(val: number) {
-        console.log("number of buttons: ", val)
         let imagesContainer = document.getElementsByClassName("imageLinksContainer")[0];
         let exampleImage = document.getElementById("exampleimageLink");
 
@@ -244,7 +239,6 @@ export default class Page {
                 }
             }
         }
-        console.log(imagesContainer.childElementCount, imagesContainer, exampleImage)
     }
 
     public reloadProjectOverview(data: Iproject[]) {
@@ -283,22 +277,33 @@ export default class Page {
 
 
         //slider
-        let slideContainer: any = document.getElementsByClassName('slidecontainer')[0];
-        let projects: any = document.getElementById('projecten');
-        slideContainer.style = 'width: ' + data.length + '00%;';
+        {
+            let highLightedProjects = data.filter(project => project.highLighted == true);
+            highLightedProjects.sort((a: Iproject, b: Iproject) => {
+                let result = 0;
+                result = a.date > b.date ? -1 : a.date < b.date ? 1 : 0;
+                return result;
+            });
+    
+            let slideContainer: any = document.getElementsByClassName('slidecontainer')[0];
+            let projects: any = document.getElementById('projecten');
+            slideContainer.style = 'width: ' + highLightedProjects.length + '00%;';
 
-        for (let i: number = 0; i < data.length; i++) {
-            if (data[i].images.length !== 0) {
-                let el: any = document.createElement('div');
-                let a: any = document.createElement('a');
-                el.className = 'dia';
-                let link: string = '#projectinfo?project=' + i;
-                el.style = 'width:' + (100 / data.length) + '%; background-image:url("' + data[i].images[0] + '");';
-                a.appendChild(el);
-                a.setAttribute('href', link);
-                slideContainer.appendChild(a);
+            for (let i: number = 0; i < highLightedProjects.length; i++) {
+                if (highLightedProjects[i].images.length !== 0) { 
+                    let el: any = document.createElement('div');
+                    let a: any = document.createElement('a');
+                    el.className = 'dia';
+                    let link: string = '#projectinfo?project=' + highLightedProjects[i].id;
+                    el.style = 'width:' + (100 / highLightedProjects.length) + '%; background-image:url("' + highLightedProjects[i].images[0] + '");';
+                    a.appendChild(el);
+                    a.setAttribute('href', link);
+                    slideContainer.appendChild(a);
+                }
             }
         }
+
+        let otherData = data.filter(project => project.highLighted == false);
 
         let orderSelection: Element = document.getElementById("projectsorder");
         orderSelection.onchange = () => {
@@ -306,12 +311,10 @@ export default class Page {
         })
         let orderSelectionDirection =document.getElementById("projectorderInvert");
         orderSelectionDirection.onchange = () => {
-            console.log("Thy fuck?");
             this.reloadProjectOverview(data);
         })
-        console.log(orderSelection.value);
 
-        data.sort((a: Iproject, b: Iproject) => {
+        otherData.sort((a: Iproject, b: Iproject) => {
             let result = 0;
             switch (orderSelection.value) {
                 case "Time":
@@ -332,8 +335,8 @@ export default class Page {
         });
 
         //thumbs - new
-        for (let i: number = 0; i < data.length; i++) {
-            let link: string = '#projectinfo?project=' + i;
+        for (let i: number = 0; i < otherData.length; i++) {
+            let link: string = '#projectinfo?project=' + otherData[i].id;
 
             let sec: any = document.createElement('div');
             sec.className = 'flipTile';
@@ -344,11 +347,11 @@ export default class Page {
             let front: any = document.createElement('section');
             front.className = 'front';
             let h2: any = document.createElement('h2');
-            h2.innerHTML = data[i].title;
+            h2.innerHTML = otherData[i].title;
             let back: any = document.createElement('section');
             back.className = 'back';
-            front.style = 'background-image:url(' + data[i].images[0] + ')';
-            back.style = 'background-image:url(' + data[i].images[1] + ')';
+            front.style = 'background-image:url(' + otherData[i].images[0] + ')';
+            back.style = 'background-image:url(' + otherData[i].images[1] + ')';
             front.appendChild(h2);
             cover.appendChild(front);
             cover.appendChild(back);
@@ -357,21 +360,20 @@ export default class Page {
             //back page
 
             let buttons: string = '';
-            for (let j: number = 0; j < data[i].buttons.length; j++) {
-                //console.log(j, data[i].buttons[j][0], data[i].buttons[j][1]);
-                buttons += '<a target="n_project" href="' + data[i].buttons[j][0] + '">' + data[i].buttons[j][1] + '</a>';
+            for (let j: number = 0; j < otherData[i].buttons.length; j++) {
+                buttons += '<a target="n_project" href="' + otherData[i].buttons[j][0] + '">' + otherData[i].buttons[j][1] + '</a>';
             }
 
             let backpage: any = document.createElement('div');
             backpage.className = 'backPage';
             backpage.innerHTML =
-                '<h2><a href="' + link + '">' + data[i].title + '</a></h2>' +
-                '<p><b>Type </b>' + data[i].type + '</p>' +
-                '<p><b>Date </b>' + data[i].date + '</p>' +
-                '<p><b>Duration </b>' + data[i].duration + '</p>' +
-                '<p><b>Team </b>' + data[i].team + '</p>' +
+                '<h2><a href="' + link + '">' + otherData[i].title + '</a></h2>' +
+                '<p><b>Type </b>' + otherData[i].type + '</p>' +
+                '<p><b>Date </b>' + otherData[i].date + '</p>' +
+                '<p><b>Duration </b>' + otherData[i].duration + '</p>' +
+                '<p><b>Team </b>' + otherData[i].team + '</p>' +
                 // '<p><b>Description: </b> </p>' +
-                // '<p>' + data[i].summary + '</p>' +
+                // '<p>' + otherData[i].summary + '</p>' +
                 '<div class="buttons">' +
                 '<a href="' + link + '">More info...</a>' +
                 buttons +
@@ -394,7 +396,6 @@ export default class Page {
     public loadProjectInfo(data: Iproject): void {
         this.infoSlider.clearDias();
 
-        // console.log(data);
         document.title = data.title;
         document.getElementById('projectTitle').innerHTML = data.type;
         document.getElementById('projectTeam').innerHTML = data.team;
@@ -406,11 +407,9 @@ export default class Page {
         let slideContainer: any = document.getElementsByClassName('slidecontainer')[1];
         slideContainer.style = 'width: ' + data.images.length + '00%;';
 
-        console.log('load damnit!');
         for (let i: number = 0; i < data.images.length; i++) {
             if (data.images[i] !== '') {
 
-                console.log(i);
                 let a: any = document.createElement('a');
                 a.target = 'n_img';
                 a.href = data.images[i];
