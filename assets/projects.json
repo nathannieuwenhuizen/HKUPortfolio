@@ -183,7 +183,7 @@
         "date": "2019-07-10",
         "summary": "A team project to make a game based on Berlin.",
         "description": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ijDmUL0K-9k\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n<p>Tribal Trials is a 2-4 player arena combat game based on a schooltrip to Berlin in Germany.</p> <p> I learned many things on the 3d camera and movement system.</p>",
-        "images": ["./assets/projects/tt/0.png", "./assets/projects/tt/1.png", "./assets/projects/tt/2.png", "./assets/projects/tt/3.gif"],
+        "images": ["./assets/projects/tt/0.PNG", "./assets/projects/tt/1.PNG", "./assets/projects/tt/2.PNG", "./assets/projects/tt/3.gif"],
         "buttons": [
             ["https://github.com/nathannieuwenhuizen/Project-vrij-1", "Github"],
             ["https://drive.google.com/file/d/1-csURRq0K79sZIKrEfXHbReKMhla2kOb/view?usp=sharing", "Build (zip)"],
