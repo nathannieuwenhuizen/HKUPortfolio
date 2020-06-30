@@ -14,12 +14,12 @@
     }, {
         "title": "Blocky Climb",
         "team": "By myself",
-        "type": "Unity 2D",
+        "type": "Unity 2D", 
         "duration": "4 weeks",
         "date": "2019-05-16",
         "summary": "A simple 2D platformer game",
         "description": "Story: \n The game is about a climber who is the magic \n want to get an apple tree. Hereby goes the \n climber use his trusted \n grappling hook that takes him everywhere \n Gameplay \n This is a simple 2D platformer where your character \n can jump, walk, jump off the wall and the \n use grappling hook. When you focus on one \n you can shoot yourself to it \n with a faster speed. This is possible from any \n corner. You can also use the grappling hook again immediately \n let go and thereby let yourself fall. <iframe width='560' height='315' src='https://www.youtube.com/embed/G6zc6rClGbU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-        "images": ["./assets/projects/blocky/0.PNG", "https://i.gyazo.com/872e55eb1d3f850eaaa16b23cfa5f5d7.gif", "./assets/projects/blocky/1.PNG", "./assets/projects/blocky/2.PNG", "./assets/projects/blocky/3.PNG"],
+        "images": ["./assets/projects/blocky/0.PNG", "./assets/projects/blocky/1.PNG", "https://i.gyazo.com/872e55eb1d3f850eaaa16b23cfa5f5d7.gif",  "./assets/projects/blocky/2.PNG", "./assets/projects/blocky/3.PNG"],
         "highLighted" : false,
         "buttons": [
             ["https://github.com/nathannieuwenhuizen/BPW2_project", "code"],
@@ -88,7 +88,7 @@
         "date": "2015-12-13",
         "summary": "Unity project made for myself",
         "description": " <p>This personal project started when I wanted to learn more about 2D arrays and grid systems. So I decided to make a puzzle game based on the mini game: 'Puzzle Panic'.</p><p>I realized with this project that creating the core gameplay is just the half work, because I spent more time on making the UI and getting the little things right.</p>",
-        "images": ["./assets/projects//ctf1.png", "https://i.gyazo.com/c42ac1e3f094d733e8b7bfbef34b26d7.gif", "./assets/projects//ctf2.png", "./assets/projects//ctf3.png", ""],
+        "images": ["./assets/projects//ctf1.png", "./assets/projects//ctf2.png", "https://i.gyazo.com/c42ac1e3f094d733e8b7bfbef34b26d7.gif", "./assets/projects//ctf3.png", ""],
         "highLighted" : false,
         "buttons": [
             ["https://nathannieuwenhuizen.github.io/PlayableBuilds/CorrectTheField/CorrectTheField.html", "code"]
@@ -101,7 +101,7 @@
         "date": "2016-6-20",
         "summary": "Game Jam for mediabites 2016",
         "description": "<p>A game jam we made during 'Mediabites 2016' where I volunteered with 7 other developers and artists to make a game with the theme 'connecting'.</p><p> In 24 hours we had to come up with a concept and make a prototype/game based around the concept.</p><p>The 24 hours were not as hard as I thought it would be, but in the last couple of hours we struggled to keep awake. Luckilly we finished our prototype: Crystales!. </p><p> It was a unique experience for me and my team and personally want to do it again next year!</p>",
-        "images": ["./assets/projects/c1.png", "https://i.gyazo.com/0df0a60e6423188859341b72fa8a5141.gif", "./assets/projects/c2.png", "./assets/projects/c3.png", "./assets/projects/c4.png", "./assets/projects/c5.jpg", ""],
+        "images": ["./assets/projects/c1.png", "./assets/projects/c2.png", "https://i.gyazo.com/0df0a60e6423188859341b72fa8a5141.gif",  "./assets/projects/c3.png", "./assets/projects/c4.png", "./assets/projects/c5.jpg", ""],
         "highLighted" : false,
         "buttons": [
             ["https://github.com/Jprummel/MediaBites_2016_GameJam", "code"],
@@ -144,7 +144,7 @@
         "date": "2015-07-12",
         "summary": "Flash game made for fun!",
         "description": "<h3>Description</h3> <p>In my 1st year, I wanted to make a platform fighting game. I made it in Actionscript 3.</p><p>I am proud of the AI enemy I created in less than a day, and the different area's you can fight in.</p> <h3>My role</h3> <p> <li>Made art</li> <li>Programmed the game.</li> </p> <h3>Game features:</h3> <p> <li>Fighting mechanics</li> <li>2 players or AI</li> <li>Choosing the area to fight</li> <li>Pick ups like (weapons/ extra health).</li> </p>",
-        "images": ["./assets/projects/smashers.jpg", "https://i.gyazo.com/thumb/1000/_92978343ea5fe22c76249f4646d99856-gif.gif", "./assets/projects/sm.jpg", "./assets/projects/sm1.png", ""],
+        "images": ["./assets/projects/smashers.jpg",  "./assets/projects/sm.jpg", "https://i.gyazo.com/thumb/1000/_92978343ea5fe22c76249f4646d99856-gif.gif", "./assets/projects/sm1.png", ""],
         "highLighted" : false,
         "buttons": [
             ["https://nathannieuwenhuizen.github.io/PlayableBuilds/Smashing.swf", "play"]
@@ -157,7 +157,7 @@
         "date": "2016-04-06",
         "summary": "Unity project made for my study in Amsterdam (Media College Amsterdam)",
         "description": "<p>A 8 week project for school where we made a game for mobile and set in for free in the Google play store.</p><p> Our subject for the game was mythe, so we chose the rainbow serpent (a fable animal) to be the theme of our game.</p> <p>This is my first mobile game I've worked so far and with the biggest team so far (10 people). And I am proud of the result!s</p> <h3>My role</h3> <p> <li>Programming the 'sky form' and transition into it.</li> <li>Proggramming the healthbar.</li> <li>Programming the enemies.</li> <li>Designing some of the level parts.</li> </p> <h3>Game features:</h3> <p> <li>Endless runner</li> <li>Online highscore</li> <li>Static and moving obstacles</li> <li>Increasing difficulty</li> <li>Randomanized chunks</li> <li>Tutorial chunks for beginners</li> <li>Snake movement</li> <li>Particles for game feel</li> </p>",
-        "images": ["./assets/projects/wr1.jpg", "https://i.gyazo.com/1b4d61a54a4b783be832db3ff168d3e5.gif", "./assets/projects/wr2.jpg", "./assets/projects/wr3.jpg", "./assets/projects/wr4.png"],
+        "images": ["./assets/projects/wr1.jpg", "./assets/projects/wr2.jpg", "https://i.gyazo.com/1b4d61a54a4b783be832db3ff168d3e5.gif", "./assets/projects/wr3.jpg", "./assets/projects/wr4.png"],
         "highLighted" : false,
         "buttons": [
             ["https://github.com/Daniel95/Mythe", "code"]
@@ -170,7 +170,7 @@
         "date": "2016-11-12",
         "summary": "HTML5 project based on a mathologer video.",
         "description": "<p>This project demonstrates the calculations for a refelction in a cup buy a facor of n. You see n = 2 in nature like lightbeams on a cofee cup or rolling a circle with half the size around the other circle.</p> <p>Inspiration came from the youtube video from Matheloger:<a target='_blank' href='https://www.youtube.com/watch?v=qhbuKbxJsk8'>Click here</a></p><p>Here is the article about light intervals: <a target='_blank' href='http://xahlee.info/SpecialPlaneCurves_dir/Cardioid_dir/_p/LightsRaysReflections.pdf'>Click here</a> </p> <p>You can see many patterns unfolding like parts of the mandelbrot, spirals and more.</p><p>I haven't found many articles or information about this, so I can't recall a name for this one.So, I call it the heart of mathematics.</p> <h3>My role</h3> <p> <li>Programmed the application.</li> <li>CSS made</li> </p> <h3>Game features:</h3> <p> <li>Random color lerping</li> <li>Interctivity about the multiplication factor and how many points the circle has.</li> <li>Animation of in/decreasing multiplication factors</li> </p>",
-        "images": ["./assets/projects/th2.jpg", "https://i.gyazo.com/ac1e6570189358cafa8839d62ef8b069.gif", "./assets/projects/th3.jpg", "./assets/projects/th4.jpg", "./assets/projects/th5.jpg", ""],
+        "images": ["./assets/projects/th2.jpg", "./assets/projects/th3.jpg", "https://i.gyazo.com/ac1e6570189358cafa8839d62ef8b069.gif",  "./assets/projects/th4.jpg", "./assets/projects/th5.jpg", ""],
         "highLighted" : false,
         "buttons": [
             ["https://nathannieuwenhuizen.github.io/PlayableBuilds/theHeart/index.html", "play!"]
@@ -269,8 +269,8 @@
         "date": "2020-04-20",
         "summary": "First solo game jam participation.",
         "description": "The games is made for the Ludum Dare 46. \nThe theme of this game jam is 'Keep it Alive'.\n And what other way to keep alive are cute little monsters.\nYou are a flying pan delivering the monster baby to their mother over lava and boobytraps. \nTry to get as many babies as save as possible to their home.\nPLayable on Keyboard and controller.",
-        "images": ["https://i.gyazo.com/05d6ef175f05f3efef71ca6844ff64a1.gif", "https://img.itch.zone/aW1hZ2UvNjE2NjExLzMyODAxNzUucG5n/347x500/7qoZRK.png", "https://img.itch.zone/aW1hZ2UvNjE2NjExLzMyODAxNzQucG5n/347x500/A0zb8Z.png"],
-        "highLighted" : true,
+        "images": [ "https://img.itch.zone/aW1hZ2UvNjE2NjExLzMyODAxNzUucG5n/347x500/7qoZRK.png", "https://img.itch.zone/aW1hZ2UvNjE2NjExLzMyODAxNzQucG5n/347x500/A0zb8Z.png", "https://i.gyazo.com/05d6ef175f05f3efef71ca6844ff64a1.gif"],
+        "highLighted" : false,
         "buttons": [
             ["https://github.com/nathannieuwenhuizen/Baby-Monster-Delivery-Ritual", "Github"],
             ["https://nathannieuwenhuizen.itch.io/baby-monster-delivery", "Itch.io page"],
